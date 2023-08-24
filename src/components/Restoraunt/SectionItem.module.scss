@@ -1,0 +1,32 @@
+.grid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 25rem));
+  gap: 5rem 3rem;
+  @media only screen and (max-width: 52.5em) {
+    justify-content: center;
+  }
+  @media only screen and (max-width: 27.25em) {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 40rem));
+    grid-auto-rows: minmax(40rem, 55rem);
+    gap: 7rem;
+  }
+}
+
+.type {
+  display: block;
+  border: 1px solid var(--text-primary);
+  border-radius: 15px;
+  padding: 2rem;
+}
+.name {
+  font-size: 1.6rem;
+}
+.heading {
+  font-size: 3.6rem;
+  text-transform: capitalize;
+  margin: 7rem 0;
+  @media only screen and (max-width: 52.5em) {
+    text-align: center;
+  }
+}

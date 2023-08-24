@@ -1,0 +1,48 @@
+.CheckOut {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 6.5rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+  &Name {
+    font-size: 1.6rem;
+
+    display: inline-block;
+    opacity: 0.4;
+    &Final {
+      font-size: 2rem;
+      opacity: 0.8;
+    }
+  }
+  &Price {
+    font-size: 1.6rem;
+
+    &Final {
+      font-size: 2.2rem;
+    }
+  }
+  &Last {
+    margin-top: 3rem;
+  }
+  &Button {
+    font-size: 1.8rem;
+    display: inline-block;
+    color: var(--text-tertiary);
+    background-color: var(--primary-color);
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    &:hover {
+      background-color: var(--primary-color);
+    }
+    &:disabled {
+      background-color: var(--primary-color--light--2);
+      cursor: not-allowed;
+    }
+  }
+}

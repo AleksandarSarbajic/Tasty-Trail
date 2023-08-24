@@ -1,0 +1,52 @@
+.hero {
+  padding-top: 10rem;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+.heading {
+  font-size: 3.6rem;
+  margin-bottom: -6rem;
+  margin-left: 2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.item {
+  display: block;
+  overflow: hidden;
+
+  padding: 0 1rem;
+  border-radius: 15px;
+  position: relative;
+}
+
+.buttonRight {
+  top: 1rem;
+  right: 3rem;
+}
+.buttonLeft {
+  top: 1rem;
+  right: 10rem;
+}
+.buttonLeft,
+.buttonRight {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--text-tertiary);
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0px 8px 20px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.buttonLeft:hover,
+.buttonRight:hover {
+  background-color: var(--bg-secondary);
+}
+
+.arrow {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}

@@ -1,0 +1,38 @@
+.header {
+  width: 140rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.button {
+  font-size: 1.6rem;
+  border: none;
+  background-color: transparent;
+  padding: 1rem;
+  color: var(--primary-color--light--2);
+  cursor: pointer;
+  transition: all 0.2s;
+  span {
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  &:hover &Icon {
+    background-color: var(--bg-primary);
+  }
+  &Icon {
+    background-color: rgba(238, 238, 238, 0.7);
+    font-size: 3.6rem;
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+}

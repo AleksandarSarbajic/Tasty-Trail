@@ -1,0 +1,31 @@
+.emptyItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    text-align: center;
+    font-size: 3.6rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    text-align: center;
+    font-size: 1.6rem;
+    opacity: 0.7;
+  }
+  img {
+    width: 30rem;
+  }
+  &Link:link,
+  &Link:visited {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 1rem 3rem;
+    border-radius: 15px;
+    font-size: 2rem;
+    color: var(--text-tertiary);
+  }
+  &Link:hover,
+  &Link:active {
+    background-color: var(--primary-color--dark--1);
+  }
+}

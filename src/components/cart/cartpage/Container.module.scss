@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  gap: 5rem;
+}
+.items {
+  padding: 15rem 1rem;
+  max-width: 135rem;
+  margin: 0 auto;
+}

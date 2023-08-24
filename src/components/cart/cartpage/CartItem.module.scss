@@ -1,0 +1,74 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  img {
+    width: 12rem;
+    border-radius: 10px;
+    height: 7rem;
+  }
+  &Image {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-grow: 1;
+  }
+  &Input {
+    margin-right: 2rem;
+    // Hide the default checkbox appearance
+
+    // Define the custom checkbox size
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border: 2px solid #aaa;
+  }
+  &Text {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  &Ingredients {
+    max-width: 40rem;
+    width: 35rem;
+    font-size: 1.2rem;
+    display: inline-block;
+  }
+  &Price {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &Name {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.cartButtons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  padding: 0.2rem 1rem;
+  box-shadow: 0px 5px 10px rgba(9, 9, 9, 0.1);
+
+  margin-right: 10rem;
+
+  &Number {
+    font-size: 1.8rem;
+    width: 2rem;
+    text-align: center;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  &Icon {
+    font-size: 2rem;
+  }
+}
+.cartItemPrice {
+  width: 10rem;
+  text-align: right;
+}

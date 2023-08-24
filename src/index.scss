@@ -1,0 +1,105 @@
+:root {
+  --primary-color: #ed7520;
+  --primary-color--light--2: #fa8838;
+  --primary-color--light--1: #fb944c;
+  --primary-color--dark--1: #e16f1e;
+  --secondary-color: #f1a661;
+  --tertiary-color: #ffd8a9;
+  --bg-primary: #fdeedc;
+  --bg-primary--2: #f8e9d8;
+  --bg-secondary: #ffd8a9;
+  --bg-tertiary: #000000;
+  --text-primary: #333;
+  --text-secondary: #222;
+  --text-tertiary: #ffffff;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color-scheme: light;
+  color: var(--text-primary);
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+li {
+  list-style: none;
+}
+.react-icons {
+  vertical-align: middle;
+}
+.rotating-curved-text {
+  fill: #333;
+  position: absolute;
+  /* top: -6rem; */
+  bottom: 0;
+}
+button {
+  font-family: "Rubik", sans-serif;
+}
+.zindex {
+  padding-top: 8rem;
+  @media only screen and (max-width: $bp-large) {
+    padding-top: 0rem;
+  }
+}
+
+.pt {
+  padding-top: 8rem;
+}
+
+.hovered__button:hover ~ .hovered__cart,
+.hovered__absolute:hover ~ .hovered__cart {
+  opacity: 1;
+  visibility: visible;
+  /* transition-delay: 1s; */
+}
+.hovered__cart:hover {
+  opacity: 1;
+  visibility: visible;
+  /* transition-delay: 1s; */
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 55%;
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 20rem 0;
+}

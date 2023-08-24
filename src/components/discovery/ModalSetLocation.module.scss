@@ -1,0 +1,76 @@
+.heading {
+  font-size: 3rem;
+  margin: 3rem 0;
+}
+
+.location {
+  animation: fade 0.3s linear;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  input {
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: 100%;
+    z-index: 532323;
+  }
+  button {
+    font-size: 1.8rem;
+    border: none;
+    background-color: var(--primary-color--light--2);
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    border-radius: 10px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  div {
+    position: relative;
+  }
+}
+.label {
+  width: max-content;
+  font-size: 1.6rem;
+  opacity: 0.6;
+  font-weight: 400;
+  position: absolute;
+  top: 1.8rem;
+  left: 2rem;
+
+  transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
+}
+.input:focus + .label {
+  top: 0.5rem;
+  left: 2rem;
+  font-size: 1rem;
+}
+.input:focus {
+  outline: none;
+}
+.animate {
+  top: 0.5rem;
+  left: 2rem;
+  font-size: 1rem;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

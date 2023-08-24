@@ -1,0 +1,75 @@
+.hero {
+  padding-top: 10rem;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+}
+.img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 1.3;
+  filter: brightness(50%);
+  object-fit: cover;
+  transition: all 0.3s;
+}
+.item:hover .img {
+  transform: scale(1.1);
+}
+.img:hover {
+  transform: scale(1.1);
+}
+.item {
+  display: block;
+  overflow: hidden;
+
+  padding: 0 2rem;
+  border-radius: 15px;
+  position: relative;
+  @media only screen and (max-width: 37.5em) {
+    padding: 1rem;
+  }
+}
+.text {
+  position: absolute;
+  bottom: 2rem;
+  left: 4rem;
+}
+.type {
+  font-size: 2rem;
+  color: #eee;
+  opacity: 0.9;
+}
+.name {
+  display: block;
+  font-size: 3.6rem;
+  color: #fff;
+}
+
+.buttonRight {
+  right: 0.5rem;
+}
+.buttonLeft {
+  left: 0.5rem;
+}
+.buttonLeft,
+.buttonRight {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--text-tertiary);
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.buttonLeft:hover,
+.buttonRight:hover {
+  background-color: var(--bg-secondary);
+}
+
+.arrow {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}

@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--bg-primary--2);
+  box-shadow: 0px 5px 15px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 3rem;
+  position: relative;
+
+  -webkit-transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  &:hover,
+  &:active {
+    transform: translateY(-5%);
+  }
+  &:hover .button {
+    border: none;
+
+    transform: scale(1.15);
+    background-image: radial-gradient(#fb944c, #fa8838);
+  }
+  &:hover .icon {
+    transform: scale(1.15);
+
+    color: var(--text-tertiary);
+  }
+  @media only screen and (max-width: 27.25em) {
+    padding: 1.4rem;
+  }
+}
+.img {
+  width: 95%;
+
+  margin-bottom: 1.4rem;
+  height: 15rem;
+  object-fit: cover;
+
+  border-radius: 3rem;
+  @media only screen and (max-width: 27.25em) {
+    width: 100%;
+
+    height: 25rem;
+  }
+}
+.name {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  max-height: 5rem;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 2.4rem;
+    margin-bottom: 0rem;
+  }
+}
+.description {
+  font-size: 1.3rem;
+  text-align: center;
+  // margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-height: 10rem;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 1.6rem;
+  }
+}
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.price {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+
+  border-radius: 15px;
+  font-weight: 700;
+  // background-color: #fef5ea;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  right: -1rem;
+  bottom: -1rem;
+
+  border: 5px solid var(--text-tertiary);
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+
+  padding: 1rem 1rem;
+  font-weight: 500;
+  // color: var(--primary-color--dark--1);
+  background-color: var(--bg-primary);
+  cursor: pointer;
+
+  -webkit-transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  background-image: radial-gradient(#fdeedc, #fdeedc);
+  // background-size: 3%;
+  @media only screen and (max-width: 27.25em) {
+    height: 8rem;
+    width: 8rem;
+    right: -2rem;
+    bottom: -2rem;
+  }
+  &:hover {
+    border: none;
+
+    transform: scale(1.15);
+    background-image: radial-gradient(#fb944c, #fa8838);
+  }
+  &:hover .icon {
+    transform: scale(1.15);
+
+    color: var(--text-tertiary);
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 2.4rem;
+  }
+}

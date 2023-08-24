@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 2.5rem;
+}
+.img {
+  width: 8rem;
+  border-radius: 5px;
+}
+.name {
+  font-size: 1.5rem;
+}
+.price {
+  font-size: 1.4rem;
+  margin-left: auto;
+  color: var(--primary-color);
+}
+.quantity {
+  width: 2.5rem;
+  font-size: 1.4rem;
+}

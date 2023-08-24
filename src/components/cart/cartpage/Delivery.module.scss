@@ -1,0 +1,100 @@
+.heading {
+  font-size: 3.6rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+.form {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  color: var(--text-primary);
+  &Heading {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  &Box {
+    display: flex;
+    flex-direction: column;
+    &Location {
+      p {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+      span {
+        font-size: 1.4rem;
+      }
+      div {
+        max-width: 25rem;
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        // gap: 2rem;
+        // justify-content: space-between;
+      }
+    }
+    &Email {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    &Radio {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      input {
+        accent-color: #333;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+      label {
+        font-size: 1.6rem;
+      }
+    }
+    label {
+      font-size: 1.6rem;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+    input {
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: block;
+      width: 100%;
+      border: none;
+
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      border-radius: 5px;
+      &::placeholder {
+        font-size: 1.4rem;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.email {
+  &Label {
+    display: block;
+  }
+  &Input {
+    display: block;
+    width: 100% !important;
+  }
+}
+.type {
+  width: 10rem !important;
+}
+.location {
+  // justify-self: flex-end !important;
+  font-size: 1.6rem;
+}
+
+.error {
+  height: 1.5rem;
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}

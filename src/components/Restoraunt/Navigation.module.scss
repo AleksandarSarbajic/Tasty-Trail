@@ -1,0 +1,27 @@
+.nav {
+  background-color: var(--text-tertiary);
+  margin: 5rem 0 3rem 0;
+  padding: 3rem 5rem;
+  border-radius: 15px;
+  box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.1);
+}
+.heading {
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+.subheading {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+.links {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 2rem;
+}
+.text {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.icon {
+  font-size: 2.4rem;
+}

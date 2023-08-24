@@ -1,0 +1,99 @@
+.container {
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.newslatter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #999;
+}
+.news {
+  font-size: 2rem;
+  width: 30rem;
+}
+.input {
+  width: 30rem;
+  padding: 1rem 2rem 1rem 5rem;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  font-size: 1.6rem;
+}
+.input:required {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.input:focus {
+  outline: none;
+}
+.form {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.button {
+  background-color: var(--primary-color--light--2);
+  border: none;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--primary-color);
+}
+.absolute {
+  position: relative;
+}
+.icon {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translate(-50%, -50%);
+}
+
+.list {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #999;
+}
+
+.logotext {
+  font-size: 4rem;
+  color: var(--primary-color--light--2);
+}
+.logosub {
+  font-size: 1.8rem;
+  width: 80%;
+}
+.all {
+  display: flex;
+  gap: 5rem;
+}
+.link:visited,
+.link:link {
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+.copy {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  opacity: 0.8;
+}

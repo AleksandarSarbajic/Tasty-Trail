@@ -1,0 +1,80 @@
+.img {
+  width: 10rem;
+}
+.company {
+  /* width: 5rem; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid var(--primary-color--light--2);
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+}
+.container {
+  max-width: 135rem;
+  margin: 10rem auto;
+  padding: 0 1rem;
+}
+.heading {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-left: -2rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 30rem));
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 15rem;
+}
+
+.animate {
+  animation: animate 1.2s linear;
+  opacity: 1;
+  visibility: visible;
+}
+.opacity {
+  opacity: 1;
+  visibility: visible;
+  animation: opacity 1s linear;
+}
+@keyframes animate {
+  0% {
+    /* transform: rotate(30deg); */
+    transform: translateX(100rem) rotate(30deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(0rem) rotate(360deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/* SS */

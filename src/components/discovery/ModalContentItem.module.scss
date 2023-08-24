@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  gap: 2rem;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.outline {
+  border-bottom: 1px solid #ddd;
+  padding: 2rem 0;
+}
+.icon {
+  font-size: 3rem;
+  color: var(--primary-color--light--2);
+}
+.home {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 0.2rem;
+}

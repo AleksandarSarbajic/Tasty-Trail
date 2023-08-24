@@ -1,0 +1,109 @@
+import { Link } from "react-router-dom";
+import classes from "../components/Footer.module.css";
+import { BiUser } from "react-icons/bi";
+export default function Footer() {
+  return (
+    <footer className={classes.container}>
+      <div className={classes.newslatter}>
+        <p className={classes.news}>
+          Join our newslatter to keep up with new food and discounts!
+        </p>
+        <form className={classes.form}>
+          <div className={classes.absolute}>
+            <BiUser className={classes.icon} />
+            <input
+              type="email"
+              className={classes.input}
+              placeholder="example@email.com"
+            />
+          </div>
+          <button className={classes.button}>Subscribe</button>
+        </form>
+      </div>
+      <div className={classes.list}>
+        <div className={classes.logo}>
+          <p className={classes.logotext}>TastyTrail</p>
+          <p className={classes.logosub}>
+            Place your food order through our application!
+          </p>
+        </div>
+        <div className={classes.all}>
+          <ul>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Platform
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Pricing
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Our team
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Our businesses
+              </Link>
+            </li>
+          </ul>
+          <ul>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Company
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Blog
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Carriers
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                News
+              </Link>
+            </li>
+          </ul>
+          <ul>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Resources
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Parteners
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                Ordering
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link to={"/"} className={classes.link}>
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className={classes.right}>
+        <p className={classes.copy}>&copy; 2023 TastyTrail inc.</p>
+        <div>
+          <span className={classes.copy}>Terms of use</span>
+          <span className={classes.copy}>Privacy Policy</span>
+          <span className={classes.copy}>Cookies</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
