@@ -1,11 +1,10 @@
 .list {
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 52.5em) {
-    // flex-direction: row;
-  }
 }
-
+.high {
+  color: var(--primary-color--dark--1);
+}
 .link:visited,
 .link:link {
   width: 17rem;
@@ -18,8 +17,7 @@
   @media only screen and (max-width: 52.5em) {
     flex-direction: row;
     border-bottom: none;
-    width: min-content;
-    max-width: 17rem;
+    width: 100%;
   }
 }
 .square:visited,

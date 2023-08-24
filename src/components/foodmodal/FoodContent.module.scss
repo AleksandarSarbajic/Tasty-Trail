@@ -1,7 +1,7 @@
 .container {
   padding: 2rem 2.5rem 2rem 2.5rem;
-  @media only screen and (max-width: 22.5em) {
-    padding: 1.5rem 2rem 1.5rem 2rem;
+  @media only screen and (max-width: 25em) {
+    padding: 1rem 1.5rem 1rem 1.5rem;
   }
 }
 .heading {
@@ -51,6 +51,9 @@
   span {
     font-size: 2.4rem;
     font-weight: 400;
+    @media only screen and (max-width: 25em) {
+      font-size: 2rem;
+    }
   }
 }
 .cart {
@@ -68,9 +71,9 @@
   &:hover {
     background-color: var(--primary-color);
   }
-  @media only screen and (max-width: 22.5em) {
+  @media only screen and (max-width: 25em) {
     padding: 0 1.5rem;
     font-size: 1.6rem;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }

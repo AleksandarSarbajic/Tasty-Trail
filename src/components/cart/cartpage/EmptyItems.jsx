@@ -6,7 +6,7 @@ export default function EmptyItems() {
       <div className={classes.emptyItems}>
         <h2>Your cart is empty</h2>
         <p>Please add some items to the cart!</p>
-        <img src="public/cart.png" alt="cart" />
+        <img src="cart.png" alt="cart" />
         <Link to="/discovery" className={classes.emptyItemsLink}>
           Discover new food!
         </Link>
