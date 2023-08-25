@@ -1,9 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import classes from "../Restoraunt/Aside.module.scss";
-import { HiOutlineSquares2X2 } from "react-icons/hi2";
+import { HiChevronDown, HiOutlineSquares2X2 } from "react-icons/hi2";
+import { useState } from "react";
 export default function Aside(props) {
+  const [animation, setAnimation] = useState(false);
   const { hash } = useLocation();
   const cuttedHash = hash.slice(1);
+
+  function onClick() {
+    setAnimation((animate) => !animate);
+  }
+
   return (
     <aside>
       <ul className={classes.list}>
@@ -11,12 +18,22 @@ export default function Aside(props) {
           <Link
             to={`/Restoraunt/${props.content.link}`}
             className={classes.square}
+            onClick={onClick}
           >
-            <HiOutlineSquares2X2 className={classes.icon} />
-            <span>Sections</span>
+            <span>
+              <HiOutlineSquares2X2 className={classes.icon} />
+              <span>Sections</span>
+            </span>
+            <span>
+              <HiChevronDown />
+            </span>
           </Link>
         </li>
-        <div className={classes.links}>
+        <div
+          className={`${classes.links} ${
+            !animation ? classes.easeIn : classes.easeOut
+          }`}
+        >
           {props.content.types.map((type) => {
             return (
               <li className={classes.item} key={type}>
@@ -25,6 +42,7 @@ export default function Aside(props) {
                   className={`${classes.link} ${
                     cuttedHash === type && cuttedHash ? classes.high : ""
                   }`}
+                  onClick={onClick}
                 >
                   {type}
                 </Link>

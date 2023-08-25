@@ -4,10 +4,16 @@
   padding: 3rem 5rem;
   border-radius: 15px;
   box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.1);
+  @media only screen and (max-width: 30em) {
+    padding: 2rem 3.5rem;
+  }
 }
 .heading {
   font-size: 3.6rem;
   font-weight: 600;
+  @media only screen and (max-width: 30em) {
+    font-size: 3rem;
+  }
 }
 .subheading {
   font-size: 2.4rem;

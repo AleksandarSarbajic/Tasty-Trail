@@ -41,7 +41,7 @@ export default function Background() {
           <p className={classes.image}>
             Rest assured, TastyTrail has got you covered.
           </p>
-          <img src="public/food.png" className={classes.img} />
+          <img src="/food.png" className={classes.img} />
         </div>
       </div>
       <Slider />

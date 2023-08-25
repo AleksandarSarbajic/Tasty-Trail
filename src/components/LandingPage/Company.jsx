@@ -17,7 +17,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/McDonalds-Logo.png"}
+            src={"/McDonalds-Logo.png"}
             alt={"McDonald's"}
             className={classes.image}
           />
@@ -41,11 +41,7 @@ export default function Company() {
         <div
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
-          <img
-            src={"public/Kfc_logo.png"}
-            alt={"KFC"}
-            className={classes.image}
-          />
+          <img src={"/Kfc_logo.png"} alt={"KFC"} className={classes.image} />
           <ReactCurvedText
             width={300}
             height={300}
@@ -67,7 +63,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/starbucks-logo.png"}
+            src={"/starbucks-logo.png"}
             alt={"StarBucks"}
             className={classes.img}
           />
@@ -92,7 +88,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/Burger-King-Logo-1994.png"}
+            src={"/Burger-King-Logo-1994.png"}
             alt={"BurgerKing"}
             className={classes.image}
           />

@@ -23,7 +23,7 @@ export default function Download() {
             Order fresh food right now!
           </Link>
         </div>
-        <img src="public/icons8-barcode-64.png" className={classes.promoimg} />
+        <img src="/icons8-barcode-64.png" className={classes.promoimg} />
         <p className={classes.code}>
           <span className={classes.circle}></span> #36C8E3
         </p>
@@ -34,7 +34,7 @@ export default function Download() {
         </p>
       </div>
       <div className={classes.rightside}>
-        <img src="public/phone.webp" className={classes.img} />
+        <img src="phone.webp" className={classes.img} />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
   height: 110vh;
   /* background-color: var(--bg-primary); */
 
-  background-image: url("../../public/bg.png");
+  background-image: url("../../bg.png");
   /* background-size: cover; */
   background-repeat: no-repeat;
   position: relative;
