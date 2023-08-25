@@ -24,7 +24,7 @@ export default function CartPreview() {
             })}
             {cart.items.length === 0 && (
               <>
-                <img src="cart.png" alt="cart" className={classes.img} />
+                {/* <img src="cart.png" alt="cart" className={classes.img} /> */}
                 <span className={classes.empty}>Your cart is empty!</span>
               </>
             )}

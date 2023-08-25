@@ -1,25 +1,29 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import classes from "../Restoraunt/Aside.module.scss";
 import { HiChevronDown, HiOutlineSquares2X2 } from "react-icons/hi2";
 import { useState } from "react";
 export default function Aside(props) {
-  const [animation, setAnimation] = useState(false);
-  const { hash } = useLocation();
-  const cuttedHash = hash.slice(1);
+  const [animation, setAnimation] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const cuttedHash = location.hash.slice(1);
 
-  function onClick() {
-    setAnimation((animate) => !animate);
+  function onClick(type) {
+    // console.log(location, type);
+
+    setAnimation((animate) =>
+      animation === null ? true : animation != null ? !animate : null
+    );
+    if (location.hash === "") return;
+    if (!animation) return;
+    navigate(`/Restoraunt/${props.content.link}`);
   }
 
   return (
     <aside>
       <ul className={classes.list}>
         <li className={classes.square}>
-          <Link
-            to={`/Restoraunt/${props.content.link}`}
-            className={classes.square}
-            onClick={onClick}
-          >
+          <button className={classes.square} onClick={onClick}>
             <span>
               <HiOutlineSquares2X2 className={classes.icon} />
               <span>Sections</span>
@@ -27,25 +31,29 @@ export default function Aside(props) {
             <span>
               <HiChevronDown />
             </span>
-          </Link>
+          </button>
         </li>
         <div
           className={`${classes.links} ${
-            !animation ? classes.easeIn : classes.easeOut
+            animation === null
+              ? ""
+              : !animation
+              ? classes.easeIn
+              : classes.easeOut
           }`}
         >
           {props.content.types.map((type) => {
             return (
               <li className={classes.item} key={type}>
-                <Link
+                <NavLink
                   to={`/Restoraunt/${props.content.link}#${type}`}
                   className={`${classes.link} ${
-                    cuttedHash === type && cuttedHash ? classes.high : ""
+                    cuttedHash === type && classes.high
                   }`}
-                  onClick={onClick}
+                  onClick={() => onClick(type)}
                 >
                   {type}
-                </Link>
+                </NavLink>
               </li>
             );
           })}

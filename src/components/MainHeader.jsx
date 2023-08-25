@@ -1,7 +1,6 @@
-import { Form, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import classes from "../components/MainHeader.module.scss";
-import { BsSearch } from "react-icons/bs";
-import { RxCross1 } from "react-icons/rx";
+
 import { FiMapPin, FiChevronDown } from "react-icons/fi";
 
 import { useEffect, useState, useCallback } from "react";
@@ -15,8 +14,7 @@ import CartPreview from "./cart/CartPreview";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
-  const [labelClass, setLabelClass] = useState("");
-  const [cancelClass, setCancelClass] = useState(classes.delete);
+
   const location = useLocation();
 
   const city = useLocationCity();
@@ -40,35 +38,6 @@ export default function MainHeader() {
     };
   }, []);
 
-  function onChangeHandler(e) {
-    if (e.target.value.length >= 1) {
-      setLabelClass(classes.animate);
-      setCancelClass("");
-    } else {
-      setLabelClass("");
-      setCancelClass(classes.delete);
-    }
-  }
-  function cancelHandler(e) {
-    e.preventDefault();
-  }
-
-  const form = location.pathname !== "/" && (
-    <Form className={classes.form}>
-      <BsSearch className={classes.search} />
-      <input id="input" className={classes.input} onChange={onChangeHandler} />
-      <label htmlFor="input" className={`${classes.label} ${labelClass}`}>
-        Search
-      </label>
-      <button
-        className={`${classes.cancel} ${cancelClass} `}
-        onClick={cancelHandler}
-      >
-        <RxCross1 className={classes.cross} />
-      </button>
-    </Form>
-  );
-
   return (
     <>
       {toggleModal && (
@@ -86,7 +55,7 @@ export default function MainHeader() {
             <Link to={"/"} className={classes.logo}>
               TastyTrail
             </Link>
-            {location.pathname !== "/" && (
+            {location.pathname !== "/" && city && (
               <div
                 className={classes.location}
                 onClick={() => {

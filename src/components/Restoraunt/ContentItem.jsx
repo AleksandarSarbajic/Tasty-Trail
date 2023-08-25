@@ -17,7 +17,7 @@ export default function ContentItem(props) {
     },
     [location.hash]
   );
-  console.log(hash);
+
   return (
     <Link
       to={`/Restoraunt/${params.id}/${props.name}`}
@@ -30,14 +30,11 @@ export default function ContentItem(props) {
       </p>
 
       <p className={classes.price}>{props.price} rsd</p>
-      <Link
-        to={`${location.pathname}/${props.name}${hash}`}
-        className={classes.button}
-      >
+      <button className={classes.button}>
         <span className={classes.icon}>
           <BsBag />
         </span>
-      </Link>
+      </button>
     </Link>
   );
 }

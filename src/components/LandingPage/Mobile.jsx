@@ -159,4 +159,5 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     </>
   );
 });
+Mobile.displayName = "Mobile";
 export default Mobile;
