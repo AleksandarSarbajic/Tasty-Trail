@@ -1,4 +1,4 @@
-import classes from "../cartpage/CheckOut.module.scss";
+import classes from "../cartpage/Checkout.module.scss";
 import { useSelector } from "react-redux";
 import CheckOutItems from "./CheckOutItems";
 import { useNavigate, useLocation } from "react-router-dom";
