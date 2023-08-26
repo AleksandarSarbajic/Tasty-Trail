@@ -21,6 +21,12 @@
   justify-content: center;
   align-items: center;
 }
+.containerMini {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @keyframes rotate {
   to {
     transform: rotate(1turn);
