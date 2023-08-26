@@ -11,7 +11,7 @@ export default function LandingPage() {
     triggerOnce: true,
   });
   const { ref: mobileRef, inView: mobileInView } = useInView({
-    threshold: 0.1,
+    threshold: 0,
     triggerOnce: true,
   });
 

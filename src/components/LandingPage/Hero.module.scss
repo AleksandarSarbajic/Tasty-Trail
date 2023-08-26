@@ -2,10 +2,9 @@
   width: 100vw;
   padding-top: 10rem;
   height: 110vh;
-  /* background-color: var(--bg-primary); */
 
   background-image: url("../../bg.png");
-  /* background-size: cover; */
+
   background-repeat: no-repeat;
   position: relative;
 }
@@ -16,29 +15,58 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  /* opacity: 0; */
 }
 .heading {
   font-size: 7.5rem;
   margin-bottom: 2rem;
+  line-height: 1.1;
+  @media only screen and (max-width: 62.5em) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 37.5em) {
+    font-size: 6.4rem;
+  }
+  @media only screen and (max-width: 30em) {
+    font-size: 6rem;
+  }
 }
 .subheading {
   font-size: 1.6rem;
   margin-top: 1.6rem;
+  @media only screen and (max-width: 37.5em) {
+    font-size: 1.8rem;
+  }
+  @media only screen and (max-width: 35em) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 30em) {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
 
 .links,
 .heading,
 .subheading {
+  padding: 0 1rem;
   opacity: 0;
   visibility: hidden;
   animation: opacity 1.2s linear 0.8s;
+  transition: all 0.3s;
 }
 
 .links {
   display: flex;
   gap: 2rem;
+  @media only screen and (max-width: 30em) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 3rem;
+  }
 }
+
 .link:visited,
 .link:link {
   display: inline-block;
@@ -51,6 +79,11 @@
   font-weight: 400;
   box-shadow: 0px 20px 14px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
+  @media only screen and (max-width: 30em) {
+    font-size: 2.4rem;
+    padding: 1.2rem 2.4rem;
+    box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 .link:hover,
 .link:active {

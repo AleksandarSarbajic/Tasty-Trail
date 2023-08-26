@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "../LandingPage/Hero.module.css";
+import classes from "../LandingPage/Hero.module.scss";
 import { useState, useEffect } from "react";
 
 const food = [

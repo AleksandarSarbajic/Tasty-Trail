@@ -78,7 +78,8 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     const { pageYOffset } = window;
 
     setScrollY(pageYOffset);
-    if (pageYOffset >= 1125) {
+    console.log(pageYOffset);
+    if (pageYOffset >= 1000 && isVisible) {
       setClassD(classes.fixed);
     } else {
       setClassD("");
@@ -98,7 +99,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
       setUserInfo({ type: "THIRD" });
     }
     // console.log(pageYOffset);
-  }, []);
+  }, [isVisible]);
 
   useEffect(() => {
     //add eventlistener to window
@@ -108,7 +109,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
-  }, []);
+  }, [onScroll]);
 
   return (
     <>
