@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 export default function CartButton() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
+  if (totalQuantity === 0) return null;
+
   return (
     <li className={`${classes.item} hovered__button`}>
       <button className={classes.button}>
