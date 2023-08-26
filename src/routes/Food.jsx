@@ -8,17 +8,12 @@ export default function Food() {
 
   const filteredRestoraunts = data.Restoraunts.find(
     (food) => food.link === params.id
-  );
-  const foodItem = filteredRestoraunts.food.find(
-    (item) => item.name === params.food
-  );
+  ).food.find((item) => item.name === params.food);
 
   return (
-    <>
-      <FoodModal>
-        <FoodContent foodItem={foodItem} />
-      </FoodModal>
-    </>
+    <FoodModal>
+      <FoodContent foodItem={filteredRestoraunts} />
+    </FoodModal>
   );
 }
 export async function loader() {

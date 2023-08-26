@@ -89,6 +89,14 @@
   }
 }
 
+.chevron {
+  display: none;
+  @media only screen and (max-width: 52.5em) {
+    display: inline-block;
+    font-size: 3.6rem;
+  }
+}
+
 @keyframes easeOut {
   0% {
     height: 66rem;

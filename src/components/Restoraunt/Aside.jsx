@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import classes from "../Restoraunt/Aside.module.scss";
 import { HiChevronDown, HiOutlineSquares2X2 } from "react-icons/hi2";
 import { useState } from "react";
@@ -8,9 +8,7 @@ export default function Aside(props) {
   const location = useLocation();
   const cuttedHash = location.hash.slice(1);
 
-  function onClick(type) {
-    // console.log(location, type);
-
+  function onClick() {
     setAnimation((animate) =>
       animation === null ? true : animation != null ? !animate : null
     );
@@ -28,7 +26,7 @@ export default function Aside(props) {
               <HiOutlineSquares2X2 className={classes.icon} />
               <span>Sections</span>
             </span>
-            <span>
+            <span className={classes.chevron}>
               <HiChevronDown />
             </span>
           </button>
