@@ -4,6 +4,7 @@ import Company from "../components/LandingPage/Company";
 import Hero from "../components/LandingPage/Hero";
 import Mobile from "../components/LandingPage/Mobile";
 import { useInView } from "react-intersection-observer";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 export default function LandingPage() {
   const { ref: boxRef, inView: boxInView } = useInView({
     threshold: 0.4,
@@ -16,6 +17,8 @@ export default function LandingPage() {
 
   return (
     <>
+      <LoadingSpinner />
+
       <Hero />
       <Mobile ref={mobileRef} isVisible={mobileInView} />
       <Boxes ref={boxRef} isVisible={boxInView} />

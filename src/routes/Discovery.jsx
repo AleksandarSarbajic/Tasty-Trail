@@ -5,6 +5,7 @@ import StoreTypes from "../components/discovery/StoreTypes";
 import { json, useRouteLoaderData } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 export default function Discovery() {
   const data = useRouteLoaderData("discovery");
   const { pathname } = useLocation();
@@ -19,6 +20,8 @@ export default function Discovery() {
   }, [pathname]);
   return (
     <>
+      <LoadingSpinner />
+
       <StoreTypes />
       <Hero data={data} />
       <SliderItems

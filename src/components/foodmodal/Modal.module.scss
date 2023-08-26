@@ -24,7 +24,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  // animation: fadeIn 0.5s linear;
+  animation: fadeIn 0.5s linear;
   @media only screen and (max-width: 30em) {
     width: 50rem;
   }
@@ -63,6 +63,6 @@
   100% {
     opacity: 1;
 
-    transform: translateY(-50%) translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 }
