@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import classes from "../components/MainHeader.module.scss";
 
 import { FiMapPin, FiChevronDown } from "react-icons/fi";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 import { useEffect, useState, useCallback } from "react";
 import useLocationCity from "../customhooks/useLocationCity";
@@ -14,6 +15,7 @@ import CartPreview from "./cart/CartPreview";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const location = useLocation();
 
@@ -72,39 +74,76 @@ export default function MainHeader() {
             )}
           </div>
           {/* {form} */}
-          <ul className={classes.list}>
-            {location.pathname === "/sd" && (
+          {location.pathname === "/" && (
+            <button
+              className={classes.menu}
+              onClick={() => {
+                setShowSidebar((show) => !show);
+              }}
+            >
+              <RxHamburgerMenu className={classes.menuBurger} />
+            </button>
+          )}
+          <ul
+            className={`${classes.list} ${
+              showSidebar ? classes.transform : ""
+            }`}
+          >
+            {location.pathname === "/" && (
               <>
                 <li>
-                  <Link to={"/"} className={classes.link}>
+                  <Link
+                    to={"/"}
+                    className={classes.link}
+                    onClick={() => {
+                      setShowSidebar((show) => !show);
+                    }}
+                  >
                     How It Works
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"} className={classes.link}>
+                  <Link
+                    to={"/"}
+                    className={classes.link}
+                    onClick={() => {
+                      setShowSidebar((show) => !show);
+                    }}
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/contact"} className={classes.link}>
+                  <Link
+                    to={"/contact"}
+                    className={classes.link}
+                    onClick={() => {
+                      setShowSidebar((show) => !show);
+                    }}
+                  >
                     Contact
                   </Link>
                 </li>
                 <li className={classes.border}>
-                  <Link to={"/discovery"} className={classes.button}>
-                    {/* <AiOutlineShoppingCart className={classes.icon} /> */}
+                  <Link
+                    to={"/discovery"}
+                    className={classes.button}
+                    onClick={() => {
+                      setShowSidebar((show) => !show);
+                    }}
+                  >
                     Get Started
                   </Link>
                 </li>
               </>
             )}
-            {location.pathname !== "/" && (
-              <>
-                <CartButton />
-                <CartPreview />
-              </>
-            )}
           </ul>
+          {location.pathname !== "/" && (
+            <>
+              <CartButton />
+              <CartPreview />
+            </>
+          )}
         </nav>
       </header>
     </>
