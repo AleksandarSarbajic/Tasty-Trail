@@ -1,4 +1,4 @@
-import classes from "../LandingPage/Company.module.css";
+import classes from "../LandingPage/Company.module.scss";
 import ReactCurvedText from "react-curved-text";
 import { useInView } from "react-intersection-observer";
 export default function Company() {
@@ -65,7 +65,7 @@ export default function Company() {
           <img
             src={"/starbucks-logo.png"}
             alt={"StarBucks"}
-            className={classes.img}
+            className={classes.bucks}
           />
           <ReactCurvedText
             width={300}

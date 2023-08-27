@@ -4,6 +4,7 @@ import { MdSell } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserAlt } from "react-icons/fa";
 import { forwardRef } from "react";
+
 const Boxes = forwardRef(({ isVisible }, ref) => {
   return (
     <div className={classes.container} ref={ref}>
@@ -48,4 +49,7 @@ const Boxes = forwardRef(({ isVisible }, ref) => {
     </div>
   );
 });
+
+Boxes.displayName = "boxes";
+
 export default Boxes;
