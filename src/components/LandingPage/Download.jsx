@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "../LandingPage/Download.module.css";
+import classes from "../LandingPage/Download.module.scss";
 import { useInView } from "react-intersection-observer";
 
 export default function Download() {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "../LandingPage/Boxes.module.css";
+import classes from "../LandingPage/Boxes.module.scss";
 import { MdSell } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserAlt } from "react-icons/fa";
