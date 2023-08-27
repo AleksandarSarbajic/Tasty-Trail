@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 export default function Download() {
   const { ref: gridRef, inView: gridInView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0,
   });
 
   return (
