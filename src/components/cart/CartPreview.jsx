@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 export default function CartPreview() {
   const [maxMoney, setMaxMoney] = useState(0);
   const cart = useSelector((state) => state.cart);
+
   useEffect(() => {
     cart.items.map((item) => {
       setMaxMoney((prev) => prev + item.totalPrice);
     });
   }, [cart.items]);
+
   return (
     <>
       <div className={`${classes.absolute} hovered__absolute`} />
@@ -24,7 +26,7 @@ export default function CartPreview() {
             })}
             {cart.items.length === 0 && (
               <>
-                {/* <img src="cart.png" alt="cart" className={classes.img} /> */}
+                <img src="cart.png" alt="cart" className={classes.img} />
                 <span className={classes.empty}>Your cart is empty!</span>
               </>
             )}
