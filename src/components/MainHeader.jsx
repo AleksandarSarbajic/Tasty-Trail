@@ -73,7 +73,7 @@ export default function MainHeader() {
           </div>
           {/* {form} */}
           <ul className={classes.list}>
-            {location.pathname === "/" && (
+            {location.pathname === "/sd" && (
               <>
                 <li>
                   <Link to={"/"} className={classes.link}>
