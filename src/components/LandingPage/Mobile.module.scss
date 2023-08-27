@@ -1,9 +1,11 @@
 .fixed {
   position: fixed;
-  z-index: 999999;
+  z-index: 9;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.position {
 }
 .mobile {
   width: 100%;
@@ -14,13 +16,18 @@
   margin: 0 auto;
   padding: 0 1rem;
   margin-top: 10rem;
-  z-index: 999999;
+  z-index: 9;
 }
 
 .heading {
   font-size: 6rem;
   text-align: center;
   font-weight: 600;
+  @media only screen and (max-width: 36em) {
+    font-size: 4.4rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
 }
 .subheading {
   font-size: 1.8rem;
@@ -28,17 +35,42 @@
   width: 50%;
   font-weight: 500;
   margin-bottom: 8rem;
+  @media only screen and (max-width: 50em) {
+    width: 70%;
+    margin-bottom: 6rem;
+  }
+  @media only screen and (max-width: 36em) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 .img {
   width: 30rem;
   justify-self: center;
+  @media only screen and (max-width: 46em) {
+    width: 25rem;
+  }
+  @media only screen and (max-width: 36em) {
+    width: 20rem;
+    margin-top: 2rem;
+  }
 }
 .grid {
   display: grid;
   grid-template-columns: 60rem 1fr;
-  gap: 10rem;
+  gap: 8dvw;
 
   justify-content: space-around;
+
+  @media only screen and (max-width: 52em) {
+    gap: 2dvw;
+  }
+  @media only screen and (max-width: 46em) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  @media only screen and (max-width: 36em) {
+    grid-template-columns: 1fr;
+  }
 }
 .log {
   height: 100vh;
@@ -47,21 +79,42 @@
 }
 .aside {
   margin-top: 10rem;
+  @media only screen and (max-width: 46em) {
+    margin-top: 5rem;
+  }
+  @media only screen and (max-width: 36em) {
+    margin-top: 0rem;
+  }
 }
 .number {
   font-size: 10rem;
   color: var(--primary-color--dark--1);
+  @media only screen and (max-width: 36em) {
+    font-size: 7.4rem;
+    font-weight: 600;
+  }
 }
 .direction {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 3.2rem;
   font-weight: 600;
+  @media only screen and (max-width: 36em) {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
 }
 .paragraph {
   font-size: 1.6rem;
   line-height: 1.7;
   width: 90%;
+  @media only screen and (max-width: 46em) {
+    width: 95%;
+  }
+  @media only screen and (max-width: 36em) {
+    font-size: 1.8rem;
+    width: 100%;
+  }
 }
 .hidden {
   opacity: 0;

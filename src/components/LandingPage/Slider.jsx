@@ -1,4 +1,4 @@
-import classes from "../LandingPage/Slider.module.css";
+import classes from "../LandingPage/Slider.module.scss";
 import { TbTruckDelivery } from "react-icons/tb";
 import { WiSunrise } from "react-icons/wi";
 import { IoFastFood } from "react-icons/io5";

@@ -5,7 +5,7 @@ import {
   useReducer,
   forwardRef,
 } from "react";
-import classes from "../LandingPage/Mobile.module.css";
+import classes from "../LandingPage/Mobile.module.scss";
 
 const info = [
   {
@@ -27,7 +27,7 @@ const info = [
     img: "/app-screen-3.png",
   },
 ];
-const reducer = (_, action) => {
+const reducer = (payload, action) => {
   switch (action.type) {
     case "FIRST":
       return [
@@ -56,6 +56,7 @@ const reducer = (_, action) => {
           number: info[2].number,
         },
       ];
+
     default:
       throw new Error("Should not get there");
   }
@@ -71,7 +72,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
   ]);
 
   const [scrollY, setScrollY] = useState(0);
-  const [classD, setClassD] = useState("");
+  const [classD, setClassD] = useState({});
   const [hidden, setHidden] = useState(true);
 
   const onScroll = useCallback(() => {
@@ -80,7 +81,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     setScrollY(pageYOffset);
     console.log(pageYOffset);
     if (pageYOffset >= 1000 && isVisible) {
-      setClassD(classes.fixed);
+      setClassD({ fixed: classes.fixed, position: classes.position });
     } else {
       setClassD("");
       setUserInfo({ type: "FIRST" });
@@ -117,7 +118,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
         className={`${classes.log} ${isVisible ? classes.animate : ""}`}
         ref={ref}
       >
-        <div className={`${classD} ${classes.mobile}`}>
+        <div className={`${classD.fixed} ${classes.mobile}`}>
           <h2 className={classes.heading}>Try the app</h2>
           <p className={classes.subheading}>
             Experience the convenience of having a wide selection of Serbian
@@ -137,7 +138,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
         </div>
       </div>
       <div className={`${classes.height} ${hidden ? classes.hidden : ""}`}>
-        <div className={` ${classes.mobile}`}>
+        <div className={`${classes.mobile}`}>
           <h2 className={classes.heading}>Try the app</h2>
           <p className={classes.subheading}>
             Experience the convenience of having a wide selection of Serbian
