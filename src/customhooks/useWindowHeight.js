@@ -21,7 +21,7 @@ export function useWindowHeight() {
         return {
           ...state,
           second: [1200, 1500],
-          third: [1500, 1800],
+          third: [1500, 1850],
           close: 1850,
         };
       });
