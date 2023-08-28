@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 export default function LandingPage() {
   const { ref: boxRef, inView: boxInView } = useInView({
-    threshold: 0.4,
+    threshold: 0.1,
     triggerOnce: true,
   });
   const { ref: mobileRef, inView: mobileInView } = useInView({

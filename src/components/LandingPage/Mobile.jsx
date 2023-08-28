@@ -111,7 +111,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
       setUserInfo({ type: "THIRD" });
     }
     // console.log(pageYOffset);
-  }, [isVisible]);
+  }, [closePosition, isVisible, secondItem, startingPosition, thirdItem]);
 
   useEffect(() => {
     //add eventlistener to window
