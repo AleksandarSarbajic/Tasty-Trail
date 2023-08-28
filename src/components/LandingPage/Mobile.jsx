@@ -6,6 +6,7 @@ import {
   forwardRef,
 } from "react";
 import classes from "../LandingPage/Mobile.module.scss";
+import { useWindowHeight } from "../../customhooks/useWindowHeight";
 
 const info = [
   {
@@ -62,6 +63,14 @@ const reducer = (payload, action) => {
   }
 };
 const Mobile = forwardRef(({ isVisible }, ref) => {
+  const {
+    windowHeight: {
+      first: startingPosition,
+      second: secondItem,
+      third: thirdItem,
+      close: closePosition,
+    },
+  } = useWindowHeight();
   const [userInfo, setUserInfo] = useReducer(reducer, [
     {
       text: info[0].text,
@@ -70,6 +79,8 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
       number: info[0].number,
     },
   ]);
+
+  console.log({ startingPosition, secondItem, thirdItem, closePosition });
 
   const [scrollY, setScrollY] = useState(0);
   const [classD, setClassD] = useState({});
@@ -80,23 +91,23 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
 
     setScrollY(pageYOffset);
     console.log(pageYOffset);
-    if (pageYOffset >= 1000 && isVisible) {
+    if (pageYOffset >= startingPosition && isVisible) {
       setClassD({ fixed: classes.fixed, position: classes.position });
     } else {
       setClassD("");
       setUserInfo({ type: "FIRST" });
     }
-    if (pageYOffset >= 2250) {
+    if (pageYOffset >= closePosition) {
       setClassD("");
       setHidden(false);
       setHidden(false);
     } else {
       setHidden(true);
     }
-    if (pageYOffset >= 1500 && pageYOffset <= 1800) {
+    if (pageYOffset >= secondItem[0] && pageYOffset <= secondItem[1]) {
       setUserInfo({ type: "SECOND" });
     }
-    if (pageYOffset >= 1800 && pageYOffset <= 2100) {
+    if (pageYOffset >= thirdItem[0] && pageYOffset <= thirdItem[1]) {
       setUserInfo({ type: "THIRD" });
     }
     // console.log(pageYOffset);
