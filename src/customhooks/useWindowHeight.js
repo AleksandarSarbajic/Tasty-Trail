@@ -42,9 +42,9 @@ export function useWindowHeight() {
         return {
           ...state,
           first: 950,
-          second: [1150, 1350],
-          third: [1350, 1450],
-          close: 1450,
+          second: [1150, 1250],
+          third: [1250, 1350],
+          close: 1350,
         };
       });
     }
