@@ -43,8 +43,8 @@ export function useWindowHeight() {
           ...state,
           first: 950,
           second: [1150, 1350],
-          third: [1350, 1550],
-          close: 1550,
+          third: [1350, 1750],
+          close: 1750,
         };
       });
     }
