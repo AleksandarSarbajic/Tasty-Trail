@@ -21,8 +21,8 @@ export function useWindowHeight() {
         return {
           ...state,
           second: [1200, 1500],
-          third: [1500, 1850],
-          close: 1850,
+          third: [1500, 1750],
+          close: 1750,
         };
       });
     }
@@ -32,8 +32,8 @@ export function useWindowHeight() {
           ...state,
           first: 950,
           second: [1200, 1450],
-          third: [1450, 1850],
-          close: 1850,
+          third: [1450, 1750],
+          close: 1750,
         };
       });
     }
