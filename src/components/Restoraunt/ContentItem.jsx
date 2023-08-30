@@ -1,10 +1,11 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import classes from "../Restoraunt/ContentItem.module.scss";
 import { BsBag } from "react-icons/bs";
 import { useEffect, useState } from "react";
 export default function ContentItem(props) {
   const location = useLocation();
   const params = useParams();
+  const navigate = useNavigate();
   const [hash, setHash] = useState(location.hash);
 
   useEffect(
@@ -19,9 +20,11 @@ export default function ContentItem(props) {
   );
 
   return (
-    <Link
-      to={`/Restoraunt/${params.id}/${props.name}`}
+    <button
       className={classes.container}
+      onClick={function () {
+        navigate(props.name);
+      }}
     >
       <img src={props.image} alt={props.name} className={classes.img} />
       <p className={classes.name}>{props.name}</p>
@@ -35,6 +38,6 @@ export default function ContentItem(props) {
           <BsBag />
         </span>
       </button>
-    </Link>
+    </button>
   );
 }

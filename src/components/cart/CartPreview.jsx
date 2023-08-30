@@ -28,19 +28,19 @@ export default function CartPreview() {
 
           previewCartHandler();
         }}
-        onMouseLeave={() => {
-          if (window.innerWidth < 600) return;
-          previewCartHandler();
-        }}
+        // onMouseLeave={() => {
+        //   if (window.innerWidth < 600) return;
+        //   previewCartHandler();
+        // }}
       />
       <div
         className={`${classes.container} ${
           isShown ? classes.isShown : classes.isDisabled
         } `}
-        onMouseEnter={() => {
-          if (window.innerWidth < 600) return;
-          previewCartHandler();
-        }}
+        // onMouseEnter={() => {
+        //   if (window.innerWidth < 600) return;
+        //   previewCartHandler();
+        // }}
         onMouseLeave={() => {
           if (window.innerWidth < 600) return;
           previewCartHandler();
