@@ -1,6 +1,6 @@
 import classes from "../cart/CartPreview.module.scss";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CartPreviewItem from "./CartPreviewItem";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
