@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "../components/Footer.module.css";
+import classes from "../components/Footer.module.scss";
 import { BiUser } from "react-icons/bi";
 export default function Footer() {
   return (

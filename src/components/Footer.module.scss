@@ -9,7 +9,12 @@
   align-items: center;
   padding-bottom: 4rem;
   border-bottom: 1px solid #999;
+  @media only screen and (max-width: 38.5em) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 }
+
 .news {
   font-size: 2rem;
   width: 30rem;
@@ -65,25 +70,45 @@
   align-items: flex-start;
   padding-bottom: 4rem;
   border-bottom: 1px solid #999;
+  @media only screen and (max-width: 31.25em) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .logotext {
   font-size: 4rem;
   color: var(--primary-color--light--2);
+  @media only screen and (max-width: 31.25em) {
+    text-align: center;
+  }
 }
 .logosub {
   font-size: 1.8rem;
   width: 80%;
+  @media only screen and (max-width: 31.25em) {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
 }
 .all {
   display: flex;
   gap: 5rem;
+  @media only screen and (max-width: 31.25em) {
+    gap: 2.5rem;
+  }
 }
 .link:visited,
 .link:link {
   font-size: 1.6rem;
   display: inline-block;
   margin-bottom: 1rem;
+  @media only screen and (max-width: 31.25em) {
+    // text-align: center;
+    // display: block;
+  }
 }
 
 .right {
