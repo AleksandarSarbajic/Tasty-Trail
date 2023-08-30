@@ -84,17 +84,17 @@ button {
   padding-top: 8rem;
 }
 
-.hovered__button:hover ~ .hovered__cart,
-.hovered__absolute:hover ~ .hovered__cart {
-  opacity: 1;
-  visibility: visible;
-  /* transition-delay: 1s; */
-}
-.hovered__cart:hover {
-  opacity: 1;
-  visibility: visible;
-  /* transition-delay: 1s; */
-}
+// .hovered__button:hover ~ .hovered__cart,
+// .hovered__absolute:hover ~ .hovered__cart {
+//   opacity: 1;
+//   visibility: visible;
+//   /* transition-delay: 1s; */
+// }
+// .hovered__cart:hover {
+//   opacity: 1;
+//   visibility: visible;
+//   /* transition-delay: 1s; */
+// }
 
 .contact {
   display: grid;

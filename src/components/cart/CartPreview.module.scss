@@ -55,6 +55,9 @@
     border: 2px solid #555555;
     border-radius: 2px;
   }
+  @media only screen and (max-width: 50em) {
+    height: 50dvh;
+  }
 }
 .img {
   width: 20rem;
@@ -128,6 +131,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  @media only screen and (max-width: 50em) {
+    padding: 1rem 1rem 2rem 1rem;
+  }
 }
 .icon {
   display: none;
