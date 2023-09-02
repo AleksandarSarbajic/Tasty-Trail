@@ -16,6 +16,7 @@ import ContactPage from "./routes/ContactPage";
 import RestorauntsPage, {
   loader as restorauntsLoader,
 } from "./routes/Restoraunts";
+import Aboutus from "./routes/Aboutus";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         id: "restoraunts",
         element: <RestorauntsPage />,
         loader: restorauntsLoader,
+      },
+      {
+        path: "/aboutus",
+        id: "aboutus",
+        element: <Aboutus />,
       },
 
       {

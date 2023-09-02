@@ -104,7 +104,7 @@ export default function MainHeader() {
                 </li>
                 <li>
                   <Link
-                    to={"/"}
+                    to={"/aboutus"}
                     className={classes.link}
                     onClick={() => {
                       setShowSidebar((show) => !show);
