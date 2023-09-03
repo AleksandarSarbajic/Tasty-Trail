@@ -9,16 +9,14 @@ function OurHistory() {
         <div className={classes.history}>
           <div className={classes.diamondContainer}>
             <div className={classes.diamondHistory}>
-              <p className={classes.diamondNumber}>2014</p>
+              <p className={classes.diamondNumber}>2022</p>
             </div>
           </div>
           <div className={classes.boxes}>
             <div className={classes.box}>
               <div className={classes.boxHead}>
-                <p className={classes.boxDate}>13 sep</p>
-                <p className={classes.boxHeading}>
-                  PROJECT DELIVERING CELEBRATION
-                </p>
+                <p className={classes.boxDate}>13 nov</p>
+                <p className={classes.boxHeading}>The start of the project</p>
               </div>
               <div className={classes["history-img-text"]}>
                 <img src="/img/ship.jpg" alt="ship" className={classes.img} />
@@ -35,9 +33,9 @@ function OurHistory() {
                 <p
                   className={`${classes.boxHeading} ${classes.boxHeadingSecond}`}
                 >
-                  PROJECT DELIVERING CELEBRATION
+                  First Working app
                 </p>
-                <p className={classes.boxDate}>13 sep</p>
+                <p className={classes.boxDate}>20 dec</p>
               </div>
               <div className="history-images">
                 <img src="/img/59.jpg" alt="ship" className="history-img" />
@@ -52,6 +50,15 @@ function OurHistory() {
                   alt="ship"
                   className="history-img"
                 />
+              </div>
+            </div>
+            <div
+              className={`${classes.diamondContainer} ${classes.diamondNumberEnd}`}
+            >
+              <div
+                className={`${classes.diamond} ${classes["history-diamond-end"]} ${classes.diamondHistory}`}
+              >
+                <p className={classes.diamondNumber}>2023</p>
               </div>
             </div>
             <div className={`${classes.box} ${classes.boxThird}`}>
