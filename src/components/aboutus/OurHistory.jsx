@@ -37,36 +37,42 @@ function OurHistory() {
                 </p>
                 <p className={classes.boxDate}>20 dec</p>
               </div>
-              <div className="history-images">
-                <img src="/img/59.jpg" alt="ship" className="history-img" />
-                <img src="/img/91.jpg" alt="ship" className="history-img" />
+              <div className={classes["history-images"]}>
                 <img
-                  src="/img/dSJvdtu.jpg"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
                   alt="ship"
-                  className="history-img"
+                  className={classes.img}
                 />
                 <img
-                  src="/img/Njg2OTcyLmpwZw.jpg"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
                   alt="ship"
-                  className="history-img"
+                  className={classes.img}
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
                 />
               </div>
             </div>
             <div
-              className={`${classes.diamondContainer} ${classes.diamondNumberEnd}`}
+              className={`${classes.diamondContainer} ${classes.diamondCenter}`}
             >
               <div
-                className={`${classes.diamond} ${classes["history-diamond-end"]} ${classes.diamondHistory}`}
+                className={` ${classes["history-diamond-end"]} ${classes.diamondHistory}`}
               >
                 <p className={classes.diamondNumber}>2023</p>
               </div>
             </div>
             <div className={`${classes.box} ${classes.boxThird}`}>
               <div className={classes.boxHead}>
-                <p className={classes.boxDate}>13 sep</p>
-                <p className={classes.boxHeading}>
-                  PROJECT DELIVERING CELEBRATION
-                </p>
+                <p className={classes.boxDate}>26 jan</p>
+                <p className={classes.boxHeading}>A lot of new content</p>
               </div>
               <div className={classes["history-img-text"]}>
                 <img src="/img/ship.jpg" alt="ship" className={classes.img} />
@@ -76,6 +82,38 @@ function OurHistory() {
                   odio. Suspendisse scelerisque. Donec sit amet lorem vel quam
                   commodo euismod.
                 </p>
+              </div>
+            </div>
+            <div className={`${classes.boxForth} ${classes.boxSecond}`}>
+              <div className={classes.boxHeadSecond}>
+                <p
+                  className={`${classes.boxHeading} ${classes.boxHeadingSecond}`}
+                >
+                  Rebranded and redisigned
+                </p>
+                <p className={classes.boxDate}>12 Aug </p>
+              </div>
+              <div className={classes["history-images"]}>
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
+                  alt="ship"
+                  className={classes.img}
+                />
               </div>
             </div>
           </div>

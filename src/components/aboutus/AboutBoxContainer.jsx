@@ -5,7 +5,7 @@ function AboutBoxContainer() {
     <section className={classes.container}>
       <h3 className={classes.heading}>What exactly is this Wolt all about? </h3>
       <AboutBox>
-        <div>
+        <div className={classes.positioned}>
           <p className={classes.text}>
             Founded in Helsinki, we are a technology company known for our local
             commerce platform. Wolts mission is to make cities better places for
@@ -33,19 +33,19 @@ function AboutBoxContainer() {
           </p>
         </div>
         <img
-          src="public/phone.webp"
-          className={classes.img}
+          src="phone.webp"
+          className={`${classes.img} ${classes.position}`}
           alt="Phone in someones hand"
         />
       </AboutBox>
       <h3 className={classes.heading}>
         Companies typically define their &quot;mission and vision.&quot; What do
-        we have in terms of ours? `
+        we have in terms of ours?
       </h3>
 
       <AboutBox>
         <img
-          src="public/TwoPeople.webp"
+          src="TwoPeople.webp"
           className={classes.img}
           alt="Phone in someones hand"
         />

@@ -16,10 +16,8 @@ import CartPreview from "./cart/CartPreview";
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
   const [showSidebar, setShowSidebar] = useState(false);
-
-  const location = useLocation();
-
   const city = useLocationCity();
+  const location = useLocation();
 
   const dispatch = useDispatch();
   const toggleModal = useSelector((state) => state.adress.isShown);
@@ -52,7 +50,7 @@ export default function MainHeader() {
           location.pathname.includes("/Restoraunt") && classes.bg
         }`}
       >
-        <nav className={`${classes.nav} `}>
+        <nav className={`${classes.nav}`}>
           <div className={classes.pin}>
             <Link to={"/"} className={classes.logo}>
               TastyTrail
@@ -74,7 +72,8 @@ export default function MainHeader() {
             )}
           </div>
           {/* {form} */}
-          {location.pathname === "/" && (
+          {location.pathname !== "/discovery" &&
+          !location.pathname.includes("/Restoraunt") ? (
             <button
               className={classes.menu}
               onClick={() => {
@@ -83,13 +82,16 @@ export default function MainHeader() {
             >
               <RxHamburgerMenu className={classes.menuBurger} />
             </button>
+          ) : (
+            ""
           )}
           <ul
             className={`${classes.list} ${
               showSidebar ? classes.transform : ""
             }`}
           >
-            {location.pathname === "/" && (
+            {location.pathname !== "/discovery" &&
+            !location.pathname.includes("/Restoraunt") ? (
               <>
                 <li>
                   <Link
@@ -136,6 +138,8 @@ export default function MainHeader() {
                   </Link>
                 </li>
               </>
+            ) : (
+              ""
             )}
           </ul>
           {location.pathname !== "/" && (
