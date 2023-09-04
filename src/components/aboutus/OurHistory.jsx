@@ -19,12 +19,12 @@ function OurHistory() {
                 <p className={classes.boxHeading}>The start of the project</p>
               </div>
               <div className={classes["history-img-text"]}>
-                <img src="/img/ship.jpg" alt="ship" className={classes.img} />
+                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
                 <p className={classes.text}>
-                  Curabitur nulla odio bibendum sit amet, facilisis sed idm
-                  lobotis id justo. Done csec sollicitudin facilisis. Phasellus
-                  odio. Suspendisse scelerisque. Donec sit amet lorem vel quam
-                  commodo euismod.
+                  The first idea about the project started back in 2020 because
+                  of the covid. In that hard times idea was lost, and it was
+                  back in 2020. When we started to develop our app and gathered
+                  our team of people.
                 </p>
               </div>
             </div>
@@ -37,27 +37,13 @@ function OurHistory() {
                 </p>
                 <p className={classes.boxDate}>20 dec</p>
               </div>
-              <div className={classes["history-images"]}>
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
+              <div className={classes["history-img-text"]}>
+                <p className={classes.text}>
+                  On December 20 2022, the first working application was
+                  released to public. At first we were thinking about that our
+                  company was gona fail, but huge amount of users suprised us
+                </p>
+                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
               </div>
             </div>
             <div
@@ -72,16 +58,30 @@ function OurHistory() {
             <div className={`${classes.box} ${classes.boxThird}`}>
               <div className={classes.boxHead}>
                 <p className={classes.boxDate}>26 jan</p>
-                <p className={classes.boxHeading}>A lot of new content</p>
+                <p className={classes.boxHeading}>A lot of new brands joined</p>
               </div>
-              <div className={classes["history-img-text"]}>
-                <img src="/img/ship.jpg" alt="ship" className={classes.img} />
-                <p className={classes.text}>
-                  Curabitur nulla odio bibendum sit amet, facilisis sed idm
-                  lobotis id justo. Done csec sollicitudin facilisis. Phasellus
-                  odio. Suspendisse scelerisque. Donec sit amet lorem vel quam
-                  commodo euismod.
-                </p>
+
+              <div className={classes["history-images"]}>
+                <img
+                  src="McDonalds-Logo.png"
+                  alt="Companies logo"
+                  className={classes.img}
+                />
+                <img
+                  src="Kfc_logo.png"
+                  alt="Companies logo"
+                  className={classes.img}
+                />
+                <img
+                  src="Burger-King-Logo-1994.png"
+                  alt="Companies logo"
+                  className={classes.img}
+                />
+                <img
+                  src="starbucks-logo.png"
+                  alt="Companies logo"
+                  className={classes.img}
+                />
               </div>
             </div>
             <div className={`${classes.boxForth} ${classes.boxSecond}`}>
@@ -93,27 +93,14 @@ function OurHistory() {
                 </p>
                 <p className={classes.boxDate}>12 Aug </p>
               </div>
-              <div className={classes["history-images"]}>
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80"
-                  alt="ship"
-                  className={classes.img}
-                />
+              <div className={classes["history-img-text"]}>
+                <p className={classes.text}>
+                  On December 12 2023, we wanted to rebrand, change colors and
+                  the way we work with others. We needed a good time to think
+                  about it but we thought a lot about it and it was a very good
+                  route to go.
+                </p>
+                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
               </div>
             </div>
           </div>
