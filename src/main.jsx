@@ -17,6 +17,7 @@ import RestorauntsPage, {
   loader as restorauntsLoader,
 } from "./routes/Restoraunts";
 import Aboutus from "./routes/Aboutus";
+import HowItWorks from "./routes/HowItWorks";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
         id: "restoraunts",
         element: <RestorauntsPage />,
         loader: restorauntsLoader,
+      },
+      {
+        path: "/howitworks",
+        id: "howitworks",
+        element: <HowItWorks />,
       },
       {
         path: "/aboutus",

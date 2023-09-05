@@ -95,7 +95,7 @@ export default function MainHeader() {
               <>
                 <li>
                   <Link
-                    to={"/"}
+                    to={"/howitworks"}
                     className={classes.link}
                     onClick={() => {
                       setShowSidebar((show) => !show);

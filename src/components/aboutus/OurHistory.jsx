@@ -95,10 +95,10 @@ function OurHistory() {
               </div>
               <div className={classes["history-img-text"]}>
                 <p className={classes.text}>
-                  On December 12 2023, we wanted to rebrand, change colors and
-                  the way we work with others. We needed a good time to think
-                  about it but we thought a lot about it and it was a very good
-                  route to go.
+                  On jun 2023, we wanted to rebrand, change colors and the way
+                  we work with others. We needed a good time to think about it
+                  but we thought a lot about it and it was a very good route to
+                  go.
                 </p>
                 <img src="Kfc_logo.png" alt="ship" className={classes.img} />
               </div>
