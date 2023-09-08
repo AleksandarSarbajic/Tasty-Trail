@@ -5,12 +5,8 @@ import "react-multi-carousel/lib/styles.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 // import SliderMarketItem from "../discovery/SliderMarketItem";
 import TypesItem from "./TypesItem";
-export default function TypesSlider(props) {
-  const [data, setData] = useState(
-    Object.entries(props.data.Markets).map(([key, store]) => ({
-      store,
-    }))
-  );
+export default function TypesSlider({ data: typesData }) {
+  const data = typesData;
 
   const responsive = {
     superLargeDesktop: {
@@ -43,11 +39,8 @@ export default function TypesSlider(props) {
       items: 2,
     },
   };
-  const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
+
+  const CustomRightArrow = ({ onClick }) => {
     // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonRight}>
@@ -55,11 +48,7 @@ export default function TypesSlider(props) {
       </button>
     );
   };
-  const CustomLeftArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
+  const CustomLeftArrow = ({ onClick }) => {
     // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonLeft}>
@@ -86,9 +75,8 @@ export default function TypesSlider(props) {
           customLeftArrow={<CustomLeftArrow />}
           removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
         >
-          {data.map((item, index) => {
-            const { store } = item;
-            return <TypesItem store={store} key={store.name} />;
+          {data.types.food.map((item) => {
+            return <TypesItem item={item} key={item.name} />;
           })}
         </Carousel>
       </div>

@@ -1,16 +1,28 @@
 import classes from "../restoraunts/TypesItem.module.scss";
 
-import { Link } from "react-router-dom";
-export default function TypesItem({ store }) {
+import { Link, useLoaderData } from "react-router-dom";
+export default function TypesItem({ item }) {
+  const { Markets: marketsData, Restoraunts: restorauntData } =
+    useLoaderData("restoraunts");
+
+  const numberOfplaces = restorauntData.filter((innerArray) => {
+    return innerArray.types.includes(item.name);
+  });
+
   return (
-    <Link to={`/Restoraunt/${store.link}`}>
+    <Link to={`/discovery/category?type=${item.name}`}>
       <div className={classes.border}>
-        <img src={store.image} className={classes.img} />
+        <img src={item.img} className={classes.img} />
       </div>
       <div className={classes.text}>
-        <p className={classes.name}>{store.name}</p>
+        <p className={classes.name}>{item.name}</p>
       </div>
-      <span className={classes.quantity}>103 places</span>
+      {numberOfplaces.length > 0 && (
+        <span className={classes.quantity}>
+          {numberOfplaces.length}{" "}
+          {numberOfplaces.length > 1 ? "places" : "place"}
+        </span>
+      )}
     </Link>
   );
 }

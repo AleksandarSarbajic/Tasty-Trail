@@ -1,4 +1,4 @@
-import { useLoaderData, json } from "react-router-dom";
+import { useLoaderData, json, useLocation } from "react-router-dom";
 import StoreTypes from "../components/discovery/StoreTypes";
 import Header from "../components/restoraunts/Header";
 import TypesSlider from "../components/restoraunts/TypesSlider";
@@ -8,13 +8,16 @@ import { useSelector } from "react-redux";
 
 export default function RestorauntsPage() {
   const showFilter = useSelector((state) => state.filter.show);
+  const location = useLocation();
 
   const data = useLoaderData("restoraunts");
   return (
     <>
       <StoreTypes />
       <Header />
-      <TypesSlider data={data} />
+      {location.pathname.includes("restoraunts") ? (
+        <TypesSlider data={data} />
+      ) : null}
       <TypesAll data={data} />
       {showFilter && <Filter data={data} />}
     </>

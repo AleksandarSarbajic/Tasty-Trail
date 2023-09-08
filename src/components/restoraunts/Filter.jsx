@@ -39,8 +39,12 @@ export default function Filter(props) {
         </nav>
         <p className={classes.heading}>Filter</p>
         <div className={classes.grid}>
-          {props.data.types.food.map((type) => (
-            <FilterItem key={type} type={type} onClick={onItemClick} />
+          {props.data.types.food.map((item) => (
+            <FilterItem
+              key={item.name}
+              type={item.name}
+              onClick={onItemClick}
+            />
           ))}
         </div>
         <p className={classes.subheading}>Sort by</p>

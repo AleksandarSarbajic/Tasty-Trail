@@ -14,7 +14,7 @@ import ModalLocationItem from "./ModalLocationItem";
 export default function ModalContent(props) {
   const userAdress = useSelector((state) => state.adress);
   const [location, setLocation] = useState("");
-  const [setAdvancedLocation] = useState({});
+  const [advancedLocation, setAdvancedLocation] = useState({});
   const [whichModal, setWhichModal] = useState(0);
 
   const dispatch = useDispatch();
