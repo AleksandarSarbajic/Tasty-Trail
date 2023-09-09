@@ -19,13 +19,13 @@ export default function StoreTypes() {
         Discover
       </Link>
       <Link
-        to={"/discovery/restoraunts"}
+        to={"/discovery/restaraunts"}
         className={`${classes.link} ${
-          location.pathname === "/discovery/restoraunts" ? classes.color : ""
+          location.pathname === "/discovery/restaraunts" ? classes.color : ""
         }`}
       >
         <ImSpoonKnife className={classes.icon} />
-        Restoraunts
+        Restaraunts
       </Link>
       <Link
         to={"/discovery/markets"}

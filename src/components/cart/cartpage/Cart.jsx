@@ -23,7 +23,7 @@ export default function Cart() {
     if (cart.items.length === cart.selectedItems.length) {
       setIsChecked(true);
     }
-  }, [cart.selectedItems]);
+  }, [cart.items.length, cart.selectedItems]);
 
   const setAllCheckedItems = () => {
     setIsChecked(!isChecked);

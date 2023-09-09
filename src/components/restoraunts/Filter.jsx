@@ -4,14 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../redux/filter-slice";
 import { useState } from "react";
 import FilterItem from "./FilterItem";
+import { useSearchParams } from "react-router-dom";
 export default function Filter(props) {
-  const sort = useSelector((state) => state.filter.sort);
+  const { sort, itemsToBeFiltered } = useSelector((state) => state.filter);
   const [value, setValue] = useState(sort);
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   function onClickHandler() {
     dispatch(filterActions.setFilter());
     dispatch(filterActions.showFilter(false));
     dispatch(filterActions.setSort(value));
+
+    if (itemsToBeFiltered.length > 0) {
+      searchParams.set("filters", itemsToBeFiltered);
+      setSearchParams(searchParams);
+    } else {
+      searchParams.delete("filters");
+
+      setSearchParams(searchParams);
+    }
   }
   function onItemClick(item) {
     dispatch(filterActions.setItemsForFilter(item));

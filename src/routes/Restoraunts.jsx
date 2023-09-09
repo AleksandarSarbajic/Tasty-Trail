@@ -11,13 +11,12 @@ export default function RestorauntsPage() {
   const location = useLocation();
 
   const data = useLoaderData("restoraunts");
+
   return (
     <>
       <StoreTypes />
       <Header />
-      {location.pathname.includes("restoraunts") ? (
-        <TypesSlider data={data} />
-      ) : null}
+      {location.search === "" ? <TypesSlider data={data} /> : null}
       <TypesAll data={data} />
       {showFilter && <Filter data={data} />}
     </>
