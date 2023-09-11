@@ -11,7 +11,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0px, 1fr));
-  gap: 3rem 1.5rem;
-  justify-content: center;
-  align-items: center;
+  gap: 1rem;
+  @media only screen and (max-width: 62.5em) {
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+  }
+  @media only screen and (max-width: 38.5em) {
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+  }
 }

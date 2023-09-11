@@ -17,7 +17,7 @@ export default function TypesAllItem(props) {
           </p>
         </div>
         <div className={classes.itemBox}>
-          <div>
+          <div className={classes.itemBoxTextes}>
             <p className={classes.itemBoxName}>{props.name}</p>
             <p className={classes.itemBoxText}>{props.text}</p>
           </div>
