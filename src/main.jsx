@@ -29,17 +29,17 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "/Restoraunt",
+        path: "/Restaraunt",
         element: <p>TEST TEST TEST</p>,
       },
       {
-        path: "/Restoraunt/:id",
+        path: "/Restaraunt/:id",
         id: "restoraunt",
         element: <Restoraunt />,
         loader: RestorauntLoader,
         children: [
           {
-            path: "/Restoraunt/:id/:food",
+            path: "/Restaraunt/:id/:food",
             id: "food",
             element: <Food />,
             loader: foodLoader,

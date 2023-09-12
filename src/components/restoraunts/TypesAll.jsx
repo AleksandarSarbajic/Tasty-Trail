@@ -57,7 +57,7 @@ filters or go back to restoraunts"
         searchQuery === null &&
         searchParams?.get("filters")?.split(",") === undefined &&
         filter.sort === "Recommended"
-          ? [...data, ...data].map((rest) => {
+          ? [...data].map((rest) => {
               return (
                 <TypesAllItem
                   key={rest.name}

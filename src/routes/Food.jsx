@@ -6,12 +6,14 @@ export default function Food() {
   const data = useRouteLoaderData("food");
   const params = useParams();
 
+  const filteredItem = data.Restoraunts.find((food) => food.link === params.id);
+
   const filteredRestoraunts = data.Restoraunts.find(
     (food) => food.link === params.id
   ).food.find((item) => item.name === params.food);
-
+  console.log(filteredItem);
   return (
-    <FoodModal>
+    <FoodModal item={filteredItem}>
       <FoodContent foodItem={filteredRestoraunts} />
     </FoodModal>
   );

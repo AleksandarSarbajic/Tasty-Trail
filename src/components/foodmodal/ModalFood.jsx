@@ -1,14 +1,15 @@
 import classes from "./Modal.module.scss";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { VscChromeClose } from "react-icons/vsc";
 
 export default function FoodModal(props) {
   const navigate = useNavigate();
-
+  const located = useLocation();
   function onCloseHandler() {
-    navigate(-1);
+    console.log(located);
+    navigate(`/Restaraunt/${props.item.link}`);
   }
   return (
     <>
