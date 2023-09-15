@@ -1,11 +1,8 @@
-import { useLoading } from "../../customhooks/useLoading";
 import classes from "./LoadingSpinner.module.scss";
-function LoadingSpinnerSmall() {
-  const state = useLoading();
+function LoadingSpinnerSmall({ state }) {
+  if (state === false) return null;
 
-  if (state === "idle") return null;
-
-  if (state === "loading")
+  if (state === true)
     return (
       <div className={classes.containerMini}>
         <div className={classes.spinner} />

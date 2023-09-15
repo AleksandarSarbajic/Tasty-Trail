@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export function useLoader(query) {
-  // console.log(data);
   const [exportData, setExportData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,11 +17,25 @@ export function useLoader(query) {
         const data = await res.json();
 
         const filteredData = await data.Restoraunts.filter((item) => {
-          const lowercaseTypes = item.types.map((type) => type.toLowerCase());
+          const types = item.types
+            .map((item) => item.replace(/\s+/g, "").toLowerCase())
+            .some((item) =>
+              item.includes(query.replace(/\s+/g, "").toLowerCase())
+            );
+          const food = item.food
+            .map((item) => item.name.replace(/\s+/g, "").toLowerCase())
+            .some((item) =>
+              item.includes(query.replace(/\s+/g, "").toLowerCase())
+            );
 
-          return lowercaseTypes.some((type) =>
-            type.includes(query.toLowerCase())
-          );
+          const names = item.name
+            .replace(/\s+/g, "")
+            .toLowerCase()
+            .includes(query.replace(/\s+/g, "").toLowerCase());
+
+          const filteredArray = food || types || names;
+          console.log(filteredArray);
+          return filteredArray;
         });
 
         setExportData(filteredData);
