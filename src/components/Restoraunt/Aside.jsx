@@ -14,7 +14,7 @@ export default function Aside(props) {
     );
     if (location.hash === "") return;
     if (!animation) return;
-    navigate(`/Restoraunt/${props.content.link}`);
+    navigate(`/Restaraunt/${props.content.link}`);
   }
 
   return (
@@ -44,7 +44,7 @@ export default function Aside(props) {
             return (
               <li className={classes.item} key={type}>
                 <NavLink
-                  to={`/Restoraunt/${props.content.link}#${type}`}
+                  to={`/Restaraunt/${props.content.link}#${type}`}
                   className={`${classes.link} ${
                     cuttedHash === type && classes.high
                   }`}

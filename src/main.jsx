@@ -18,6 +18,7 @@ import RestorauntsPage, {
 } from "./routes/Restoraunts";
 import Aboutus from "./routes/Aboutus";
 import HowItWorks from "./routes/HowItWorks";
+import Search from "./routes/Search";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
         element: <HowItWorks />,
       },
       {
+        path: "/search",
+        id: "search",
+        element: <Search />,
+      },
+      {
         path: "/aboutus",
         id: "aboutus",
         element: <Aboutus />,
@@ -84,11 +90,11 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <IconContext.Provider value={{ className: "react-icons" }}>
         <RouterProvider router={router} />
       </IconContext.Provider>
-    </React.StrictMode>
-  </Provider>
+    </Provider>
+  </React.StrictMode>
 );

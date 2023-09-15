@@ -3,7 +3,7 @@ import classes from "../restoraunts/TypesAllItem.module.scss";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 export default function TypesAllItem(props) {
   return (
-    <Link to={`/Restoraunt/${props.link}`} className={classes.item}>
+    <Link to={`/Restaraunt/${props.link}`} className={classes.item}>
       <div className={classes.container}>
         <div className={classes.itemContainer}>
           <img src={props.img} alt={props.name} className={classes.img} />

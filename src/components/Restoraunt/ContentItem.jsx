@@ -33,11 +33,11 @@ export default function ContentItem(props) {
       </p>
 
       <p className={classes.price}>{props.price} rsd</p>
-      <button className={classes.button}>
+      <p className={classes.button}>
         <span className={classes.icon}>
           <BsBag />
         </span>
-      </button>
+      </p>
     </button>
   );
 }
