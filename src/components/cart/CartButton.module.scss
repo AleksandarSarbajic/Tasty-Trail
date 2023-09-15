@@ -4,6 +4,10 @@
     font-size: 4rem;
   }
 }
+.blank {
+  min-width: 0px;
+  flex: 1 1 0%;
+}
 .button {
   display: flex;
   align-items: center;
@@ -44,10 +48,20 @@
   }
 }
 .item {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 0px;
+  flex: 1 1 0%;
+
   @media only screen and (max-width: 50em) {
     position: fixed;
     bottom: 0;
     left: 50%;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
 
     width: 100%;
 

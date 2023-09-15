@@ -12,6 +12,7 @@ import Modal from "./UI/Modal";
 import ModalContent from "./discovery/ModalContent";
 import CartButton from "./cart/CartButton";
 import CartPreview from "./cart/CartPreview";
+import SearchForm from "../search/SearchForm";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
@@ -71,17 +72,19 @@ export default function MainHeader() {
               </div>
             )}
           </div>
-          {/* {form} */}
+
           {location.pathname !== "/discovery" &&
           !location.pathname.includes("/Restoraunt") ? (
-            <button
-              className={classes.menu}
-              onClick={() => {
-                setShowSidebar((show) => !show);
-              }}
-            >
-              <RxHamburgerMenu className={classes.menuBurger} />
-            </button>
+            <>
+              <button
+                className={classes.menu}
+                onClick={() => {
+                  setShowSidebar((show) => !show);
+                }}
+              >
+                <RxHamburgerMenu className={classes.menuBurger} />
+              </button>
+            </>
           ) : (
             ""
           )}
@@ -144,6 +147,7 @@ export default function MainHeader() {
           </ul>
           {location.pathname !== "/" && (
             <>
+              <SearchForm />
               <CartButton />
               <CartPreview />
             </>

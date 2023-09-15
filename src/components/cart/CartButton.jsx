@@ -6,7 +6,7 @@ import { useShowCart } from "../../customhooks/useShowCart";
 export default function CartButton() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const { previewCartHandler } = useShowCart();
-  if (totalQuantity === 0) return null;
+  if (totalQuantity === 0) return <div className={classes.blank}>&nbsp;</div>;
 
   return (
     <li

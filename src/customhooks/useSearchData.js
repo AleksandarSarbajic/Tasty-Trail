@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useLoader(query) {
+  // console.log(data);
   const [exportData, setExportData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +34,7 @@ export function useLoader(query) {
     }
     const handler = setTimeout(() => {
       loadData();
-    }, 1000);
+    }, 2000);
     return () => {
       clearTimeout(handler);
     };
