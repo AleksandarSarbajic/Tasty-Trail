@@ -18,7 +18,7 @@ import RestorauntsPage, {
 } from "./routes/Restoraunts";
 import Aboutus from "./routes/Aboutus";
 import HowItWorks from "./routes/HowItWorks";
-import Search from "./routes/Search";
+import Search, { loader as searchLoader } from "./routes/Search";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/search",
         id: "search",
+        loader: searchLoader,
         element: <Search />,
       },
       {

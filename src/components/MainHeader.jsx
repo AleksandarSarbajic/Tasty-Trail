@@ -12,7 +12,7 @@ import Modal from "./UI/Modal";
 import ModalContent from "./discovery/ModalContent";
 import CartButton from "./cart/CartButton";
 import CartPreview from "./cart/CartPreview";
-import SearchForm from "../search/SearchForm";
+import SearchForm from "./search/SearchForm";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);

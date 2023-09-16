@@ -15,7 +15,12 @@
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
   animation: rotate 1.5s infinite linear;
 }
-
+.container {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .containerMini {
   height: 100%;
   display: flex;

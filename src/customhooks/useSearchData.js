@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useLoader(query) {
+export function useLoader(query, time = 1000) {
   const [exportData, setExportData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,7 +34,7 @@ export function useLoader(query) {
             .includes(query.replace(/\s+/g, "").toLowerCase());
 
           const filteredArray = food || types || names;
-          console.log(filteredArray);
+
           return filteredArray;
         });
 
@@ -47,11 +47,11 @@ export function useLoader(query) {
     }
     const handler = setTimeout(() => {
       loadData();
-    }, 2000);
+    }, time);
     return () => {
       clearTimeout(handler);
     };
-  }, [query]);
+  }, [query, time]);
 
   return { isLoading, exportData };
 }

@@ -1,51 +1,44 @@
 import { useLoader } from "../customhooks/useSearchData";
-import TypesAllItem from "../components/restoraunts/TypesAllItem";
-import classes from "../components/restoraunts/TypesAll.module.scss";
-import { useState } from "react";
+import Header from "../components/restoraunts/Header";
+import Filter from "../components/restoraunts/Filter";
+import { useSelector } from "react-redux";
+import { json, useLoaderData, useSearchParams } from "react-router-dom";
+import TypesAll from "../components/restoraunts/TypesAll";
+import LoadingSpinnerSmall from "../components/UI/LoadingSpinnerSmall";
 
 function Search() {
-  const [query, setQuery] = useState("");
-  const { exportData, isLoading } = useLoader(query);
-  console.log(isLoading, exportData);
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
+  const showFilter = useSelector((state) => state.filter.show);
+  const data = useLoaderData("search");
 
-  // if (isLoading) return <div>Loading...</div>;
-
-  function handleOnClick(e) {
-    e.preventDefault();
-    setQuery(e.target.value);
-  }
+  const { exportData, isLoading } = useLoader(query, 1000);
+  console.log(exportData);
 
   return (
-    <div className={classes.container}>
-      <div className={classes.grid}>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : exportData.length !== 0 ? (
-          exportData.map((rest) => (
-            <TypesAllItem
-              key={rest.name}
-              img={rest.image}
-              name={rest.name}
-              price={rest.price}
-              text={rest.text}
-              order={rest.order}
-              link={rest.link}
-            />
-          ))
-        ) : (
-          <p>Cart is empty</p>
-        )}
-      </div>
-      <form>
-        <input
-          style={{ paddingTop: "20rem" }}
-          type="text"
-          value={query}
-          onChange={handleOnClick}
-        />
-      </form>
+    <div className={"search__container"}>
+      <Header heading={"Search Results"} />
+
+      {isLoading ? (
+        <LoadingSpinnerSmall state={isLoading} />
+      ) : (
+        <TypesAll searchData={exportData} heading={""} />
+      )}
+      {showFilter && <Filter data={data} />}
     </div>
   );
 }
 
 export default Search;
+
+// eslint-disable-next-line react-refresh/only-export-components
+export async function loader() {
+  const response = await fetch(
+    "https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data/types.json"
+  );
+  if (!response.ok) {
+    throw json("Failed to load data");
+  } else {
+    return response;
+  }
+}

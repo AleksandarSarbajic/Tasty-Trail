@@ -5,7 +5,7 @@ import { filterActions } from "../../redux/filter-slice";
 import { useState } from "react";
 import FilterItem from "./FilterItem";
 import { useSearchParams } from "react-router-dom";
-export default function Filter(props) {
+export default function Filter({ data }) {
   const { sort, itemsToBeFiltered } = useSelector((state) => state.filter);
   const [value, setValue] = useState(sort);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,7 +50,7 @@ export default function Filter(props) {
         </nav>
         <p className={classes.heading}>Filter</p>
         <div className={classes.grid}>
-          {props.data.types.food.map((item) => (
+          {data.food.map((item) => (
             <FilterItem
               key={item.name}
               type={item.name}

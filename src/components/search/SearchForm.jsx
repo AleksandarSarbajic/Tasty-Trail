@@ -3,8 +3,8 @@ import classes from "./SearchForm.module.scss";
 import { AiOutlineSearch, AiOutlineExclamationCircle } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 import { useState } from "react";
-import { useLoader } from "../customhooks/useSearchData";
-import LoadingSpinnerSmall from "../components/UI/LoadingSpinnerSmall";
+import { useLoader } from "../../customhooks/useSearchData";
+import LoadingSpinnerSmall from "../UI/LoadingSpinnerSmall";
 import SearchItem from "./SearchItem";
 function SearchForm() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,6 +45,7 @@ function SearchForm() {
             value={searchText}
             className={`${classes.input} ${classes.inputIsVisible}`}
             onChange={handleSearchText}
+            placeholder={"Search on Tasty Trail..."}
           />
           <AiOutlineSearch className={classes.search} />
           <div className={classes.buttonBox}>
@@ -78,7 +79,10 @@ function SearchForm() {
                 {!isLoading ? (
                   <div className={classes.showBox}>
                     {exportData.length >= 5 ? (
-                      <Link to={"/"} className={classes.showLink}>
+                      <Link
+                        to={`/search?q=${searchText}`}
+                        className={classes.showLink}
+                      >
                         Display of all 14 results
                       </Link>
                     ) : null}

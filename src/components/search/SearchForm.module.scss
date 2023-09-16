@@ -122,12 +122,13 @@
     rgba(0, 0, 0, 0.12) 0px 0.25rem 0.25rem 0px;
   background-color: rgb(255, 255, 255);
   border-radius: 0.5rem;
-  left: 40%;
+  left: 50%;
   position: absolute;
   top: 10rem;
   z-index: 100;
   opacity: 1;
   transform: none;
+  transform: translateX(-50%);
 }
 .box {
   position: relative;

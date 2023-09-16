@@ -17,11 +17,12 @@ export default function RestorauntsPage() {
       <StoreTypes />
       <Header />
       {location.search === "" ? <TypesSlider data={data} /> : null}
-      <TypesAll data={data} />
-      {showFilter && <Filter data={data} />}
+      <TypesAll allData={data} heading={"Restaraunts"} />
+      {showFilter && <Filter data={data.types} />}
     </>
   );
 }
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
   const response = await fetch(
     "https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data.json"

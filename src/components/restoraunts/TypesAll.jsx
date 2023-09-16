@@ -4,13 +4,19 @@ import TypesAllItem from "./TypesAllItem";
 import { useSelector } from "react-redux";
 import Error from "../UI/Error";
 
-export default function TypesAll(props) {
+export default function TypesAll({ allData, searchData = [], heading }) {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const filter = useSelector((state) => state.filter);
-  const data = props.data.Restoraunts;
-  const searchQuery = searchParams.get("type");
+  const containsLocation =
+    location.pathname.includes("restaraunts") ||
+    location.pathname.includes("search");
 
+  const data = location.pathname.includes("restaraunts")
+    ? allData.Restoraunts
+    : searchData;
+
+  const searchQuery = searchParams.get("type");
   const filteredRestaurants = [...data].filter((restaurant) =>
     restaurant.types.some((type) =>
       searchParams?.get("filters")?.split(",").includes(type)
@@ -51,9 +57,9 @@ filters or go back to restoraunts"
     );
   return (
     <div className={classes.container}>
-      <h3>All Restaraunts</h3>
+      {heading && <h3>{heading}</h3>}
       <div className={classes.grid}>
-        {location.pathname.includes("restaraunts") &&
+        {containsLocation &&
         searchQuery === null &&
         searchParams?.get("filters")?.split(",") === undefined &&
         filter.sort === "Recommended"
@@ -297,19 +303,7 @@ filters or go back to restoraunts"
                   />
                 );
               })
-          : props.data.Markets.map((rest) => {
-              return (
-                <TypesAllItem
-                  key={rest.name}
-                  img={rest.image}
-                  name={rest.name}
-                  price={rest.price}
-                  text={rest.text}
-                  order={rest.order}
-                  link={rest.link}
-                />
-              );
-            })}
+          : ""}
       </div>
     </div>
   );

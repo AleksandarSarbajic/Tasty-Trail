@@ -3,7 +3,7 @@ import { TbArrowsSort } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../redux/filter-slice";
 import { useSearchParams } from "react-router-dom";
-export default function Header() {
+export default function Header({ heading = "Restaraunts" }) {
   const { sort, filters } = useSelector((state) => state.filter);
   const [searchParams] = useSearchParams();
 
@@ -23,7 +23,7 @@ export default function Header() {
   }
   return (
     <header className={classes.header}>
-      <h2 className={classes.heading}>Restaranunts</h2>
+      <h2 className={classes.heading}>{heading}</h2>
       <button
         className={classes.button}
         onClick={() => {
