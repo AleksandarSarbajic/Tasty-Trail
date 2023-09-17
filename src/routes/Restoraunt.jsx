@@ -11,7 +11,7 @@ export default function Restoraunt() {
 
   return (
     <>
-      <RestorauntHero store={restoraunt}></RestorauntHero>
+      <RestorauntHero store={restoraunt} />
       <Outlet />
     </>
   );
