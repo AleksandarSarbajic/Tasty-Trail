@@ -17,6 +17,9 @@ export default function Discovery() {
       behavior: "smooth",
     });
   }, [pathname]);
+
+  console.log(data);
+
   return (
     <>
       <LoadingSpinner />
