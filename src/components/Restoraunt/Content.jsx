@@ -4,6 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import ContentItem from "./ContentItem";
 import { useEffect, useState, useCallback } from "react";
 import Section from "./Section";
+import SearchInPlace from "./SearchInPlace";
 
 export default function Content({ content }) {
   const [scrollY, setScrollY] = useState(0);

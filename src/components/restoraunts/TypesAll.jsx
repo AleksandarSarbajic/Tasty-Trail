@@ -12,9 +12,11 @@ export default function TypesAll({ allData, searchData = [], heading }) {
     location.pathname.includes("restaraunts") ||
     location.pathname.includes("search");
 
-  const data = location.pathname.includes("restaraunts")
-    ? allData.Restoraunts
-    : searchData;
+  const data =
+    location.pathname.includes("restaraunts") ||
+    location.pathname.includes("category")
+      ? allData.Restoraunts
+      : searchData;
 
   const searchQuery = searchParams.get("type");
   const filteredRestaurants = [...data].filter((restaurant) =>
@@ -22,7 +24,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
       searchParams?.get("filters")?.split(",").includes(type)
     )
   );
-
+  console.log(allData.Restoraunts, searchQuery !== null);
   if (
     searchQuery !== null &&
     [...data].filter((restaurant) =>
@@ -33,28 +35,28 @@ export default function TypesAll({ allData, searchData = [], heading }) {
       <Error
         img={"/cart.png"}
         text=" There is no such restoraunt for any of that filters, choose other
-filters or go back to restoraunts"
-        to="/discovery/restaraunts"
-        alt={"cart"}
-        link={"Go back"}
-      />
-    );
-  }
-  if (
-    filteredRestaurants.length === 0 &&
-    searchQuery === null &&
-    searchParams.get("filters") !== null
-  )
-    return (
-      <Error
-        img={"/cart.png"}
-        text=" There is no such restoraunt for any of that filters, choose other
   filters or go back to restoraunts"
         to="/discovery/restaraunts"
         alt={"cart"}
         link={"Go back"}
       />
     );
+  }
+  // if (
+  //   filteredRestaurants.length === 0 &&
+  //   searchQuery === null &&
+  //   searchParams.get("filters") !== null
+  // )
+  //   return (
+  //     <Error
+  //       img={"/cart.png"}
+  //       text=" There is no such restoraunt for any of that filters, choose other
+  // filters or go back to restoraunts"
+  //       to="/discovery/restaraunts"
+  //       alt={"cart"}
+  //       link={"Go back"}
+  //     />
+  //   );
   return (
     <div className={classes.container}>
       {heading && <h3>{heading}</h3>}
