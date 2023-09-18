@@ -5,7 +5,7 @@ const items = [
   {
     heading: "Open",
     text: "Open your application on your device, and search for food you want to eat.",
-    img: "public/undraw_progressive_app_m9ms.png",
+    img: "/undraw_progressive_app_m9ms.png",
     alt: "image of application on phone and computer",
     id: crypto.randomUUID().toString(),
     speacialClass: "one",
@@ -13,7 +13,7 @@ const items = [
   {
     heading: "Add To Cart",
     text: "Add to cart item you would like to purchase, and continue shopping or go to cart.",
-    img: "public/undraw_Add_to_cart_re_wrdo.png",
+    img: "/undraw_Add_to_cart_re_wrdo.png",
     alt: "image of application while addint to cart",
     id: crypto.randomUUID().toString(),
     speacialClass: "two",
@@ -21,7 +21,7 @@ const items = [
   {
     heading: "Delivery",
     text: "Our delivery man will pick up your order and it will be delivered as fast as possible.",
-    img: "public/undraw_delivery_truck_vt6p.png",
+    img: "/undraw_delivery_truck_vt6p.png",
     alt: "image of delivery map handing delivery",
     id: crypto.randomUUID().toString(),
     speacialClass: "three",
