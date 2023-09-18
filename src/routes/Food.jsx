@@ -11,10 +11,10 @@ export default function Food() {
   const filteredRestoraunts = data.Restoraunts.find(
     (food) => food.link === params.id
   ).food.find((item) => item.name === params.food);
-  console.log(filteredItem);
+
   return (
     <FoodModal item={filteredItem}>
-      <FoodContent foodItem={filteredRestoraunts} />
+      <FoodContent foodItem={filteredRestoraunts} item={filteredItem} />
     </FoodModal>
   );
 }

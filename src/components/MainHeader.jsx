@@ -54,7 +54,7 @@ export default function MainHeader() {
         <nav className={`${classes.nav}`}>
           <div className={classes.pin}>
             <Link to={"/"} className={classes.logo}>
-              TastyTrail
+              Tasty Trail
             </Link>
             {location.pathname !== "/" && city && (
               <div
@@ -73,8 +73,10 @@ export default function MainHeader() {
             )}
           </div>
 
-          {location.pathname !== "/discovery" &&
-          !location.pathname.includes("/Restoraunt") ? (
+          {location.pathname === "/" ||
+          location.pathname === "/aboutus" ||
+          location.pathname === "/contact" ||
+          location.pathname === "/howitworks" ? (
             <>
               <button
                 className={classes.menu}

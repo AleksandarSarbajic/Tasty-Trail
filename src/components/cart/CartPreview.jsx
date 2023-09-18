@@ -24,7 +24,7 @@ export default function CartPreview() {
       <div
         className={`${classes.absolute} hovered__absolute`}
         onMouseEnter={() => {
-          if (window.innerWidth < 600) return;
+          if (window.innerWidth < 800) return;
 
           previewCartHandler();
         }}
@@ -42,7 +42,7 @@ export default function CartPreview() {
         //   previewCartHandler();
         // }}
         onMouseLeave={() => {
-          if (window.innerWidth < 600) return;
+          if (window.innerWidth < 800) return;
           previewCartHandler();
         }}
       >

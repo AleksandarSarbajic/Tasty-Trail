@@ -3,11 +3,25 @@
   color: #000;
   padding: 8rem 5rem 10rem 5rem;
   border-radius: 2rem;
+  @media only screen and (max-width: 50em) {
+    width: 75%;
+    justify-self: center;
+  }
+  @media only screen and (max-width: 37.5em) {
+    width: 95%;
+    justify-self: center;
+  }
+  @media only screen and (max-width: 29.25em) {
+    width: 100%;
+  }
 }
 .title {
   font-size: 3.6rem;
   font-weight: 600;
   line-height: 1.2;
+  @media only screen and (max-width: 29.25em) {
+    font-size: 3rem;
+  }
 }
 .subtitle {
   margin: 2rem 0 5rem 0;

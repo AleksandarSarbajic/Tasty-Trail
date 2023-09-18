@@ -30,23 +30,23 @@ export default function Footer() {
         <div className={classes.all}>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Platform
+              <Link to={"/howitworks"} className={classes.link}>
+                How it works
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Pricing
+              <Link to={"/aboutus"} className={classes.link}>
+                About us
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Our team
+              <Link to={"/contact"} className={classes.link}>
+                Contact
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Our businesses
+              <Link to={"/discovery"} className={classes.link}>
+                Discovery
               </Link>
             </li>
           </ul>

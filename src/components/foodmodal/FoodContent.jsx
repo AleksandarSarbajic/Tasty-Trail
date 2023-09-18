@@ -4,7 +4,7 @@ import { cartActions } from "../../redux/cart-slice";
 import classes from "../foodmodal/FoodContent.module.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-export default function FoodContent({ foodItem }) {
+export default function FoodContent({ foodItem, item }) {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
   const filter = items.find((item) => item.name === foodItem.name);
@@ -13,7 +13,7 @@ export default function FoodContent({ foodItem }) {
     filter ? filter.totalPrice : foodItem.price
   );
   const navigate = useNavigate();
-
+  console.log(item);
   function addOrderNumberHandler(decision) {
     if (orderNumber === 1 && decision === "-" && !filter) {
       return;
@@ -36,7 +36,7 @@ export default function FoodContent({ foodItem }) {
     } else {
       dispatch(cartActions.addToCart(newItem));
     }
-    navigate(-1);
+    navigate(`/Restaraunt/${item.link}`);
   }
 
   return (

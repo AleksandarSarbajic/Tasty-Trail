@@ -12,15 +12,15 @@ export default function CartButton() {
     <li
       className={`${classes.item} hovered__button`}
       onMouseEnter={() => {
-        if (window.innerWidth < 600) return;
+        if (window.innerWidth < 800) return;
         previewCartHandler();
       }}
       onMouseLeave={() => {
-        if (window.innerWidth < 600) return;
+        if (window.innerWidth < 800) return;
         previewCartHandler();
       }}
       onClick={() => {
-        if (window.innerWidth > 600) return;
+        if (window.innerWidth > 800) return;
         previewCartHandler();
       }}
     >

@@ -30,6 +30,7 @@ export default function Content({ content }) {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search");
+  const parts = location.pathname.split("/");
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = useCallback(() => {
@@ -46,24 +47,29 @@ export default function Content({ content }) {
     };
   }, [onScroll]);
 
-  const handlePopState = useCallback(() => {
-    console.log(searchText.length, query);
-    if (searchText.length === 0 && query === null && location.hash === "") {
-      navigate("/discovery");
-    }
-    if (searchText.length === 0 && query === null) return;
-    dispatch(searchActions.setSearchText({ payload: "" }));
-    searchParams.delete("search");
-    setSearchParams(searchParams);
-  }, [
-    location.hash,
-    dispatch,
-    navigate,
-    query,
-    searchParams,
-    searchText.length,
-    setSearchParams,
-  ]);
+  const handlePopState = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (parts.length === 3) return;
+      if (searchText.length === 0 && query === null && location.hash === "") {
+        navigate("/discovery");
+      }
+      if (searchText.length === 0 && query === null) return;
+      dispatch(searchActions.setSearchText({ payload: "" }));
+      searchParams.delete("search");
+      setSearchParams(searchParams);
+    },
+    [
+      parts,
+      location.hash,
+      dispatch,
+      navigate,
+      query,
+      searchParams,
+      searchText.length,
+      setSearchParams,
+    ]
+  );
 
   useEffect(() => {
     window.addEventListener("popstate", handlePopState);
