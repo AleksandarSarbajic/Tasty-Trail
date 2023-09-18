@@ -1,4 +1,9 @@
-import { Form, useLocation } from "react-router-dom";
+import {
+  Form,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import classes from "../Restoraunt/Content.module.scss";
 import { AiOutlineSearch } from "react-icons/ai";
 import ContentItem from "./ContentItem";
@@ -17,12 +22,14 @@ export default function Content({ content }) {
   const dispatch = useDispatch();
   const { exportData, isLoading } = useSearchInItem(
     searchText,
-    250,
+    100,
     "/Restoraunts",
     content.name
   );
   const location = useLocation();
-
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("search");
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = useCallback(() => {
@@ -39,12 +46,42 @@ export default function Content({ content }) {
     };
   }, [onScroll]);
 
+  const handlePopState = useCallback(() => {
+    console.log(searchText.length, query);
+    if (searchText.length === 0 && query === null && location.hash === "") {
+      navigate("/discovery");
+    }
+    if (searchText.length === 0 && query === null) return;
+    dispatch(searchActions.setSearchText({ payload: "" }));
+    searchParams.delete("search");
+    setSearchParams(searchParams);
+  }, [
+    location.hash,
+    dispatch,
+    navigate,
+    query,
+    searchParams,
+    searchText.length,
+    setSearchParams,
+  ]);
+
+  useEffect(() => {
+    window.addEventListener("popstate", handlePopState);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [handlePopState]);
+
   function onChangeTextHandler(e) {
     dispatch(searchActions.setSearchText({ payload: e.target.value }));
   }
   function handleClearSearch(e) {
     e.preventDefault();
     dispatch(searchActions.setSearchText({ payload: "" }));
+    searchParams.delete("search");
+    setSearchParams(searchParams);
   }
 
   return (

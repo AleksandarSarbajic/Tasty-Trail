@@ -15,14 +15,15 @@ export function useSearchInItem(
 
   useEffect(() => {
     setIsLoading(true);
+    if (query.length === 0) return;
     async function loadData() {
       try {
         const res = await fetch(
           `https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data${type}.json`
         );
-        // if (!res.ok) {
-        //   throw new Error("Items could not be fetched");
-        // }
+        if (!res.ok) {
+          throw new Error("Items could not be fetched");
+        }
 
         const data = await res.json();
         const restaraunt = await data.find((item) => item.name === name);
@@ -42,11 +43,17 @@ export function useSearchInItem(
 
           return filteredArray;
         });
+
         if (query.length !== 0) {
           searchParams.set("search", query);
           setSearchParams(searchParams);
         }
-        if (query.length === 0 && location.hash === "") {
+
+        if (
+          query.length === 0 &&
+          location.hash === "" &&
+          searchQuery !== null
+        ) {
           console.log(location);
           searchParams.delete("search");
           setSearchParams(searchParams);
