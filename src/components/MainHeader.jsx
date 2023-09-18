@@ -48,7 +48,7 @@ export default function MainHeader() {
       )}
       <header
         className={`${classes.header} ${scrollY > 150 ? classes.fixed : ""} ${
-          location.pathname.includes("/Restoraunt") && classes.bg
+          location.pathname.includes("/Restaraunt") && classes.bg
         }`}
       >
         <nav className={`${classes.nav}`}>
@@ -88,13 +88,24 @@ export default function MainHeader() {
           ) : (
             ""
           )}
+          {location.pathname !== "/" &&
+          location.pathname !== "/aboutus" &&
+          location.pathname !== "/contact" &&
+          location.pathname !== "/howitworks" ? (
+            <SearchForm />
+          ) : (
+            ""
+          )}
+
           <ul
             className={`${classes.list} ${
               showSidebar ? classes.transform : ""
             }`}
           >
-            {location.pathname !== "/discovery" &&
-            !location.pathname.includes("/Restoraunt") ? (
+            {location.pathname === "/" ||
+            location.pathname === "/aboutus" ||
+            location.pathname === "/contact" ||
+            location.pathname === "/howitworks" ? (
               <>
                 <li>
                   <Link
@@ -145,12 +156,16 @@ export default function MainHeader() {
               ""
             )}
           </ul>
-          {location.pathname !== "/" && (
+          {location.pathname !== "/" &&
+          location.pathname !== "/aboutus" &&
+          location.pathname !== "/contact" &&
+          location.pathname !== "/howitworks" ? (
             <>
-              <SearchForm />
               <CartButton />
               <CartPreview />
             </>
+          ) : (
+            ""
           )}
         </nav>
       </header>
