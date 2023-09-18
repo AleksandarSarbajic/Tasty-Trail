@@ -142,7 +142,11 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               <p className={classes.direction}>{userInfo[0].heading}</p>
               <p className={classes.paragraph}>{userInfo[0].text}</p>
             </div>
-            <img src={`${userInfo[0].img}`} className={classes.img} />
+            <img
+              src={`${userInfo[0].img}`}
+              className={classes.img}
+              alt="Image of our app on the phone"
+            />
             {/* <img src="/public/app-screen-2.png" />
         <img src="/public/app-screen-3.png" /> */}
           </div>
@@ -162,7 +166,11 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               <p className={classes.direction}>{userInfo[0].heading}</p>
               <p className={classes.paragraph}>{userInfo[0].text}</p>
             </div>
-            <img src={`${userInfo[0].img}`} className={classes.img} />
+            <img
+              src={`${userInfo[0].img}`}
+              className={classes.img}
+              alt="Image of our app on the phone"
+            />
             {/* <img src="/public/app-screen-2.png" />
         <img src="/public/app-screen-3.png" /> */}
           </div>

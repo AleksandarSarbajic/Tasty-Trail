@@ -53,7 +53,18 @@ export default function MainHeader() {
       >
         <nav className={`${classes.nav}`}>
           <div className={classes.pin}>
-            <Link to={"/"} className={classes.logo}>
+            <Link
+              to={`${
+                location.pathname === "/" ||
+                location.pathname === "/aboutus" ||
+                location.pathname === "/contact" ||
+                location.pathname === "/discovery" ||
+                location.pathname === "/howitworks"
+                  ? "/"
+                  : "/discovery"
+              } `}
+              className={classes.logo}
+            >
               Tasty Trail
             </Link>
             {location.pathname !== "/" && city && (
