@@ -20,6 +20,7 @@ export default function Company() {
             src={"/McDonalds-Logo.png"}
             alt={"McDonald's"}
             className={classes.image}
+            loading="lazy"
           />
           <ReactCurvedText
             width={300}
@@ -41,7 +42,12 @@ export default function Company() {
         <div
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
-          <img src={"/Kfc_logo.png"} alt={"KFC"} className={classes.image} />
+          <img
+            src={"/Kfc_logo.png"}
+            alt={"KFC"}
+            className={classes.image}
+            loading="lazy"
+          />
           <ReactCurvedText
             width={300}
             height={300}
@@ -66,6 +72,7 @@ export default function Company() {
             src={"/starbucks-logo.png"}
             alt={"StarBucks"}
             className={classes.bucks}
+            loading="lazy"
           />
           <ReactCurvedText
             width={300}

@@ -41,7 +41,12 @@ export default function FoodContent({ foodItem, item }) {
 
   return (
     <div className={classes.foodContent}>
-      <img src={foodItem.image} alt={foodItem.name} className={classes.image} />
+      <img
+        src={foodItem.image}
+        alt={foodItem.name}
+        className={classes.image}
+        loading="lazy"
+      />
       <div className={classes.container}>
         <h1 className={classes.heading}>{foodItem.name}</h1>
         <p className={classes.price}>{foodItem.price} rsd</p>

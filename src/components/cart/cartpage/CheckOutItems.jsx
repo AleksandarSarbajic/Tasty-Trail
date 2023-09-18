@@ -23,6 +23,7 @@ export default function CheckOutItems() {
                   src={item.image}
                   alt={item.name}
                   className={classes.checkItemImg}
+                  loading="lazy"
                 />
                 <div className={classes.checkItemText}>
                   <span className={classes.checkItemName}>{item.name}</span>

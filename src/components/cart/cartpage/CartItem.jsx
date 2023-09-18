@@ -47,7 +47,7 @@ export default function CartItem({ item, check, addItem }) {
         />
       </Form>
       <div className={classes.cartItemImage}>
-        <img src={item.image} alt={item.name} />
+        <img src={item.image} alt={item.name} loading="lazy" />
         <div className={classes.cartItemName}>
           <span className={classes.cartItemText}>{item.name}</span>
           <span className={classes.cartItemIngredients}>

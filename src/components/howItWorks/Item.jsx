@@ -2,7 +2,7 @@ import classes from "./Item.module.scss";
 function Item({ img, heading, number, text, alt, className }) {
   return (
     <div className={classes.box}>
-      <img className={classes.img} src={img} alt={alt} />
+      <img className={classes.img} src={img} alt={alt} loading="lazy" />
       <div className={classes.numberBox}>
         <span className={`${classes[className]} ${classes.number}`}>
           {number}

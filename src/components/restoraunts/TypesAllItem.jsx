@@ -6,7 +6,12 @@ export default function TypesAllItem(props) {
     <Link to={`/Restaraunt/${props.link}`} className={classes.item}>
       <div className={classes.container}>
         <div className={classes.itemContainer}>
-          <img src={props.img} alt={props.name} className={classes.img} />
+          <img
+            src={props.img}
+            alt={props.name}
+            className={classes.img}
+            loading="lazy"
+          />
           <p className={classes.delivery}>
             <MdOutlineDeliveryDining className={classes.deliveryIcons} />
             {props.price === 0 ? (
