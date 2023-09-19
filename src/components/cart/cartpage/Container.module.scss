@@ -3,6 +3,12 @@
   grid-template-columns: 70% 1fr;
   grid-template-rows: 5rem 1fr;
   gap: 5rem;
+  @media only screen and (max-width: 50em) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 1fr;
+    // height: 75dvh;
+    gap: 1rem;
+  }
   @media only screen and (max-width: 37.5em) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -14,13 +20,13 @@
   padding: 15rem 1rem;
   max-width: 135rem;
   margin: 0 auto;
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 50em) {
     padding: 15rem 0.5rem;
   }
 }
 
 .fullScreen {
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 50em) {
     // height: 100dvh;
   }
 }

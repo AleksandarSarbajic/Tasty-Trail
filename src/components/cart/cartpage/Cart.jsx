@@ -10,12 +10,6 @@ export default function Cart() {
   const dispatch = useDispatch();
   const [isChecked, setIsChecked] = useState(false);
 
-  const removeAllItemsHandler = () => {
-    if (cart.items.length === cart.selectedItems.length) {
-      dispatch(cartActions.removeAllItems());
-    }
-  };
-
   useEffect(() => {
     if (cart.selectedItems.length === 0) {
       setIsChecked(false);
@@ -28,7 +22,7 @@ export default function Cart() {
   return (
     <div className={classes.cart}>
       <div className={classes.cartHeader}>
-        <button onClick={removeAllItemsHandler} disabled={!isChecked}>
+        <button disabled={!isChecked}>
           <BsTrash3 />
           Remove
         </button>

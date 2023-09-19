@@ -1,7 +1,7 @@
 .check {
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 50em) {
     overflow-y: scroll;
   }
 }
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 50em) {
     max-height: 17rem;
     overflow-y: scroll;
   }
@@ -17,7 +17,7 @@
 .checkHeading {
   font-size: 2rem;
   margin-bottom: 1rem;
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 50em) {
     font-size: 3rem;
   }
 }
@@ -34,13 +34,13 @@
   }
   &Name {
     font-size: 1.4rem;
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 50em) {
       font-size: 2.2rem;
     }
   }
   &Price {
     font-size: 1.6rem;
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 50em) {
       font-size: 2.2rem;
     }
   }
@@ -52,7 +52,7 @@
   &Img {
     width: 8rem;
     border-radius: 7px;
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 50em) {
       width: 12rem;
       height: 7rem;
       object-fit: cover;
