@@ -30,7 +30,7 @@ export default function Finish(props) {
       <div className={classes.orderItems}>
         <h3 className={classes.orderItemsHeading}>Your Order</h3>
         <div className={classes.orderItemsMargin}>
-          {cart.selectedItems.map((item) => {
+          {cart.items.map((item) => {
             return (
               <div className={classes.orderItem} key={item.name}>
                 <div className={classes.orderItemDetails}>

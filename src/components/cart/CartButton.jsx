@@ -2,11 +2,13 @@ import classes from "../cart/CartButton.module.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useShowCart } from "../../customhooks/useShowCart";
+import { useLocation } from "react-router-dom";
 
 export default function CartButton() {
   const totalQuantity = useSelector((state) => state.cart.items);
+  const location = useLocation();
   const { previewCartHandler } = useShowCart();
-  if (totalQuantity.length === 0)
+  if (totalQuantity.length === 0 || location.pathname === "/cart")
     return <div className={classes.blank}>&nbsp;</div>;
 
   return (

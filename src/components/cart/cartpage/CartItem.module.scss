@@ -1,10 +1,21 @@
 .cartItem {
   display: flex;
   align-items: center;
+  position: relative;
+
+  @media only screen and (max-width: 37.5em) {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+  }
   img {
     width: 12rem;
     border-radius: 10px;
     height: 7rem;
+    @media only screen and (max-width: 37.5em) {
+      height: 9rem;
+      object-fit: cover;
+    }
   }
   &Image {
     display: flex;
@@ -14,9 +25,7 @@
   }
   &Input {
     margin-right: 2rem;
-    // Hide the default checkbox appearance
 
-    // Define the custom checkbox size
     width: 1.5rem;
     height: 1.5rem;
 
@@ -26,16 +35,36 @@
     font-size: 1.8rem;
     display: inline-block;
     margin-bottom: 0.5rem;
+    @media only screen and (max-width: 37.5em) {
+      margin-bottom: 4rem;
+    }
   }
   &Ingredients {
     max-width: 40rem;
     width: 35rem;
     font-size: 1.2rem;
     display: inline-block;
+    @media only screen and (max-width: 37.5em) {
+      display: none;
+    }
   }
   &Price {
     font-size: 2rem;
     font-weight: 500;
+    width: 10rem;
+    text-align: right;
+    @media only screen and (max-width: 37.5em) {
+      width: auto;
+      font-size: 1.6rem;
+      font-weight: 700;
+      position: absolute;
+      bottom: 2rem;
+      left: 15rem;
+      background-color: var(--primary-color--light--1);
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      border-radius: 8px;
+    }
   }
   &Name {
     display: flex;
@@ -51,11 +80,19 @@
   box-shadow: 0px 5px 10px rgba(9, 9, 9, 0.1);
 
   margin-right: 10rem;
-
+  @media only screen and (max-width: 37.5em) {
+    margin-right: 0rem;
+    background-color: #222;
+    border-radius: 8px;
+  }
   &Number {
     font-size: 1.8rem;
-    width: 2rem;
+    width: 2.4rem;
     text-align: center;
+    @media only screen and (max-width: 37.5em) {
+      color: #fff;
+      font-size: 2.4rem;
+    }
   }
   button {
     background-color: transparent;
@@ -63,12 +100,14 @@
 
     color: var(--primary-color);
     cursor: pointer;
+    @media only screen and (max-width: 37.5em) {
+      color: var(--primary-color--light--1);
+    }
   }
   &Icon {
     font-size: 2rem;
+    @media only screen and (max-width: 37.5em) {
+      font-size: 2.4rem;
+    }
   }
-}
-.cartItemPrice {
-  width: 10rem;
-  text-align: right;
 }

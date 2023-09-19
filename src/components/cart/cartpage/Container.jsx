@@ -25,7 +25,11 @@ export default function ContainerCart() {
   return (
     <div className={classes.items}>
       {cart.length > 0 ? (
-        <div className={classes.grid}>
+        <div
+          className={`${classes.grid} ${
+            locataion.hash === "#checkout" ? classes.fullScreen : ""
+          }`}
+        >
           <ProgressBar />
           {locataion.hash === "" ? (
             <Cart />
@@ -34,7 +38,7 @@ export default function ContainerCart() {
           ) : (
             ""
           )}
-          {locataion.hash === "#finish" ? (
+          {locataion.hash === "#overview" ? (
             ""
           ) : (
             <CheckOut form={inputs} onClick={onClickHandler} />
@@ -43,7 +47,7 @@ export default function ContainerCart() {
       ) : (
         <EmptyItems />
       )}
-      {locataion.hash === "#finish" && <Finish />}
+      {locataion.hash === "#overview" && <Finish />}
     </div>
   );
 }

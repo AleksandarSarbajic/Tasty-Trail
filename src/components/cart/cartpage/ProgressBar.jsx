@@ -4,7 +4,11 @@ function ProgressBar() {
   const location = useLocation();
 
   return (
-    <div className={classes.progress}>
+    <div
+      className={`${classes.progress} ${
+        location.hash === "#overview" ? classes.center : ""
+      }`}
+    >
       <p
         className={`${classes.link} ${
           location.hash !== "" ? classes.opacity : ""

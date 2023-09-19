@@ -46,6 +46,10 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @media only screen and (max-width: 37.5em) {
+      max-height: 25rem;
+      overflow-y: scroll;
+    }
   }
 }
 

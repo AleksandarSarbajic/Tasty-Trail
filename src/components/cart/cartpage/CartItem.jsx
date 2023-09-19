@@ -1,6 +1,6 @@
 import classes from "../cartpage/CartItem.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { cartActions } from "../../../redux/cart-slice";
 
 export default function CartItem({ item }) {
