@@ -100,7 +100,6 @@ export default function Delivery(props) {
 
   return (
     <div className={classes.container}>
-      <h3 className={classes.heading}>Checkout</h3>
       <p className={classes.formHeading}>Shipping address</p>
       <Form className={classes.form}>
         <div className={classes.formBox}>

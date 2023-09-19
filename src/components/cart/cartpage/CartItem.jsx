@@ -1,51 +1,20 @@
-import { Form } from "react-router-dom";
 import classes from "../cartpage/CartItem.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../../redux/cart-slice";
-import { useState } from "react";
-import { useEffect } from "react";
-export default function CartItem({ item, check, addItem }) {
-  const [isChecked, setIsChecked] = useState(false);
+
+export default function CartItem({ item }) {
   const dispatch = useDispatch();
-  const selectedItems = useSelector((state) => state.cart.selectedItems);
+
   const lowerQuantityHandler = () => {
     dispatch(cartActions.addOneRemoveOne({ item, type: "lowerQuantity" }));
   };
   const raiseQuantityHandler = () => {
     dispatch(cartActions.addOneRemoveOne({ item, type: "raiseQuantity" }));
   };
-  useEffect(() => {
-    const existingItem = selectedItems.find(
-      (element) => element.name === item.name
-    );
-    if (check) {
-      setIsChecked(true);
-    } else {
-      setIsChecked(false);
-    }
-    if (existingItem) {
-      setIsChecked(true);
-    } else {
-      setIsChecked(false);
-    }
-  }, [check]);
-  const setIsCheckedHandler = () => {
-    setIsChecked(!isChecked);
 
-    addItem(item);
-    dispatch(cartActions.selectItems(item));
-  };
   return (
     <li className={classes.cartItem}>
-      <Form>
-        <input
-          type="checkbox"
-          className={classes.cartItemInput}
-          checked={isChecked}
-          onChange={setIsCheckedHandler}
-        />
-      </Form>
       <div className={classes.cartItemImage}>
         <img src={item.image} alt={item.name} loading="lazy" />
         <div className={classes.cartItemName}>

@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: 70% 1fr;
+  grid-template-rows: 5rem 1fr;
   gap: 5rem;
 }
 .items {

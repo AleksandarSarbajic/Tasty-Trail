@@ -1,10 +1,10 @@
-import { itemToBeAdded } from "./Items";
+import { itemToBeAdded } from "./AllItems";
 
 function AddItems() {
   async function addItemsHandler() {
     try {
       const res = await fetch(
-        `https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data/Restoraunts.json`,
+        `https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data/Markets.json`,
         {
           method: "PUT",
           body: JSON.stringify(itemToBeAdded),

@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import { useShowCart } from "../../customhooks/useShowCart";
 
 export default function CartButton() {
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const totalQuantity = useSelector((state) => state.cart.items);
   const { previewCartHandler } = useShowCart();
-  if (totalQuantity === 0) return <div className={classes.blank}>&nbsp;</div>;
+  if (totalQuantity.length === 0)
+    return <div className={classes.blank}>&nbsp;</div>;
 
   return (
     <li
@@ -27,7 +28,7 @@ export default function CartButton() {
       <button className={classes.button}>
         <AiOutlineShoppingCart className={classes.icon} />
         <span className={classes.text}>Cart</span>
-        <span className={classes.count}>{totalQuantity}</span>
+        <span className={classes.count}>{totalQuantity.length}</span>
       </button>
     </li>
   );

@@ -10,12 +10,15 @@ export default function TypesAll({ allData, searchData = [], heading }) {
   const filter = useSelector((state) => state.filter);
   const containsLocation =
     location.pathname.includes("restaraunts") ||
+    location.pathname.includes("markets") ||
     location.pathname.includes("search");
 
   const data =
     location.pathname.includes("restaraunts") ||
     location.pathname.includes("category")
       ? allData.Restoraunts
+      : location.pathname.includes("markets")
+      ? allData.Markets
       : searchData;
 
   const searchQuery = searchParams.get("type");
@@ -68,6 +71,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
           ? [...data].map((rest) => {
               return (
                 <TypesAllItem
+                  type={rest.type}
                   key={rest.name}
                   img={rest.image}
                   name={rest.name}
@@ -89,6 +93,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -110,6 +115,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -131,6 +137,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -149,6 +156,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -167,6 +175,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -192,6 +201,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               )
               .map((rest) => (
                 <TypesAllItem
+                  type={rest.type}
                   key={rest.name}
                   img={rest.image}
                   name={rest.name}
@@ -206,6 +216,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
             filter.sort === "Recommended"
           ? [...filteredRestaurants].map((rest) => (
               <TypesAllItem
+                type={rest.type}
                 key={rest.name}
                 img={rest.image}
                 name={rest.name}
@@ -232,6 +243,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -250,6 +262,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -277,6 +290,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}
@@ -295,6 +309,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
               .map((rest) => {
                 return (
                   <TypesAllItem
+                    type={rest.type}
                     key={rest.name}
                     img={rest.image}
                     name={rest.name}

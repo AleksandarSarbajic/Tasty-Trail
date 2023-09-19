@@ -7,6 +7,7 @@ import Delivery from "./Delivery";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Finish from "./Finish";
+import ProgressBar from "./ProgressBar";
 
 export default function ContainerCart() {
   const [inputs, setInputs] = useState({});
@@ -25,6 +26,7 @@ export default function ContainerCart() {
     <div className={classes.items}>
       {cart.length > 0 ? (
         <div className={classes.grid}>
+          <ProgressBar />
           {locataion.hash === "" ? (
             <Cart />
           ) : locataion.hash === "#checkout" ? (

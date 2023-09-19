@@ -1,16 +1,10 @@
 import { useSelector } from "react-redux";
 import classes from "../cartpage/CheckOutItems.module.scss";
 import { Form } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 export default function CheckOutItems() {
-  const selector = useSelector((state) => state.cart);
-  const [items, setItems] = useState(selector.selectedItems);
-  useEffect(() => {
-    if (selector.selectedItems.length === selector.items.length) {
-      setItems(selector.selectedItems);
-    }
-  }, []);
+  const items = useSelector((state) => state.cart.items);
+
   return (
     <div className={classes.check}>
       <p className={classes.checkHeading}>Your Order</p>
@@ -23,7 +17,6 @@ export default function CheckOutItems() {
                   src={item.image}
                   alt={item.name}
                   className={classes.checkItemImg}
-                  loading="lazy"
                 />
                 <div className={classes.checkItemText}>
                   <span className={classes.checkItemName}>{item.name}</span>

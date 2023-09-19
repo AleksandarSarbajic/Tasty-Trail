@@ -1,0 +1,34 @@
+.progress {
+  grid-column: 1/2;
+  display: flex;
+  gap: 3rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-size: 1.6rem;
+  color: #111;
+  // opacity: 0.5;
+}
+
+.number {
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #aaa;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.highlighted {
+  background-color: var(--primary-color--light--2);
+  color: #333;
+}
+.opacity {
+  opacity: 0.5;
+  font-weight: 500;
+}

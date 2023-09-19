@@ -1,198 +1,251 @@
 export const itemToBeAdded = [
   {
-    id: "e1fd0d61-5593-42c1-9cff-f0809c3fe53d",
+    id: "bf9835ab-76ff-41ce-9ff0-5ff0290859ba",
     averageOrder: 37.5,
     discount: "20%",
     food: [
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/613225787074fcf8a7150d26/93df9d4c-b125-11ed-b713-36674a11db31_double_original.jpeg?w=960",
-        ingredients:
-          "2x80g juneceg mesa, 2 x topljeni sir, senf, kiseli krastavcici, heinz kecap, luk",
-        name: "Double original smash",
-        price: 750,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/753b5678-b126-11ed-a413-d6eeb23acdd3_triple_original.jpeg?w=600",
-        ingredients:
-          "3x80g juneceg mesa, 3 x topljeni sir, senf, kiseli krastavcici, heinz kecap, luk",
-        name: "Triple original smash",
-        price: 890,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/7e6ed24c-b126-11ed-943a-aa4cc56ce020_double_jalapeno.jpeg?w=300",
-        ingredients:
-          "2x80g juneceg mesa, 2 x topljeni sir, jalapeno paprika, bbq sos,onion rings, iceberg, gorgonzola sos",
-        name: "Double Jalapeno smash",
-        price: 820,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/86597534-b126-11ed-817a-7e5bedf0b063_triple_jalapeno.jpeg?w=600",
-        ingredients:
-          "3x80g juneceg mesa, 3 x topljeni sir, jalapeno paprika, bbq sos,onion rings, iceberg, gorgonzola sos",
-        name: "Triple Jalapeno smash",
-        price: 890,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/8d9452b0-b126-11ed-8c4a-16b2a86b8a16_double_collina.jpeg?w=600",
-        ingredients:
-          "2x80g juneceg mesa, 2 x topljeni sir, burger sos, kiseli krastavcici, heinz kecap, iceberg salata",
-        name: "Double Collina smash",
-        price: 780,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/9469f2fc-b126-11ed-91ab-16a6e42eecad_triple_collina.jpeg?w=960",
-        ingredients:
-          "3x80g juneceg mesa, 3 x topljeni sir, burger sos, kiseli krastavcici, heinz kecap, iceberg salata",
-        name: "Triple Collina smash",
-        price: 890,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/9b32dc16-b126-11ed-adfc-f626667f0629_double_bacon.jpeg?w=960",
-        ingredients:
-          "2x80g juneceg mesa, 2 x topljeni sir,slanina, iceberg salata, sweet mayo sos, bbq sos",
-        name: "Double bacon smash",
-        price: 820,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/a412bb8a-b126-11ed-801b-2a4ce0b6f431_triple_bacon.jpeg?w=960",
-        ingredients:
-          "3x80g juneceg mesa, 3 x topljeni sir,slanina, iceberg salata, sweet mayo sos, bbq sos",
-        name: "Triple bacon smash",
-        price: 890,
-        type: "burger",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/bf0b0dfe-9cca-11ed-8ec5-86807e109c46_collina_fries_1.jpeg?w=960",
-        ingredients: "200g",
-        name: "Pomfrit",
-        price: 250,
-        type: "side-dish",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/c9660cea-9cca-11ed-a609-461ff3a670ec_collina_onion_rings_1.jpeg?w=960",
-        ingredients: "9 komada",
-        name: "Onion rings",
-        price: 250,
-        type: "side-dish",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/5c9be57a-9cb2-11ed-b910-bacd2ba7b9ca_pepsi_blue_330ml_sleekcan_wolt_1000x563px.jpeg?w=960",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/f1a652e0-5117-11ed-8fb3-8268b17e7cc3_myst_hero___space_grey.jpeg?w=960",
         ingredients: "",
-        name: "Pepsi 0.33l",
-        price: 250,
-        type: "non-alchocolic-beverages",
+        name: "Myst HERO Space Grey",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/649fa14e-9cb2-11ed-843c-46983861fae7_pepsi_max_330ml_sleekcan_wolt_1000x563px.jpeg?w=960",
-        ingredients: "Bez secera",
-        name: "Pepsi max 0.33l",
-        price: 250,
-        type: "non-alchocolic-beverages",
-      },
-      {
-        image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/6f2bbd28-9cb2-11ed-af90-f21f51717072_pepsi_mirinda_orange_330ml_sleekcan_wolt_1000x563px.jpeg?w=960",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/fbe658c2-5117-11ed-962c-727c00461841_myst_hero_mini___orange.jpeg?w=960",
         ingredients: "",
-        name: "Mirinda pomorandža 0.33l",
-        price: 240,
-        type: "non-alchocolic-beverages",
+        name: "Myst Hero MINI Orange",
+        price: 1500,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/7de027be-9cb2-11ed-a8fc-66c568a3447e_pepsi_7up_330ml_sleekcan_wolt_1000x563px.jpeg?w=960",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/1012d5be-5118-11ed-8956-2aea065efca8_myst_hero_mini___gray.jpeg?w=960",
         ingredients: "",
-        name: "7 UP 0.33l",
-        price: 240,
-        type: "non-alchocolic-beverages",
+        name: "Myst Hero MINI Gray",
+        price: 1500,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/84d15214-9cb2-11ed-a63b-d69b27a15a96_pepsi_evervess_bitter_lemon_330ml_sleekcan_wolt_1000x563px.jpeg?w=960",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/ed95aeac-b905-11ed-9beb-022b4cf8702e_myst_hero_aurora_blue.jpeg?w=960",
         ingredients: "",
-        name: "Evervess bitter lemon 0.33l",
-        price: 240,
-        type: "non-alchocolic-beverages",
+        name: "Myst HERO Aurora Blue",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/d0ee0c50-9cb2-11ed-998e-d69b27a15a96_knjazmilos_0.5_pet_1000x563.jpeg?w=960",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/f8d3290c-b905-11ed-ade5-4a0135b7a4dc_myst_hero_rose_gold.jpeg?w=960",
         ingredients: "",
-        name: "Kisela voda 0.5l",
-        price: 120,
-        type: "non-alchocolic-beverages",
+        name: "Myst HERO Rose Gold",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/e4210098-9cb2-11ed-aefd-d69b27a15a96_82bdfd6c_0cab_11ec_b089_72b273c96cae_salto_pale_ale.jpeg?w=960",
-        ingredients:
-          "5.7% alkohola. Nefiltrirani, nepasterizovani zlatno-žuti ejl sa puno aromatičnog hmelja",
-        name: "Salto pale ale 0.33l",
-        price: 390,
-        type: "alchocol",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/0107f2e2-b906-11ed-b704-7a73b184b298_myst_hero_desert_sunset.jpeg?w=960",
+        ingredients: "",
+        name: "Myst HERO Desert Sunset",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/fe21bf3c-9cb2-11ed-98d1-3a6337a646b6_dc54356c_0cab_11ec_8c75_82ac47dab590_belgrade.jpeg?w=960",
-        ingredients:
-          "6.5% alkohola. Cvetno-voćni buke skladnog karaktera koji se savršeno uklapa sa laganim karamelno-biskvitnim telom",
-        name: "Salto Belgrade IPA 0.33l",
-        price: 410,
-        type: "alchocol",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/0ac6e91e-b906-11ed-ac14-ca80d6a9097e_myst_hero_crystal_jade.jpeg?w=960",
+        ingredients: "",
+        name: "Myst HERO Crystal Jade",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/07fa24b8-9cb3-11ed-a199-f21f51717072_5e41550e_528f_11ec_87cd_4a1d74c98959_456000165_1l__2_.jpeg?w=960",
-        ingredients:
-          "4.9% alkohola, svetle, citrusne arome koje imaju završetak u slatkim notama",
-        name: "Salto wit 0.33l",
-        price: 410,
-        type: "alchocol",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/14e49356-b906-11ed-98fd-b6a391cfd13d_myst_hero_midnight_black.jpeg?w=960",
+        ingredients: "",
+        name: "Myst HERO Midnight Black",
+        price: 3000,
+        type: "E-CIGARETTES",
       },
       {
         image:
-          "https://imageproxy.wolt.com/menu/menu-images/63cffbca67142328d5d828ba/0e89b384-9cb3-11ed-9e68-ce903d0a361e_87918154_528f_11ec_845c_4a8730c87080_salto_stout_pivo_0_33_salto_stout_60840bd2e3aa3__2_.jpeg?w=960",
-        ingredients:
-          "5.5% alkohola, nalet slasnih nota mlečne čokolade, lešnika i kafe",
-        name: "Salto stout 0.33l",
-        price: 410,
-        type: "alchocol",
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/8cc67836-5118-11ed-b898-7e39ff46fe06_unipuff_midi_600___blue_razz.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 – Blue razz",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/95b963d6-5118-11ed-bf77-426ec429624c_unipuff_midi_600___lush_ice.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 – Lush ice",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/9d026c0a-5118-11ed-b04b-a2598ba64214_unipuff_midi_600___strawberry_burst.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 – Strawberry burst",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/a57ef344-5118-11ed-809a-be26dbbecb30_unipuff_midi_600___crisp_apple.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 – Crisp apple",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/ad78d1aa-5118-11ed-8d32-ee930d820bde_unipuff_midi_600___green_grape.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 – Green grape",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/5103c1a2-64c1-11ed-a107-523b23540ab5_unipuff_mind_banana.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Midi 600 - Banana",
+        price: 900,
+        type: "DISPOSABLE-E-CIGARETTES",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/aab1cb56-5119-11ed-bcbb-727c00461841_unipuff_zero_1200___ice_cola.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Zero 1200 - Ice Cola",
+        price: 1300,
+        type: "0%-NICOTINE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/b1ae61a8-5119-11ed-9310-aa50e4f228db_unipuff_zero_1200___mamba.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Zero 1200 - Mamba",
+        price: 1300,
+        type: "0%-NICOTINE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/bbc78f48-5119-11ed-a379-4eafdd90e394_unipuff_zero_1200___pink_lemonade.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Zero 1200 - Pink Lemonade",
+        price: 1300,
+        type: "0%-NICOTINE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/1964276a-511a-11ed-a200-36626884f5c2_unipuff_zero_1200___blue_razz.jpeg?w=960",
+        ingredients: "",
+        name: "Unipuff Zero 1200 - Blue Razz",
+        price: 1300,
+        type: "0%-NICOTINE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/1be7cd60-511b-11ed-a9ca-ee930d820bde_myst_hero_refreshing_hami_melon_pods_3_komada.jpeg?w=960",
+        ingredients: "",
+        name: "Myst Hero Refreshing hami melon pods",
+        price: 1500,
+        type: "MYST-HERO-CARTRIDGES-WITH-FLAVOR",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/238286d2-511b-11ed-9213-ee930d820bde_myst_hero_pineapple_passion_fruit_pods_3_komada.jpeg?w=960",
+        ingredients: "",
+        name: "Myst Hero Pineapple passion fruit pods",
+        price: 1500,
+        type: "MYST-HERO-CARTRIDGES-WITH-FLAVOR",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/2c2cb848-511b-11ed-896d-8e175081577e_myst_hero_minty_menthol_3_komada.jpeg?w=960",
+        ingredients: "",
+        name: "Myst Hero Minty Menthol",
+        price: 1500,
+        type: "MYST-HERO-CARTRIDGES-WITH-FLAVOR",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/37f2b5b0-511b-11ed-8916-1669d916ee95_myst_hero_coconut_latte_3_komada.jpeg?w=960",
+        ingredients: "",
+        name: "Myst Hero Coconut Latte",
+        price: 1500,
+        type: "MYST-HERO-CARTRIDGES-WITH-FLAVOR",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/c89f7048-511c-11ed-9caa-ba2ccb3eca0d_relx_pods___golden_slice.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Golden slice",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/84bb4d72-511f-11ed-a86b-4a08db4dd06c_relx_pods___gardens_heart.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Gardens heart",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/8b7c339c-511f-11ed-8ccb-4e864ca309c3_relx_pods___tangy_purple.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Tangy purple",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/a5f8b8a8-511f-11ed-ad66-6e6934e9b322_relx_pods___dark_sparkle.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Dark sparkle",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/e406359e-511f-11ed-a7db-a21f4d2abde5_relx_pods___menthol_plus.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Menthol plus",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
+      },
+      {
+        image:
+          "https://imageproxy.wolt.com/menu/menu-images/635121682748df36eecdfe03/eb320168-511f-11ed-9ff3-5aa241cc34f4_relx_pods___fresh_red.jpeg?w=960",
+        ingredients: "",
+        name: "Relx pods – Fresh red",
+        price: 1000,
+        type: "RELX-CARTRIDGES-WITH-TASTE",
       },
     ],
     image:
-      "https://imageproxy.wolt.com/venue/63cffb6c121bfc6a040f9389/65b5efe2-b1cb-11ed-81ec-5218838bdca4_2.jpg?w=1600",
-    link: "Collina-Burgers-&-Pancakes-Novi-Beograd",
-    location: "Novi Beograd",
-    name: "Collina Burgers & Pancakes Novi Beograd",
+      "https://imageproxy.wolt.com/venue/635102bc80e73622b19e00bf/e231ed66-5116-11ed-973c-aa50e4f228db_meni__1___1_.jpg?w=1600",
+    link: "Puffbar",
+    location: "Kralja Petra 36",
+    name: "Puffbar",
     order: "30-45",
     price: 160,
-    text: "Best burgers you can find!",
-    time: "08:00-23:30",
-    type: "Restoraunt",
+    text: "All in one place for your E-cigarettes",
+    time: "09:15-21:30",
+    type: "Market",
     types: [
-      "burger",
-      "french-fries",
-      "side-dish",
-      "non-alchocolic-beverages",
-      "alchocol",
+      "E-CIGARETTES",
+      "DISPOSABLE-E-CIGARETTES",
+      "0%-NICOTINE",
+      "MYST-HERO-CARTRIDGES-WITH-FLAVOR",
+      "RELX-CARTRIDGES-WITH-TASTE",
+      "ACCESSORIES",
     ],
   },
 ];
