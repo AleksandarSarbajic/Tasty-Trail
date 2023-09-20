@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 // import { useState } from "react";
 export default function CheckOut(props) {
   const cart = useSelector((state) => state.cart);
+  const { adress } = useSelector((state) => state.adress);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,6 +24,7 @@ export default function CheckOut(props) {
       // }
       // if (props.form?.email === props?.form.sameEmail) {
       // }
+      if (adress.length === 0) return;
       if (
         props.form?.name === "" ||
         props.form?.phone === "" ||
@@ -40,7 +42,7 @@ export default function CheckOut(props) {
         props.form?.email === props?.form.sameEmail
       ) {
         if (location.hash === "#checkout") {
-          navigate("#finish");
+          navigate("#overview");
         }
       } else {
         return;

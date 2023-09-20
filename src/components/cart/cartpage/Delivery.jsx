@@ -64,7 +64,6 @@ export default function Delivery(props) {
   }
 
   function onInputHandler() {
-    console.log(nameRef.current.value.length);
     if (nameRef.current.value.length === 0) {
       dispatchError({ type: "nameError", payload: true });
     } else {

@@ -1,15 +1,47 @@
 import { useSelector } from "react-redux";
 import classes from "../cartpage/Finish.module.scss";
 import { CiCircleCheck } from "react-icons/ci";
-export default function Finish(props) {
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+export default function Finish() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
+  const { adress } = useSelector((state) => state.adress);
+
   const currentDate = new Date();
+
+  const orderTime = [30, 45];
+
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
+
+  const timeOptions = {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false, // Use 12-hour format with AM/PM
+  };
+
+  useEffect(() => {
+    if (adress.length === 0) navigate("/cart");
+  }, [navigate, adress]);
+
+  useEffect(() => {
+    setCurrentTime(new Date());
+  }, []);
+
+  const addMinutes = (date, minutes) => {
+    return new Date(date.getTime() + minutes * 60000);
+  };
+
+  const updatedTimeFirst = addMinutes(currentTime, orderTime[0]);
+  const updatedTimeSecond = addMinutes(currentTime, orderTime[1]);
+
   const formattedDate = currentDate.toLocaleDateString(undefined, options);
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
@@ -18,6 +50,14 @@ export default function Finish(props) {
         <p className={classes.headerMessage}>
           The order confirmation has been sent to {formattedDate}
         </p>
+        <div className={classes.time}>
+          <span>Estimated time for Delivery: </span>
+          <div>
+            <span>{updatedTimeFirst.toLocaleTimeString([], timeOptions)}</span>{" "}
+            -{" "}
+            <span>{updatedTimeSecond.toLocaleTimeString([], timeOptions)}</span>
+          </div>
+        </div>
       </div>
       <div className={classes.box}>
         <h3 className={classes.boxHeading}>Transacation Date</h3>
