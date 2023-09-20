@@ -5,10 +5,18 @@ import TypesSlider from "../components/restoraunts/TypesSlider";
 import TypesAll from "../components/restoraunts/TypesAll";
 import Filter from "../components/restoraunts/Filter";
 import { useSelector } from "react-redux";
+import useDocumentTitle from "../customhooks/useDocumentTitle";
 
 export default function RestorauntsPage() {
-  const showFilter = useSelector((state) => state.filter.show);
   const location = useLocation();
+  console.log(location);
+  useDocumentTitle(
+    `${
+      location.pathname.includes("markets") ? "All Markets" : "All Restaurants"
+    }  | TastyTrail`
+  );
+
+  const showFilter = useSelector((state) => state.filter.show);
 
   const data = useLoaderData("restoraunts");
 

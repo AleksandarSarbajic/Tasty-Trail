@@ -6,8 +6,11 @@ import { json, useRouteLoaderData } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
+import useDocumentTitle from "../customhooks/useDocumentTitle";
 export default function Discovery() {
+  useDocumentTitle("Discover a Restaurant or Markets | TastyTrail");
   const data = useRouteLoaderData("discovery");
+
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -17,8 +20,6 @@ export default function Discovery() {
       behavior: "smooth",
     });
   }, [pathname]);
-
-  console.log(data);
 
   return (
     <>

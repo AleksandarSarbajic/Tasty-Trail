@@ -4,7 +4,7 @@ import CheckOutItems from "./CheckOutItems";
 import { useNavigate, useLocation } from "react-router-dom";
 // import { useState } from "react";
 export default function CheckOut(props) {
-  const { cart, adress } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
 
   const navigate = useNavigate();
   const location = useLocation();
