@@ -9,13 +9,15 @@ import useDocumentTitle from "../customhooks/useDocumentTitle";
 
 export default function RestorauntsPage() {
   const location = useLocation();
-  console.log(location);
+
   useDocumentTitle(
     `${
       location.pathname.includes("markets") ? "All Markets" : "All Restaurants"
     }  | TastyTrail`
   );
-
+  const heading = location.pathname.includes("markets")
+    ? "Markets"
+    : "Restaurants";
   const showFilter = useSelector((state) => state.filter.show);
 
   const data = useLoaderData("restoraunts");
@@ -23,10 +25,12 @@ export default function RestorauntsPage() {
   return (
     <>
       <StoreTypes />
-      <Header />
-      {location.search === "" ? <TypesSlider data={data} /> : null}
-      <TypesAll allData={data} heading={"Restaurants"} />
-      {showFilter && <Filter data={data.types} />}
+      <Header heading={heading} />
+      {location.search === "" ? (
+        <TypesSlider data={data} heading={heading} />
+      ) : null}
+      <TypesAll allData={data} heading={heading} />
+      {showFilter && <Filter data={data.types} type={heading} />}
     </>
   );
 }

@@ -90,7 +90,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     const { pageYOffset } = window;
 
     setScrollY(pageYOffset);
-    console.log(pageYOffset);
+
     if (pageYOffset >= startingPosition && isVisible) {
       setClassD({ fixed: classes.fixed, position: classes.position });
     } else {

@@ -21,6 +21,8 @@ function SearchForm() {
     setSearchText(e.target.value);
   }
 
+  const items = exportData.length > 5 ? exportData.slice(0, 5) : exportData;
+
   return (
     <Form
       className={classes.form}
@@ -66,19 +68,19 @@ function SearchForm() {
                 <div className={classes.itemsBox}>
                   {isLoading ? (
                     <LoadingSpinnerSmall state={isLoading} />
-                  ) : exportData.length === 0 ? (
+                  ) : items.length === 0 ? (
                     <p className={classes.empty}>
                       We didnt find anything, try typing something else 😀
                     </p>
                   ) : (
-                    exportData.map((item) => (
+                    items.map((item) => (
                       <SearchItem item={item} key={item.name} />
                     ))
                   )}
                 </div>
                 {!isLoading ? (
                   <div className={classes.showBox}>
-                    {exportData.length >= 5 ? (
+                    {exportData.length > 5 ? (
                       <Link
                         to={`/search?q=${searchText}`}
                         className={classes.showLink}

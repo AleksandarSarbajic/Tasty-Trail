@@ -5,7 +5,7 @@ function SearchItem({ item, close }) {
   return (
     <>
       <Link
-        to={`/Restaraunt/${item.link}`}
+        to={`/Restaurant/${item.link}`}
         className={classes.link}
         // onClick={() => close()}
       >

@@ -1,11 +1,11 @@
 import classes from "../restoraunts/TypesSlider.module.scss";
-import { useState } from "react";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 // import SliderMarketItem from "../discovery/SliderMarketItem";
 import TypesItem from "./TypesItem";
-export default function TypesSlider({ data: typesData }) {
+export default function TypesSlider({ data: typesData, heading }) {
   const data = typesData;
 
   const responsive = {
@@ -66,7 +66,7 @@ export default function TypesSlider({ data: typesData }) {
           infinite={true}
           responsive={responsive}
           containerClass="zindex"
-          autoPlay={true}
+          // autoPlay={true}
           customTransition="transform 1000ms ease-in-out"
           transitionDuration={1000}
           autoPlaySpeed={5000}
@@ -75,9 +75,13 @@ export default function TypesSlider({ data: typesData }) {
           customLeftArrow={<CustomLeftArrow />}
           removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
         >
-          {data.types.food.map((item) => {
-            return <TypesItem item={item} key={item.name} />;
-          })}
+          {heading === "Markets"
+            ? data.types.markets.map((item) => {
+                return <TypesItem item={item} key={item.name} type={heading} />;
+              })
+            : data.types.food.map((item) => {
+                return <TypesItem item={item} key={item.name} type={heading} />;
+              })}
         </Carousel>
       </div>
     </div>

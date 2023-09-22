@@ -16,7 +16,7 @@ export function useLoader(query, time = 1000) {
         }
         const data = await res.json();
 
-        const filteredData = await data.Restoraunts.filter((item) => {
+        const filteredRestaurants = await data.Restoraunts.filter((item) => {
           const types = item.types
             .map((item) => item.replace(/\s+/g, "").toLowerCase())
             .some((item) =>
@@ -38,7 +38,31 @@ export function useLoader(query, time = 1000) {
           return filteredArray;
         });
 
-        setExportData(filteredData);
+        const filteredMarkers = await data.Markets.filter((item) => {
+          const types = item.types
+            .map((item) => item.replace(/\s+/g, "").toLowerCase())
+            .some((item) =>
+              item.includes(query.replace(/\s+/g, "").toLowerCase())
+            );
+          const food = item.food
+            .map((item) => item.name.replace(/\s+/g, "").toLowerCase())
+            .some((item) =>
+              item.includes(query.replace(/\s+/g, "").toLowerCase())
+            );
+
+          const names = item.name
+            .replace(/\s+/g, "")
+            .toLowerCase()
+            .includes(query.replace(/\s+/g, "").toLowerCase());
+
+          const filteredArray = food || types || names;
+
+          return filteredArray;
+        });
+
+        const filteredItems = await filteredRestaurants.concat(filteredMarkers);
+
+        setExportData(filteredItems);
       } catch (error) {
         console.error(error.message);
       } finally {

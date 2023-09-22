@@ -23,7 +23,7 @@ export default function Aside(props) {
 
     // if (!animation) return;
 
-    navigate(`/Restaraunt/${props.content.link}`);
+    navigate(`/Restaurant/${props.content.link}`);
   }
 
   function clearAndMoveHandler(type) {

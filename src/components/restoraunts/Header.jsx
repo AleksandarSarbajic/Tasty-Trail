@@ -9,6 +9,9 @@ export default function Header({ heading = "Restaraunts" }) {
 
   const dispatch = useDispatch();
   const items = searchParams.get("filters");
+
+  const queryType = searchParams.get("type");
+
   function onClickHandler() {
     console.log(searchParams.get("filters"));
     if (searchParams.get("filters") !== null && filters.length === 0) {
@@ -23,7 +26,9 @@ export default function Header({ heading = "Restaraunts" }) {
   }
   return (
     <header className={classes.header}>
-      <h2 className={classes.heading}>{heading}</h2>
+      <h2 className={classes.heading}>
+        {queryType === null ? heading : queryType + " " + "close to you!"}
+      </h2>
       <button
         className={classes.button}
         onClick={() => {

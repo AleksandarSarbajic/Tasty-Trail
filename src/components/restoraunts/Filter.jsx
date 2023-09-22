@@ -5,11 +5,14 @@ import { filterActions } from "../../redux/filter-slice";
 import { useState } from "react";
 import FilterItem from "./FilterItem";
 import { useSearchParams } from "react-router-dom";
-export default function Filter({ data }) {
+export default function Filter({ data: allData, type }) {
   const { sort, itemsToBeFiltered } = useSelector((state) => state.filter);
   const [value, setValue] = useState(sort);
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
+
+  const data = type === "Markets" ? allData.markets : allData.food;
+  console.log(data);
   function onClickHandler() {
     dispatch(filterActions.setFilter());
     dispatch(filterActions.showFilter(false));
@@ -50,7 +53,7 @@ export default function Filter({ data }) {
         </nav>
         <p className={classes.heading}>Filter</p>
         <div className={classes.grid}>
-          {data.food.map((item) => (
+          {data.map((item) => (
             <FilterItem
               key={item.name}
               type={item.name}

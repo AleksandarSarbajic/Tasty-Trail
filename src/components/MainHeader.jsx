@@ -30,9 +30,7 @@ export default function MainHeader() {
   }, []);
 
   useEffect(() => {
-    //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
 
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
@@ -48,7 +46,10 @@ export default function MainHeader() {
       )}
       <header
         className={`${classes.header} ${scrollY > 150 ? classes.fixed : ""} ${
-          location.pathname.includes("/Restaraunt") && classes.bg
+          location.pathname.includes("/Restaurant") ||
+          location.pathname.includes("/Market")
+            ? classes.bg
+            : ""
         }`}
       >
         <nav className={`${classes.nav}`}>
