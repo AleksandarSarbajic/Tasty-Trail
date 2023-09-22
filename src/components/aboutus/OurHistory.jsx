@@ -19,7 +19,7 @@ function OurHistory() {
                 <p className={classes.boxHeading}>The start of the project</p>
               </div>
               <div className={classes["history-img-text"]}>
-                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
+                <img src="Kfc_logo.webp" alt="ship" className={classes.img} />
                 <p className={classes.text}>
                   The first idea about the project started back in 2020 because
                   of the covid. In that hard times idea was lost, and it was
@@ -43,7 +43,7 @@ function OurHistory() {
                   released to public. At first we were thinking about that our
                   company was gona fail, but huge amount of users suprised us
                 </p>
-                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
+                <img src="Kfc_logo.webp" alt="ship" className={classes.img} />
               </div>
             </div>
             <div
@@ -63,22 +63,22 @@ function OurHistory() {
 
               <div className={classes["history-images"]}>
                 <img
-                  src="McDonalds-Logo.png"
+                  src="McDonalds-Logo.webp"
                   alt="Companies logo"
                   className={classes.img}
                 />
                 <img
-                  src="Kfc_logo.png"
+                  src="Kfc_logo.webp"
                   alt="Companies logo"
                   className={classes.img}
                 />
                 <img
-                  src="Burger-King-Logo-1994.png"
+                  src="Burger-King-Logo-1994.webp"
                   alt="Companies logo"
                   className={classes.img}
                 />
                 <img
-                  src="starbucks-logo.png"
+                  src="starbucks-logo.webp"
                   alt="Companies logo"
                   className={classes.img}
                 />
@@ -100,7 +100,12 @@ function OurHistory() {
                   but we thought a lot about it and it was a very good route to
                   go.
                 </p>
-                <img src="Kfc_logo.png" alt="ship" className={classes.img} />
+                <img
+                  src="Kfc_logo.webp
+                "
+                  alt="ship"
+                  className={classes.img}
+                />
               </div>
             </div>
           </div>

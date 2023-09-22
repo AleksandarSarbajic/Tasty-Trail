@@ -52,8 +52,8 @@ export default function Hero() {
           There are more than a thousand stores available to place food orders
           from!
         </p>
-        <img className={`${classes.left} ${cloud}`} src="/cloud.png" />
-        <img className={`${classes.right} ${cloud}`} src="/cloud.png" />
+        <img className={`${classes.left} ${cloud}`} src="/cloud.webp" />
+        <img className={`${classes.right} ${cloud}`} src="/cloud.webp" />
       </div>
     </section>
   );

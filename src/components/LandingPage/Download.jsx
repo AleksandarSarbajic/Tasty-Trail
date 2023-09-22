@@ -22,7 +22,7 @@ export default function Download() {
             Order fresh food right now!
           </Link>
         </div>
-        <img src="/icons8-barcode-64.png" className={classes.promoimg} />
+        <img src="/icons8-barcode-64.webp" className={classes.promoimg} />
         <p className={classes.code}>
           <span className={classes.circle}></span> #36C8E3
         </p>

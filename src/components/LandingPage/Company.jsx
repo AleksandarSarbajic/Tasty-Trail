@@ -17,7 +17,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"/McDonalds-Logo.png"}
+            src={"/McDonalds-Logo.webp"}
             alt={"McDonald's"}
             className={classes.image}
             loading="lazy"
@@ -43,7 +43,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"/Kfc_logo.png"}
+            src={"/Kfc_logo.webp"}
             alt={"KFC"}
             className={classes.image}
             loading="lazy"
@@ -69,7 +69,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"/starbucks-logo.png"}
+            src={"/starbucks-logo.webp"}
             alt={"StarBucks"}
             className={classes.bucks}
             loading="lazy"
@@ -95,7 +95,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"/Burger-King-Logo-1994.png"}
+            src={"/Burger-King-Logo-1994.webp"}
             alt={"BurgerKing"}
             className={classes.image}
           />

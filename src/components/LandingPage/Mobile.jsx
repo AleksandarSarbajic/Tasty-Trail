@@ -13,19 +13,19 @@ const info = [
     number: 1,
     text: "Never again waste time thinking about what to eat! Omnifood AI will create a 100% personalized weekly meal plan just for you. It makes sure you get all the nutrients and vitamins you need, no matter what diet you follow!",
     heading: "Find the perfect food for you",
-    img: "/app-screen-1.png",
+    img: "/app-screen-1.webp",
   },
   {
     number: 2,
     text: "Once per week, approve the meal plan generated for you by Omnifood AI. You can change ingredients, swap entire meals, or even add your own recipes!",
     heading: "Go to cart and check your order",
-    img: "/app-screen-2.png",
+    img: "/app-screen-2.webp",
   },
   {
     number: 3,
     text: "Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!",
     heading: "Order your food, and it will be at your place in 10 minutes",
-    img: "/app-screen-3.png",
+    img: "/app-screen-3.webp",
   },
 ];
 const reducer = (payload, action) => {
@@ -110,13 +110,10 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     if (pageYOffset >= thirdItem[0] && pageYOffset <= thirdItem[1]) {
       setUserInfo({ type: "THIRD" });
     }
-    // console.log(pageYOffset);
   }, [closePosition, isVisible, secondItem, startingPosition, thirdItem]);
 
   useEffect(() => {
-    //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
 
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
@@ -147,8 +144,6 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               className={classes.img}
               alt="Image of our app on the phone"
             />
-            {/* <img src="/public/app-screen-2.png" />
-        <img src="/public/app-screen-3.png" /> */}
           </div>
         </div>
       </div>
@@ -171,12 +166,9 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               className={classes.img}
               alt="Image of our app on the phone"
             />
-            {/* <img src="/public/app-screen-2.png" />
-        <img src="/public/app-screen-3.png" /> */}
           </div>
         </div>
       </div>
-      {/* <div className={classes.height}></div> */}
     </>
   );
 });
