@@ -55,36 +55,21 @@ const cartSlice = createSlice({
       const existingItem = state.items.find(
         (items) => items.name === item.name
       );
-      const existingItemSelected = state.selectedItems.find(
-        (items) => items.name === item.name
-      );
-      console.log(existingItemSelected);
+
       if (type === "lowerQuantity") {
         state.totalPrice = state.totalPrice - item.price;
         state.totalQuantity = state.totalQuantity - 1;
         existingItem.quantity = existingItem.quantity - 1;
         existingItem.totalPrice = existingItem.totalPrice - item.price;
-        if (existingItemSelected) {
-          existingItemSelected.quantity = existingItemSelected.quantity - 1;
-          existingItemSelected.totalPrice =
-            existingItemSelected.totalPrice - item.price;
-        }
+
         if (existingItem.quantity === 0) {
           state.items = state.items.filter((items) => items.name !== item.name);
-          state.selectedItems = state.selectedItems.filter(
-            (items) => items.name !== item.name
-          );
         }
       } else {
         state.totalPrice = state.totalPrice + item.price;
         state.totalQuantity = state.totalQuantity + 1;
         existingItem.quantity = existingItem.quantity + 1;
         existingItem.totalPrice = existingItem.totalPrice + item.price;
-        if (existingItemSelected) {
-          existingItemSelected.quantity = existingItemSelected.quantity + 1;
-          existingItemSelected.totalPrice =
-            existingItemSelected.totalPrice + item.price;
-        }
       }
     },
     removeAllItems: (state) => {
@@ -92,8 +77,6 @@ const cartSlice = createSlice({
       state.totalQuantity = 0;
       state.totalPrice = 0;
       state.changed = false;
-      state.selectedItems = [];
-      state.totalPriceSelected = 0;
     },
   },
 });
