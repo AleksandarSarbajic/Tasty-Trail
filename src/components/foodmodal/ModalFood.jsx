@@ -9,7 +9,7 @@ export default function FoodModal(props) {
   const located = useLocation();
   function onCloseHandler() {
     console.log(located);
-    navigate(`/Restaraunt/${props.item.link}`);
+    navigate(`/${props.item.type}/${props.item.link}`);
   }
   return (
     <>

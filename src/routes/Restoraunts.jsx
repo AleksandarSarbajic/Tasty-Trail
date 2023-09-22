@@ -25,7 +25,7 @@ export default function RestorauntsPage() {
       <StoreTypes />
       <Header />
       {location.search === "" ? <TypesSlider data={data} /> : null}
-      <TypesAll allData={data} heading={"Restaraunts"} />
+      <TypesAll allData={data} heading={"Restaurants"} />
       {showFilter && <Filter data={data.types} />}
     </>
   );

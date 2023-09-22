@@ -1,16 +1,28 @@
 import FoodContent from "../components/foodmodal/FoodContent";
 import FoodModal from "../components/foodmodal/ModalFood";
-import { json, useRouteLoaderData, useParams } from "react-router-dom";
+import {
+  json,
+  useRouteLoaderData,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 
-export default function Food() {
-  const data = useRouteLoaderData("food");
+export default function Food({ type = "food" }) {
+  const data = useRouteLoaderData(type);
   const params = useParams();
+  const location = useLocation();
+  console.log(data);
+  const filteredItem = location.pathname.includes("Market")
+    ? data.Markets.find((food) => food.link === params.id)
+    : data.Restoraunts.find((food) => food.link === params.id);
 
-  const filteredItem = data.Restoraunts.find((food) => food.link === params.id);
-
-  const filteredRestoraunts = data.Restoraunts.find(
-    (food) => food.link === params.id
-  ).food.find((item) => item.name === params.food);
+  const filteredRestoraunts = location.pathname.includes("Market")
+    ? data.Markets.find((food) => food.link === params.id).food.find(
+        (item) => item.name === params.food
+      )
+    : data.Restoraunts.find((food) => food.link === params.id).food.find(
+        (item) => item.name === params.food
+      );
 
   return (
     <FoodModal item={filteredItem}>

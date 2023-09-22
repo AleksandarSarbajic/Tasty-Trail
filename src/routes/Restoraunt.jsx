@@ -9,7 +9,7 @@ export default function Restoraunt() {
   const restoraunt = loading.Restoraunts.find((store) => {
     return store.link === params.id;
   });
-  console.log(restoraunt);
+
   useDocumentTitle(`${restoraunt.name} | TastyTrail`);
   return (
     <>

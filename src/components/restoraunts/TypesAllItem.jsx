@@ -6,7 +6,7 @@ export default function TypesAllItem(props) {
 
   return (
     <Link
-      to={`/${props.type === "Market" ? "Market" : "Restaraunt"}/${props.link}`}
+      to={`/${props.type === "Market" ? "Market" : "Restaurant"}/${props.link}`}
       className={classes.item}
     >
       <div className={classes.container}>

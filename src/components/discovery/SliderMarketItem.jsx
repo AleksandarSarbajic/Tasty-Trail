@@ -3,7 +3,7 @@ import classes from "../discovery/SliderMarketItem.module.scss";
 import { Link } from "react-router-dom";
 export default function SliderMarketItem({ store }) {
   return (
-    <Link to={`/Restoraunt/${store.link}`}>
+    <Link to={`/Restaurant/${store.link}`}>
       <div className={classes.border}>
         <img src={store.image} className={classes.img} />
       </div>

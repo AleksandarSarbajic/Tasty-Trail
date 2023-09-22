@@ -19,6 +19,7 @@ import RestorauntsPage, {
 import Aboutus from "./routes/Aboutus";
 import HowItWorks from "./routes/HowItWorks";
 import Search, { loader as searchLoader } from "./routes/Search";
+import Market, { loader as marketsLoader } from "./routes/Market";
 
 const router = createBrowserRouter([
   {
@@ -30,19 +31,33 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "/Restaraunt",
+        path: "/Restaurant",
         element: <p>TEST TEST TEST</p>,
       },
       {
-        path: "/Restaraunt/:id",
+        path: "/Restaurant/:id",
         id: "restoraunt",
         element: <Restoraunt />,
         loader: RestorauntLoader,
         children: [
           {
-            path: "/Restaraunt/:id/:food",
+            path: "/Restaurant/:id/:food",
             id: "food",
             element: <Food />,
+            loader: foodLoader,
+          },
+        ],
+      },
+      {
+        path: "/Market/:id",
+        id: "market",
+        element: <Market />,
+        loader: marketsLoader,
+        children: [
+          {
+            path: "/Market/:id/:food",
+            id: "component",
+            element: <Food type={"component"} />,
             loader: foodLoader,
           },
         ],

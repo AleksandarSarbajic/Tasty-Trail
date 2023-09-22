@@ -4,7 +4,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    selectedItems: [],
+    secondItems: [],
     totalQuantity: 0,
     totalPrice: 0,
     totalPriceSelected: 0,
@@ -94,35 +94,6 @@ const cartSlice = createSlice({
       state.changed = false;
       state.selectedItems = [];
       state.totalPriceSelected = 0;
-    },
-    selectItems: (state, action) => {
-      const items = action.payload;
-
-      if (items.length > 1 || items.length === 0) {
-        state.selectedItems = items;
-      } else {
-        const existingItem = state.selectedItems.find(
-          (element) => element.name === items.name
-        );
-        if (!existingItem) {
-          state.totalPriceSelected =
-            state.totalPriceSelected + items.totalPrice;
-          state.selectedItems.push({
-            name: items.name,
-            price: items.price,
-            quantity: items.quantity,
-            totalPrice: items.totalPrice,
-            image: items.image,
-            ingredients: items.ingredients,
-          });
-        } else {
-          state.totalPriceSelected =
-            state.totalPriceSelected - existingItem.totalPrice;
-          state.selectedItems = state.selectedItems.filter(
-            (element) => element.name !== items.name
-          );
-        }
-      }
     },
   },
 });

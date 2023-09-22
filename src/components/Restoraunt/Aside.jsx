@@ -10,7 +10,7 @@ export default function Aside(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const queryParams = searchParams.get("typeQuery");
+  // const queryParams = searchParams.get("typeQuery");
   const cuttedHash = location.hash.slice(1);
   const dispatch = useDispatch();
 

@@ -8,12 +8,13 @@ export default function FoodContent({ foodItem, item }) {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
   const filter = items.find((item) => item.name === foodItem.name);
+
   const [orderNumber, setOrderNumber] = useState(filter ? filter.quantity : 1);
   const [totalPrice, setTotalPrice] = useState(
     filter ? filter.totalPrice : foodItem.price
   );
   const navigate = useNavigate();
-  console.log(item);
+
   function addOrderNumberHandler(decision) {
     if (orderNumber === 1 && decision === "-" && !filter) {
       return;
@@ -36,7 +37,7 @@ export default function FoodContent({ foodItem, item }) {
     } else {
       dispatch(cartActions.addToCart(newItem));
     }
-    navigate(`/Restaraunt/${item.link}`);
+    navigate(`/${item.type}/${item.link}`);
   }
 
   return (
