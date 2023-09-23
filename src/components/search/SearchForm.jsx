@@ -85,7 +85,7 @@ function SearchForm() {
                         to={`/search?q=${searchText}`}
                         className={classes.showLink}
                       >
-                        Display of all 14 results
+                        Display of all {exportData.length} results
                       </Link>
                     ) : null}
                     <Link to={"/"} className={classes.showSort}>

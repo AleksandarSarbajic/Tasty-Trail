@@ -6,8 +6,46 @@
 .absolute {
   position: absolute;
   width: 100%;
-  top: -85%;
+  top: -35%;
+  left: 0%;
+  transform: translate(0%, -40%);
+
   z-index: -1;
+  @media only screen and (max-width: 100em) {
+    top: -30%;
+
+    transform: translate(0%, -30%);
+  }
+  @media only screen and (max-width: 75em) {
+    top: -25%;
+
+    transform: translate(0%, -25%);
+  }
+  @media only screen and (max-width: 62.5em) {
+    top: -20%;
+
+    transform: translate(0%, -20%);
+  }
+  @media only screen and (max-width: 50em) {
+    top: -10%;
+
+    transform: translate(0%, -10%);
+  }
+  @media only screen and (max-width: 40em) {
+    top: -5%;
+
+    transform: translate(0%, -5%);
+  }
+  @media only screen and (max-width: 40em) {
+    top: 0%;
+
+    transform: translate(0%, 0%);
+  }
+  @media only screen and (max-width: 31.25em) {
+    top: 5%;
+
+    transform: translate(0%, 5%);
+  }
 }
 .img {
   width: 100%;

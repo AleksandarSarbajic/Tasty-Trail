@@ -1,5 +1,5 @@
 import classes from "../cartpage/Cart.module.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { BsTrash3 } from "react-icons/bs";
 
