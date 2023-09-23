@@ -1,19 +1,27 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "../cartpage/Finish.module.scss";
 import { CiCircleCheck } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { cartActions } from "../../../redux/cart-slice";
 export default function Finish() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const { adress } = useSelector((state) => state.adress);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const checkOutItems =
     cart.selected === "first"
       ? cart.items
       : cart.selected === "second"
       ? cart.secondItems
       : cart.items.concat(cart.secondItems);
+
+  const delivery =
+    [...new Set(checkOutItems.map((item) => item.company))].length * 160;
+
   const currentDate = new Date();
 
   const orderTime = [30, 45];
@@ -27,7 +35,7 @@ export default function Finish() {
   const timeOptions = {
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false, // Use 12-hour format with AM/PM
+    hour12: false,
   };
 
   useEffect(() => {
@@ -46,6 +54,11 @@ export default function Finish() {
   const updatedTimeSecond = addMinutes(currentTime, orderTime[1]);
 
   const formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  function onClickHandler() {
+    dispatch(cartActions.removeAllItems());
+    navigate("/discovery");
+  }
 
   return (
     <div className={classes.container}>
@@ -119,7 +132,10 @@ export default function Finish() {
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Delivery</p>
-        <p className={classes.checkOutText}> 160 rsd </p>
+        <p className={classes.checkOutText}>
+          {delivery}
+          rsd
+        </p>
       </div>
 
       <div className={classes.checkOut}>
@@ -127,14 +143,16 @@ export default function Finish() {
         <p className={classes.checkOutPrice}>
           {" "}
           {cart.selected === "first"
-            ? cart.totalPrice
+            ? cart.totalPrice + delivery
             : cart.selected === "second"
-            ? cart.totalPriceSecond
-            : cart.totalPrice + cart.totalPriceSecond}{" "}
+            ? cart.totalPriceSecond + delivery
+            : cart.totalPrice + cart.totalPriceSecond + delivery}{" "}
           RSD
         </p>
       </div>
-      <button className={classes.button}>Continue ordering food</button>
+      <button className={classes.button} onClick={onClickHandler}>
+        Continue ordering food
+      </button>
     </div>
   );
 }

@@ -39,14 +39,21 @@ export default function FoodContent({ foodItem, item }) {
       quantity: orderNumber,
       totalPrice,
       type: item.type,
+      delivery: item.price,
+      company: item.name,
     };
-    console.log(item.type);
+    console.log(item);
     if (orderNumber === 0) {
       dispatch(
         cartActions.removeFromCart({ name: foodItem.name, type: item.type })
       );
     } else {
-      dispatch(cartActions.addToCart({ item: newItem, type: item.type }));
+      dispatch(
+        cartActions.addToCart({
+          item: newItem,
+          type: item.type,
+        })
+      );
     }
 
     navigate(`/${item.type}/${item.link}`);

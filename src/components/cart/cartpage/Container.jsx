@@ -47,7 +47,12 @@ export default function ContainerCart() {
       ) : (
         <EmptyItems />
       )}
-      {locataion.hash === "#overview" && items.length !== 0 ? <Finish /> : ""}
+      {locataion.hash === "#overview" &&
+      (items.length !== 0 || secondItems.length !== 0) ? (
+        <Finish />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

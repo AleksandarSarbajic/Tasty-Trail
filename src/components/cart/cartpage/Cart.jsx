@@ -28,7 +28,7 @@ export default function Cart() {
 
   return (
     <div className={classes.cart}>
-      {secondItems.length !== 0 && (
+      {secondItems.length > 0 && items.length > 0 ? (
         <div className={classes.form}>
           <input
             type="checkbox"
@@ -39,6 +39,8 @@ export default function Cart() {
           />
           <h4 className={classes.heading}>First Cart</h4>
         </div>
+      ) : (
+        ""
       )}
       <ul className={classes.list}>
         <li className={classes.item}>
@@ -49,7 +51,7 @@ export default function Cart() {
         {items.map((item) => {
           return <CartItem key={item.name} item={item} />;
         })}
-        {secondItems.length > 0 ? (
+        {secondItems.length > 0 && items.length > 0 ? (
           <>
             <div className={classes.form}>
               <input

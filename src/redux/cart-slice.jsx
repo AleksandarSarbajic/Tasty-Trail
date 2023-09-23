@@ -34,6 +34,8 @@ const cartSlice = createSlice({
             image: newItem.image,
             ingredients: newItem.ingredients,
             type: newItem.type,
+            delivery: newItem.delivery,
+            company: newItem.company,
           });
         } else {
           state.totalPrice =
@@ -61,6 +63,8 @@ const cartSlice = createSlice({
             image: newItem.image,
             ingredients: newItem.ingredients,
             type: newItem.type,
+            delivery: newItem.delivery,
+            company: newItem.company,
           });
         } else {
           state.totalPriceSecond =
@@ -137,10 +141,28 @@ const cartSlice = createSlice({
       }
     },
     removeAllItems: (state) => {
-      state.items = [];
-      state.totalQuantity = 0;
-      state.totalPrice = 0;
-      state.changed = false;
+      state.selected === "first";
+      if (state.selected === "first") {
+        state.items = [];
+        state.totalQuantity = 0;
+        state.totalPrice = 0;
+        state.changed = false;
+      }
+      if (state.selected === "second") {
+        state.secondItems = [];
+        state.totalQuantitySecond = 0;
+        state.totalPriceSecond = 0;
+        state.changed = false;
+      }
+      if (state.selected === "both") {
+        state.items = [];
+        state.secondItems = [];
+        state.totalQuantity = 0;
+        state.totalQuantitySecond = 0;
+        state.totalPrice = 0;
+        state.totalPriceSecond = 0;
+        state.changed = false;
+      }
     },
     setSelectedCart: (state, action) => {
       state.selected = action.payload;

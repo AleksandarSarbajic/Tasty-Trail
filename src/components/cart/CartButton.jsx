@@ -8,7 +8,7 @@ export default function CartButton() {
   const { items, secondItems } = useSelector((state) => state.cart);
   const location = useLocation();
   const { previewCartHandler } = useShowCart();
-  console.log(secondItems.length);
+
   if (
     (items.length === 0 && secondItems.length === 0) ||
     location.pathname === "/cart"
