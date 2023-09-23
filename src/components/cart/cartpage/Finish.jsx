@@ -35,7 +35,7 @@ export default function Finish() {
   const timeOptions = {
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hour12: true,
   };
 
   useEffect(() => {

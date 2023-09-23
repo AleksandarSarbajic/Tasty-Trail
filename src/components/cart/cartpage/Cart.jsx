@@ -27,56 +27,58 @@ export default function Cart() {
   }, [dispatch, firstCart, secondCart]);
 
   return (
-    <div className={classes.cart}>
-      {secondItems.length > 0 && items.length > 0 ? (
-        <div className={classes.form}>
-          <input
-            type="checkbox"
-            value={firstCart}
-            onChange={() => {
-              setFirstCart((value) => !value);
-            }}
-          />
-          <h4 className={classes.heading}>First Cart</h4>
-        </div>
-      ) : (
-        ""
-      )}
-      <ul className={classes.list}>
-        <li className={classes.item}>
-          <p>Product</p>
-          <p className={classes.quantity}>Quantity</p>
-          <p>Price</p>
-        </li>
-        {items.map((item) => {
-          return <CartItem key={item.name} item={item} />;
-        })}
+    <>
+      <div className={classes.cart}>
         {secondItems.length > 0 && items.length > 0 ? (
-          <>
-            <div className={classes.form}>
-              <input
-                type="checkbox"
-                value={secondCart}
-                onChange={() => {
-                  setSecondCart((value) => !value);
-                }}
-              />
-              <h4 className={classes.heading}>Second Cart</h4>
-            </div>
-
-            <li className={classes.item}>
-              <p>Product</p>
-              <p className={classes.quantity}>Quantity</p>
-              <p>Price</p>
-            </li>
-          </>
+          <div className={classes.form}>
+            <input
+              type="checkbox"
+              value={firstCart}
+              onChange={() => {
+                setFirstCart((value) => !value);
+              }}
+            />
+            <h4 className={classes.heading}>First Cart</h4>
+          </div>
         ) : (
           ""
         )}
-        {secondItems.map((item) => {
-          return <CartItem key={item.name} item={item} />;
-        })}
-      </ul>
-    </div>
+        <ul className={classes.list}>
+          <li className={classes.item}>
+            <p>Product</p>
+            <p className={classes.quantity}>Quantity</p>
+            <p>Price</p>
+          </li>
+          {items.map((item) => {
+            return <CartItem key={item.name} item={item} />;
+          })}
+          {secondItems.length > 0 && items.length > 0 ? (
+            <>
+              <div className={classes.form}>
+                <input
+                  type="checkbox"
+                  value={secondCart}
+                  onChange={() => {
+                    setSecondCart((value) => !value);
+                  }}
+                />
+                <h4 className={classes.heading}>Second Cart</h4>
+              </div>
+
+              <li className={classes.item}>
+                <p>Product</p>
+                <p className={classes.quantity}>Quantity</p>
+                <p>Price</p>
+              </li>
+            </>
+          ) : (
+            ""
+          )}
+          {secondItems.map((item) => {
+            return <CartItem key={item.name} item={item} />;
+          })}
+        </ul>
+      </div>
+    </>
   );
 }
