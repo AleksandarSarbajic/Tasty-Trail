@@ -8,7 +8,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useShowCart } from "../../customhooks/useShowCart";
 export default function CartPreview() {
   const [maxMoney, setMaxMoney] = useState(0);
-  const { items, totalPrice, secondItems } = useSelector((state) => state.cart);
+  const { items, secondItems, totalPrice, totalPriceSecond } = useSelector(
+    (state) => state.cart
+  );
   const { isShown, previewCartHandler } = useShowCart();
 
   useEffect(() => {
@@ -66,6 +68,8 @@ export default function CartPreview() {
                   ? classes.height
                   : secondItems.length === 1
                   ? classes.heightOneAndHalf
+                  : secondItems.length > 1 && items.length === 1
+                  ? classes.heightHalf
                   : ""
               } ${
                 items.length === 1 && secondItems.length === 1
@@ -90,6 +94,8 @@ export default function CartPreview() {
                   ? classes.height
                   : items.length === 1
                   ? classes.heightOneAndHalf
+                  : items.length > 1 && secondItems.length === 1
+                  ? classes.heightHalf
                   : ""
               } ${classes.flex}
               
@@ -116,9 +122,22 @@ export default function CartPreview() {
           >
             Go to cart
           </Link>
-          <p className={classes.total}>
-            Total: <span>{totalPrice} rsd</span>
-          </p>
+          <div className={classes.totalBox}>
+            {items.length > 0 ? (
+              <p className={classes.total}>
+                Restaurants Total: <span>{totalPrice} rsd</span>
+              </p>
+            ) : (
+              ""
+            )}
+            {secondItems.length > 0 ? (
+              <p className={classes.total}>
+                Markets Total: <span>{totalPriceSecond} rsd</span>
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
     </>

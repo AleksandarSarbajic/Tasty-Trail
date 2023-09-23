@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import classes from "./SearchItem.module.scss";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 function SearchItem({ item, close }) {
+  console.log(item);
   return (
     <>
       <Link
-        to={`/Restaurant/${item.link}`}
+        to={`/${item.type}/${item.link}`}
         className={classes.link}
         // onClick={() => close()}
       >

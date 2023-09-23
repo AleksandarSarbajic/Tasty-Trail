@@ -112,13 +112,22 @@
 }
 .total {
   font-size: 2rem;
+
+  &Box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   span {
     color: var(--primary-color);
   }
+
   @media only screen and (max-width: 50em) {
     font-size: 3rem;
   }
 }
+
 .finish {
   display: inline-block;
   font-size: 1.8rem;
