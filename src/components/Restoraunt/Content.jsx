@@ -20,13 +20,13 @@ import { searchActions } from "../../redux/search-slice";
 export default function Content({ content }) {
   const searchText = useSelector((state) => state.search.search);
   const dispatch = useDispatch();
+  const location = useLocation();
   const { exportData, isLoading } = useSearchInItem(
     searchText,
     100,
-    "/Restoraunts",
+    location.pathname.includes("Market") ? "/Markets" : "/Restoraunts",
     content.name
   );
-  const location = useLocation();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search");
@@ -38,6 +38,8 @@ export default function Content({ content }) {
 
     setScrollY(pageYOffset);
   }, []);
+
+  console.log(exportData);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll, { passive: true });

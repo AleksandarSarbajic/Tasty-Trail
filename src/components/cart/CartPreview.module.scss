@@ -14,7 +14,7 @@
   border-bottom-left-radius: 10px;
   opacity: 0;
   visibility: hidden;
-  height: 45rem;
+  height: 50rem;
   justify-content: space-between;
   @media only screen and (max-width: 50em) {
     position: fixed;
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 25rem;
+  height: 12.5rem;
   overflow: auto;
   scrollbar-gutter: initial;
   scrollbar-width: thin;
@@ -56,7 +56,26 @@
     border-radius: 2px;
   }
   @media only screen and (max-width: 50em) {
-    height: 50dvh;
+    height: 30dvh;
+  }
+}
+
+.height {
+  &Half {
+    height: 5rem;
+    @media only screen and (max-width: 50em) {
+      height: 20dvh;
+    }
+  }
+  &OneAndHalf {
+    height: 20rem;
+    @media only screen and (max-width: 50em) {
+      height: 30dvh;
+    }
+  }
+  height: 31rem;
+  @media only screen and (max-width: 50em) {
+    height: 70dvh;
   }
 }
 .img {
@@ -70,11 +89,15 @@
   text-align: center;
 }
 .heading {
-  font-size: 2.4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   @media only screen and (max-width: 50em) {
     font-size: 4rem;
   }
+}
+.secondCart {
+  font-size: 2.4rem;
+  margin: 1rem;
 }
 .buttons {
   margin-top: 2.5rem;

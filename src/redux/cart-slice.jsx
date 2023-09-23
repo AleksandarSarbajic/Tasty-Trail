@@ -6,36 +6,73 @@ const cartSlice = createSlice({
     items: [],
     secondItems: [],
     totalQuantity: 0,
+    totalQuantitySecond: 0,
     totalPrice: 0,
-    totalPriceSelected: 0,
+    totalPriceSecond: 0,
     changed: false,
   },
   reducers: {
     addToCart: (state, action) => {
-      const newItem = action.payload;
-      const existingItem = state.items.find(
-        (items) => items.name === newItem.name
-      );
+      const newItem = action.payload.item;
+      const type = action.payload.type;
 
-      state.changed = true;
-      if (!existingItem) {
-        state.totalQuantity = state.totalQuantity + newItem.quantity;
-        state.totalPrice = state.totalPrice + newItem.totalPrice;
-        state.items.push({
-          name: newItem.name,
-          price: newItem.price,
-          quantity: newItem.quantity,
-          totalPrice: newItem.totalPrice,
-          image: newItem.image,
-          ingredients: newItem.ingredients,
-        });
+      if (type !== "Market") {
+        const existingItem = state.items.find(
+          (items) => items.name === newItem.name
+        );
+
+        state.changed = true;
+        if (!existingItem) {
+          state.totalQuantity = state.totalQuantity + newItem.quantity;
+          state.totalPrice = state.totalPrice + newItem.totalPrice;
+          state.items.push({
+            name: newItem.name,
+            price: newItem.price,
+            quantity: newItem.quantity,
+            totalPrice: newItem.totalPrice,
+            image: newItem.image,
+            ingredients: newItem.ingredients,
+            type: newItem.type,
+          });
+        } else {
+          state.totalPrice =
+            state.totalPrice - existingItem.totalPrice + newItem.totalPrice;
+          state.totalQuantity =
+            state.totalQuantity + newItem.quantity - existingItem.quantity;
+          existingItem.quantity = newItem.quantity;
+          existingItem.totalPrice = newItem.totalPrice;
+        }
       } else {
-        state.totalPrice =
-          state.totalPrice - existingItem.totalPrice + newItem.totalPrice;
-        state.totalQuantity =
-          state.totalQuantity + newItem.quantity - existingItem.quantity;
-        existingItem.quantity = newItem.quantity;
-        existingItem.totalPrice = newItem.totalPrice;
+        const existingItem = state.secondItems.find(
+          (items) => items.name === newItem.name
+        );
+
+        state.changed = true;
+        if (!existingItem) {
+          state.totalQuantitySecond =
+            state.totalQuantitySecond + newItem.quantity;
+          state.totalPriceSecond = state.totalPriceSecond + newItem.totalPrice;
+          state.secondItems.push({
+            name: newItem.name,
+            price: newItem.price,
+            quantity: newItem.quantity,
+            totalPrice: newItem.totalPrice,
+            image: newItem.image,
+            ingredients: newItem.ingredients,
+            type: newItem.type,
+          });
+        } else {
+          state.totalPriceSecond =
+            state.totalPriceSecond -
+            existingItem.totalPrice +
+            newItem.totalPrice;
+          state.totalQuantitySecond =
+            state.totalQuantitySecond +
+            newItem.quantity -
+            existingItem.quantity;
+          existingItem.quantity = newItem.quantity;
+          existingItem.totalPrice = newItem.totalPrice;
+        }
       }
     },
     removeFromCart: (state, action) => {
@@ -52,24 +89,50 @@ const cartSlice = createSlice({
     },
     addOneRemoveOne: (state, action) => {
       const { item, type } = action.payload;
-      const existingItem = state.items.find(
-        (items) => items.name === item.name
-      );
+      if (item.type !== "Market") {
+        const existingItem = state.items.find(
+          (items) => items.name === item.name
+        );
 
-      if (type === "lowerQuantity") {
-        state.totalPrice = state.totalPrice - item.price;
-        state.totalQuantity = state.totalQuantity - 1;
-        existingItem.quantity = existingItem.quantity - 1;
-        existingItem.totalPrice = existingItem.totalPrice - item.price;
+        if (type === "lowerQuantity") {
+          state.totalPrice = state.totalPrice - item.price;
+          state.totalQuantity = state.totalQuantity - 1;
+          existingItem.quantity = existingItem.quantity - 1;
+          existingItem.totalPrice = existingItem.totalPrice - item.price;
 
-        if (existingItem.quantity === 0) {
-          state.items = state.items.filter((items) => items.name !== item.name);
+          if (existingItem.quantity === 0) {
+            state.items = state.items.filter(
+              (items) => items.name !== item.name
+            );
+          }
+        } else {
+          state.totalPrice = state.totalPrice + item.price;
+          state.totalQuantity = state.totalQuantity + 1;
+          existingItem.quantity = existingItem.quantity + 1;
+          existingItem.totalPrice = existingItem.totalPrice + item.price;
         }
       } else {
-        state.totalPrice = state.totalPrice + item.price;
-        state.totalQuantity = state.totalQuantity + 1;
-        existingItem.quantity = existingItem.quantity + 1;
-        existingItem.totalPrice = existingItem.totalPrice + item.price;
+        const existingItem = state.secondItems.find(
+          (items) => items.name === item.name
+        );
+
+        if (type === "lowerQuantity") {
+          state.totalPriceSecond = state.totalPriceSecond - item.price;
+          state.totalQuantitySecond = state.totalQuantitySecond - 1;
+          existingItem.quantity = existingItem.quantity - 1;
+          existingItem.totalPrice = existingItem.totalPrice - item.price;
+
+          if (existingItem.quantity === 0) {
+            state.secondItems = state.secondItems.filter(
+              (items) => items.name !== item.name
+            );
+          }
+        } else {
+          state.totalPriceSecond = state.totalPriceSecond + item.price;
+          state.totalQuantitySecond = state.totalQuantitySecond + 1;
+          existingItem.quantity = existingItem.quantity + 1;
+          existingItem.totalPrice = existingItem.totalPrice + item.price;
+        }
       }
     },
     removeAllItems: (state) => {

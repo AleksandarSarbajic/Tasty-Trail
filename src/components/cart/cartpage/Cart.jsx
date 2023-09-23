@@ -6,7 +6,7 @@ import { BsTrash3 } from "react-icons/bs";
 // import { cartActions } from "../../../redux/cart-slice";
 // import { useEffect, useState } from "react";
 export default function Cart() {
-  const cart = useSelector((state) => state.cart);
+  const { items, secondItems } = useSelector((state) => state.cart);
 
   return (
     <div className={classes.cart}>
@@ -22,7 +22,10 @@ export default function Cart() {
           <p className={classes.quantity}>Quantity</p>
           <p>Price</p>
         </li>
-        {cart.items.map((item) => {
+        {items.map((item) => {
+          return <CartItem key={item.name} item={item} />;
+        })}
+        {secondItems.map((item) => {
           return <CartItem key={item.name} item={item} />;
         })}
       </ul>

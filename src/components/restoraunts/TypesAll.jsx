@@ -53,7 +53,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
     return (
       <Error
         img={"/cart.png"}
-        text=" There is no such restoraunt for any of that filters, choose other
+        text="There is no such restoraunt for any of that filters, choose other
   filters or go back to restoraunts"
         to="/discovery/restaraunts"
         alt={"cart"}

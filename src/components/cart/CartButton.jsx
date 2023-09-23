@@ -5,11 +5,16 @@ import { useShowCart } from "../../customhooks/useShowCart";
 import { useLocation } from "react-router-dom";
 
 export default function CartButton() {
-  const totalQuantity = useSelector((state) => state.cart.items);
+  const { items, secondItems } = useSelector((state) => state.cart);
   const location = useLocation();
   const { previewCartHandler } = useShowCart();
-  if (totalQuantity.length === 0 || location.pathname === "/cart")
+  console.log(secondItems.length);
+  if (
+    (items.length === 0 && secondItems.length === 0) ||
+    location.pathname === "/cart"
+  ) {
     return <div className={classes.blank}>&nbsp;</div>;
+  }
 
   return (
     <li
@@ -30,7 +35,9 @@ export default function CartButton() {
       <button className={classes.button}>
         <AiOutlineShoppingCart className={classes.icon} />
         <span className={classes.text}>Cart</span>
-        <span className={classes.count}>{totalQuantity.length}</span>
+        <span className={classes.count}>
+          {items.length + secondItems.length}
+        </span>
       </button>
     </li>
   );

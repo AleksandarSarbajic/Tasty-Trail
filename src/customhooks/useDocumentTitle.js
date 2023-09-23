@@ -5,7 +5,7 @@ function useDocumentTitle(title) {
     document.title = title;
 
     return () => {
-      document.title = "Tasty Trail";
+      document.title = "Tasty Trail | Find the best food!";
     };
   }, [title]);
 }

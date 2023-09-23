@@ -6,8 +6,11 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 export default function FoodContent({ foodItem, item }) {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.cart.items);
-  const filter = items.find((item) => item.name === foodItem.name);
+  const { items, secondItems } = useSelector((state) => state.cart);
+  const filter =
+    item.type === "Market"
+      ? secondItems.find((item) => item.name === foodItem.name)
+      : items.find((item) => item.name === foodItem.name);
 
   const [orderNumber, setOrderNumber] = useState(filter ? filter.quantity : 1);
   const [totalPrice, setTotalPrice] = useState(
@@ -31,12 +34,21 @@ export default function FoodContent({ foodItem, item }) {
     }
   }
   function addToCartHandler() {
-    const newItem = { ...foodItem, quantity: orderNumber, totalPrice };
+    const newItem = {
+      ...foodItem,
+      quantity: orderNumber,
+      totalPrice,
+      type: item.type,
+    };
+    console.log(item.type);
     if (orderNumber === 0) {
-      dispatch(cartActions.removeFromCart({ name: foodItem.name }));
+      dispatch(
+        cartActions.removeFromCart({ name: foodItem.name, type: item.type })
+      );
     } else {
-      dispatch(cartActions.addToCart(newItem));
+      dispatch(cartActions.addToCart({ item: newItem, type: item.type }));
     }
+
     navigate(`/${item.type}/${item.link}`);
   }
 

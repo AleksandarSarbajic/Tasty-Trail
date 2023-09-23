@@ -4,7 +4,11 @@ function Error({ img, text, link, to, alt, type = "link", onClick, header }) {
   return (
     <div className={classes.error}>
       <img src={img} className={classes.img} alt={alt} />
-      <p className={classes.errorHeading}>&quot;{header}&quot;</p>
+      {header ? (
+        <p className={classes.errorHeading}>&quot;{header}&quot;</p>
+      ) : (
+        ""
+      )}
       <p className={classes.errorMessage}>{text}</p>
       {type === "link" ? (
         <Link to={to} className={classes.link}>

@@ -8,16 +8,16 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useShowCart } from "../../customhooks/useShowCart";
 export default function CartPreview() {
   const [maxMoney, setMaxMoney] = useState(0);
-  const cart = useSelector((state) => state.cart);
+  const { items, totalPrice, secondItems } = useSelector((state) => state.cart);
   const { isShown, previewCartHandler } = useShowCart();
 
   useEffect(() => {
-    cart.items.map((item) => {
+    items.map((item) => {
       setMaxMoney((prev) => prev + item.totalPrice);
     });
-  }, [cart.items]);
+  }, [items]);
 
-  if (cart.items.length === 0) return null;
+  if (items.length === 0 && secondItems.length === 0) return null;
 
   return (
     <>
@@ -28,10 +28,6 @@ export default function CartPreview() {
 
           previewCartHandler();
         }}
-        // onMouseLeave={() => {
-        //   if (window.innerWidth < 600) return;
-        //   previewCartHandler();
-        // }}
       />
       <div
         className={`${classes.container} ${
@@ -54,17 +50,55 @@ export default function CartPreview() {
               <AiOutlineClose className={classes.icon} />
             </button>
           </div>
-          <div className={classes.flex}>
-            {cart.items.map((item) => {
-              return <CartPreviewItem key={item.name} item={item} />;
-            })}
-            {cart.items.length === 0 && (
-              <>
-                <img src="cart.png" alt="cart" className={classes.img} />
-                <span className={classes.empty}>Your cart is empty!</span>
-              </>
-            )}
-          </div>
+
+          {/* {items.length === 0 && secondItems.length === 0 ? (
+            <>
+              <img src="cart.png" alt="cart" className={classes.img} />
+              <span className={classes.empty}>Your cart is empty!</span>
+            </>
+          ) : (
+            ""
+          )} */}
+          {items.length > 0 && (
+            <div
+              className={`${
+                secondItems.length === 0
+                  ? classes.height
+                  : secondItems.length === 1
+                  ? classes.heightOneAndHalf
+                  : ""
+              } ${items.length === 1 ? classes.heightHalf : ""} ${
+                classes.flex
+              }`}
+            >
+              {items.map((item) => {
+                return <CartPreviewItem key={item.name} item={item} />;
+              })}
+            </div>
+          )}
+          {items.length > 0 && secondItems.length > 0 ? (
+            <p className={classes.secondCart}>Second Cart</p>
+          ) : (
+            ""
+          )}
+          {secondItems.length > 0 && (
+            <div
+              className={`${
+                items.length === 0
+                  ? classes.height
+                  : items.length === 1
+                  ? classes.heightOneAndHalf
+                  : ""
+              } ${classes.flex}
+              
+              ${secondItems.length === 1 ? classes.heightHalf : ""}
+              `}
+            >
+              {secondItems.map((item) => {
+                return <CartPreviewItem key={item.name} item={item} />;
+              })}
+            </div>
+          )}
         </div>
         <div className={classes.buttons}>
           <Link
@@ -77,7 +111,7 @@ export default function CartPreview() {
             Go to cart
           </Link>
           <p className={classes.total}>
-            Total: <span>{cart.totalPrice} rsd</span>
+            Total: <span>{totalPrice} rsd</span>
           </p>
         </div>
       </div>

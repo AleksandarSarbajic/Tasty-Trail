@@ -14,7 +14,7 @@ export default function ContainerCart() {
   const [error, setError] = useState({});
   const locataion = useLocation();
 
-  const cart = useSelector((state) => state.cart.items);
+  const { items, secondItems } = useSelector((state) => state.cart);
 
   function setPageHandler(e) {
     setInputs(e);
@@ -24,7 +24,7 @@ export default function ContainerCart() {
   }
   return (
     <div className={classes.items}>
-      {cart.length > 0 ? (
+      {items.length > 0 || secondItems.length > 0 ? (
         <div
           className={`${classes.grid} ${
             locataion.hash === "#checkout" ? classes.fullScreen : ""
@@ -47,7 +47,7 @@ export default function ContainerCart() {
       ) : (
         <EmptyItems />
       )}
-      {locataion.hash === "#overview" && cart.length !== 0 ? <Finish /> : ""}
+      {locataion.hash === "#overview" && items.length !== 0 ? <Finish /> : ""}
     </div>
   );
 }
