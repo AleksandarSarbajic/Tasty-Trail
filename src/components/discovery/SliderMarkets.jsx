@@ -7,7 +7,6 @@ import SliderMarketItem from "./SliderMarketItem";
 export default function SliderMarkets(props) {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 6,
     },
@@ -37,7 +36,6 @@ export default function SliderMarkets(props) {
     },
   };
   const CustomRightArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonRight}>
         <BsArrowRight className={classes.arrow} />
@@ -45,7 +43,6 @@ export default function SliderMarkets(props) {
     );
   };
   const CustomLeftArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonLeft}>
         <BsArrowLeft className={classes.arrow} />

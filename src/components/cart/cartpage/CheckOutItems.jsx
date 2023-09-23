@@ -3,13 +3,19 @@ import classes from "../cartpage/CheckOutItems.module.scss";
 import { Form } from "react-router-dom";
 
 export default function CheckOutItems() {
-  const items = useSelector((state) => state.cart.items);
+  const cart = useSelector((state) => state.cart);
+  const checkOutItems =
+    cart.selected === "first"
+      ? cart.items
+      : cart.selected === "second"
+      ? cart.secondItems
+      : cart.items.concat(cart.secondItems);
 
   return (
     <div className={classes.check}>
       <p className={classes.checkHeading}>Your Order</p>
       <div className={classes.container}>
-        {items.map((item) => {
+        {checkOutItems.map((item) => {
           return (
             <div key={item.name} className={classes.checkItem}>
               <div>

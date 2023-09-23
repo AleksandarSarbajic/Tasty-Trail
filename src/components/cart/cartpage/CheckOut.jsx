@@ -22,8 +22,8 @@ export default function CheckOut(props) {
       // }
       // if (props.form?.email === "" || props.form?.sameEmail === "") {
       // }
-      // if (props.form?.email === props?.form.sameEmail) {
-      // }
+      if (props.form?.email !== props?.form.sameEmail) return;
+
       if (adress.length === 0) return;
       if (
         props.form?.name === "" ||
@@ -55,7 +55,14 @@ export default function CheckOut(props) {
       {location.hash === "" ? "" : <CheckOutItems />}
       <div>
         <span className={classes.CheckOutName}>Subtotal</span>
-        <span className={classes.CheckOutPrice}>{cart.totalPrice} RSD</span>
+        <span className={classes.CheckOutPrice}>
+          {cart.selected === "first"
+            ? cart.totalPrice
+            : cart.selected === "second"
+            ? cart.totalPriceSecond
+            : cart.totalPrice + cart.totalPriceSecond}{" "}
+          RSD
+        </span>
       </div>
       <div>
         <span className={classes.CheckOutName}>Discount</span>
@@ -64,7 +71,12 @@ export default function CheckOut(props) {
       <div className={classes.CheckOutLast}>
         <span className={classes.CheckOutNameFinal}>Grand total</span>
         <span className={classes.CheckOutPriceFinal}>
-          {cart.totalPrice} RSD
+          {cart.selected === "first"
+            ? cart.totalPrice
+            : cart.selected === "second"
+            ? cart.totalPriceSecond
+            : cart.totalPrice + cart.totalPriceSecond}{" "}
+          RSD
         </span>
       </div>
       <button className={classes.CheckOutButton} onClick={onClickHandler}>

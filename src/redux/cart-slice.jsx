@@ -9,6 +9,7 @@ const cartSlice = createSlice({
     totalQuantitySecond: 0,
     totalPrice: 0,
     totalPriceSecond: 0,
+    selected: "first",
     changed: false,
   },
   reducers: {
@@ -140,6 +141,9 @@ const cartSlice = createSlice({
       state.totalQuantity = 0;
       state.totalPrice = 0;
       state.changed = false;
+    },
+    setSelectedCart: (state, action) => {
+      state.selected = action.payload;
     },
   },
 });

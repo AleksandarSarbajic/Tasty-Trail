@@ -8,7 +8,12 @@ export default function Finish() {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const { adress } = useSelector((state) => state.adress);
-
+  const checkOutItems =
+    cart.selected === "first"
+      ? cart.items
+      : cart.selected === "second"
+      ? cart.secondItems
+      : cart.items.concat(cart.secondItems);
   const currentDate = new Date();
 
   const orderTime = [30, 45];
@@ -70,7 +75,7 @@ export default function Finish() {
       <div className={classes.orderItems}>
         <h3 className={classes.orderItemsHeading}>Your Order</h3>
         <div className={classes.orderItemsMargin}>
-          {cart.items.map((item) => {
+          {checkOutItems.map((item) => {
             return (
               <div className={classes.orderItem} key={item.name}>
                 <div className={classes.orderItemDetails}>
@@ -93,7 +98,15 @@ export default function Finish() {
         </div>
         <div className={classes.checkBox}>
           <h3 className={classes.checkBoxHeading}>Subtotal</h3>
-          <p className={classes.checkBoxText}> {cart.totalPrice} rsd</p>
+          <p className={classes.checkBoxText}>
+            {" "}
+            {cart.selected === "first"
+              ? cart.totalPrice
+              : cart.selected === "second"
+              ? cart.totalPriceSecond
+              : cart.totalPrice + cart.totalPriceSecond}{" "}
+            RSD
+          </p>
         </div>
       </div>
       <div className={classes.checkOut}>
@@ -111,7 +124,15 @@ export default function Finish() {
 
       <div className={classes.checkOut}>
         <p className={classes.checkOutTotal}>Grand total</p>
-        <p className={classes.checkOutPrice}> {cart.totalPrice} rsd</p>
+        <p className={classes.checkOutPrice}>
+          {" "}
+          {cart.selected === "first"
+            ? cart.totalPrice
+            : cart.selected === "second"
+            ? cart.totalPriceSecond
+            : cart.totalPrice + cart.totalPriceSecond}{" "}
+          RSD
+        </p>
       </div>
       <button className={classes.button}>Continue ordering food</button>
     </div>
