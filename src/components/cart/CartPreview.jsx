@@ -67,9 +67,11 @@ export default function CartPreview() {
                   : secondItems.length === 1
                   ? classes.heightOneAndHalf
                   : ""
-              } ${items.length === 1 ? classes.heightHalf : ""} ${
-                classes.flex
-              }`}
+              } ${
+                items.length === 1 && secondItems.length === 1
+                  ? classes.heightHalf
+                  : ""
+              } ${classes.flex}`}
             >
               {items.map((item) => {
                 return <CartPreviewItem key={item.name} item={item} />;
@@ -91,7 +93,11 @@ export default function CartPreview() {
                   : ""
               } ${classes.flex}
               
-              ${secondItems.length === 1 ? classes.heightHalf : ""}
+              ${
+                items.length === 1 && secondItems.length === 1
+                  ? classes.heightHalf
+                  : ""
+              }
               `}
             >
               {secondItems.map((item) => {
