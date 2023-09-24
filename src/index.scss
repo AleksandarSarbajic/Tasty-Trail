@@ -55,6 +55,14 @@ a {
   display: inline-block;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
