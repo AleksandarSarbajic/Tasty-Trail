@@ -28,11 +28,7 @@
   align-items: center;
   padding: 0 1rem;
 }
-.logo {
-  font-size: 3.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+
 .list {
   display: flex;
   align-items: center;
@@ -117,65 +113,13 @@
   color: var(--primary-color);
 }
 
-.input {
-  width: 40rem;
-  padding: 1.6rem 2.5rem 1.2rem 4rem;
-  border-radius: 25px;
-  border: 1px solid #ddd;
-  font-size: 1.6rem;
+.logo {
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  flex: 1 1 0%;
 }
-.search {
-  font-size: 1.8rem;
-  z-index: 12;
-  position: absolute;
-  top: 50%;
-  left: 2.5rem;
-  transform: translate(-50%, -50%);
-}
-.form {
-  position: relative;
-}
-.label {
-  font-size: 1.6rem;
-  font-weight: 400;
-  position: absolute;
-  top: 50%;
-  left: 7rem;
-  transform: translate(-50%, -50%);
-  transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
-}
-.input:focus + .label {
-  top: 0.9rem;
-  left: 6rem;
-  font-size: 1rem;
-}
-.input:focus {
-  outline: none;
-}
-.animate {
-  top: 0.9rem;
-  left: 6rem;
-  font-size: 1rem;
-}
-.cancel {
-  border: none;
-  background-color: transparent;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  right: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.cancel:hover {
-  color: red;
-}
-.cross {
-  font-size: 2rem;
-}
-.delete {
-  display: none;
-}
+
 .pin {
   display: flex;
   align-items: center;
@@ -188,11 +132,11 @@
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  // max-width: 18rem;
 
-  @media only screen and (max-width: 50em) {
+  flex: 1 1 0%;
+
+  @media only screen and (max-width: 56.25em) {
     display: none;
-    // flex: 1 1 0%;
   }
 
   span {
