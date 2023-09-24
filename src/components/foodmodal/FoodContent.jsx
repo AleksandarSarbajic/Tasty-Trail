@@ -42,7 +42,7 @@ export default function FoodContent({ foodItem, item }) {
       delivery: item.price,
       company: item.name,
     };
-    console.log(item);
+
     if (orderNumber === 0) {
       dispatch(
         cartActions.removeFromCart({ name: foodItem.name, type: item.type })

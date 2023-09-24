@@ -13,7 +13,6 @@ function Search() {
   const data = useLoaderData("search");
 
   const { exportData, isLoading } = useLoader(query, 1000);
-  console.log(exportData);
 
   return (
     <div className={"search__container"}>

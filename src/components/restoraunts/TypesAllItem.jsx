@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import classes from "../restoraunts/TypesAllItem.module.scss";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 export default function TypesAllItem(props) {
-  console.log(props);
-
   return (
     <Link
       to={`/${props.type === "Market" ? "Market" : "Restaurant"}/${props.link}`}

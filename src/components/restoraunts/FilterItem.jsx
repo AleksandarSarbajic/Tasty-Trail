@@ -10,7 +10,7 @@ export default function FilterItem({ type, onClick }) {
 
   const select = useSelector((state) => state.filter.itemsToBeFiltered);
   // function onClickHandler() {
-  //   console.log(select);
+
   //   const existingItems = select.find((item) => item === type);
 
   //   if (existingItems) {

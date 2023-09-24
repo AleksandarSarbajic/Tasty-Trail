@@ -39,8 +39,6 @@ export default function Content({ content }) {
     setScrollY(pageYOffset);
   }, []);
 
-  console.log(exportData);
-
   useEffect(() => {
     window.addEventListener("scroll", onScroll, { passive: true });
 

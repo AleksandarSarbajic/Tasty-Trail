@@ -12,7 +12,7 @@ export default function Filter({ data: allData, type }) {
   const dispatch = useDispatch();
 
   const data = type === "Markets" ? allData.markets : allData.food;
-  console.log(data);
+
   function onClickHandler() {
     dispatch(filterActions.setFilter());
     dispatch(filterActions.showFilter(false));

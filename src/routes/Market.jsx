@@ -9,7 +9,7 @@ function Market() {
   const market = loading.find((store) => {
     return store.link === params.id;
   });
-  console.log(market);
+
   useDocumentTitle(`${market.name} | TastyTrail`);
   return (
     <>

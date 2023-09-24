@@ -11,7 +11,7 @@ export default function Food({ type = "food" }) {
   const data = useRouteLoaderData(type);
   const params = useParams();
   const location = useLocation();
-  console.log(data);
+
   const filteredItem = location.pathname.includes("Market")
     ? data.Markets.find((food) => food.link === params.id)
     : data.Restoraunts.find((food) => food.link === params.id);

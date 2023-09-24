@@ -80,8 +80,6 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
     },
   ]);
 
-  console.log({ startingPosition, secondItem, thirdItem, closePosition });
-
   const [scrollY, setScrollY] = useState(0);
   const [classD, setClassD] = useState({});
   const [hidden, setHidden] = useState(true);

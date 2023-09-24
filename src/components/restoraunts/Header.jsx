@@ -13,15 +13,12 @@ export default function Header({ heading = "Restaraunts" }) {
   const queryType = searchParams.get("type");
 
   function onClickHandler() {
-    console.log(searchParams.get("filters"));
     if (searchParams.get("filters") !== null && filters.length === 0) {
-      console.log(";");
       let item = items.split(",");
       dispatch(filterActions.setFilters(item));
     }
     if (searchParams.get("filters") === null) {
       dispatch(filterActions.setFilters([]));
-      console.log("kita");
     }
   }
   return (

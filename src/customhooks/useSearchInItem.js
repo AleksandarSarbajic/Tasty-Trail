@@ -54,7 +54,6 @@ export function useSearchInItem(
           location.hash === "" &&
           searchQuery !== null
         ) {
-          console.log(location);
           searchParams.delete("search");
           setSearchParams(searchParams);
         }
