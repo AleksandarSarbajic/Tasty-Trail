@@ -27,12 +27,12 @@
   animation: fadeIn 0.5s linear;
   @media only screen and (max-width: 50em) {
     top: 20%;
-    left: 43%;
+    left: 50%;
     transform: translate(-50%, -20%);
     animation: none;
   }
-  @media only screen and (max-width: 35em) {
-    width: 83dvw;
+  @media only screen and (max-width: 32.5em) {
+    width: 95dvw;
   }
 }
 
