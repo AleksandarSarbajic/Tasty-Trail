@@ -1,3 +1,4 @@
+import { useErrorBoundary } from "react-error-boundary";
 import FoodContent from "../components/foodmodal/FoodContent";
 import FoodModal from "../components/foodmodal/ModalFood";
 import {

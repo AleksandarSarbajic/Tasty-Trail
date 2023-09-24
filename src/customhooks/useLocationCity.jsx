@@ -26,6 +26,9 @@ const useLocationCity = () => {
       const response = await fetch(
         `https://eu1.locationiq.com/v1/reverse?key=pk.838fc0e07bae0ae3f17fb1605d4f0f1a&lat=${latitude}&lon=${longitude}&format=json`
       );
+
+      if (!response.ok) throw new Error();
+
       const data = await response.json();
 
       setCity(data.address);
