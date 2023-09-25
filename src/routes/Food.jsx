@@ -15,13 +15,13 @@ export default function Food({ type = "food" }) {
 
   const filteredItem = location.pathname.includes("Market")
     ? data.Markets.find((food) => food.link === params.id)
-    : data.Restoraunts.find((food) => food.link === params.id);
+    : data.Restaurants.find((food) => food.link === params.id);
 
   const filteredRestoraunts = location.pathname.includes("Market")
     ? data.Markets.find((food) => food.link === params.id).food.find(
         (item) => item.name === params.food
       )
-    : data.Restoraunts.find((food) => food.link === params.id).food.find(
+    : data.Restaurants.find((food) => food.link === params.id).food.find(
         (item) => item.name === params.food
       );
 

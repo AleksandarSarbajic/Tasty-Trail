@@ -24,7 +24,7 @@ export default function Content({ content }) {
   const { exportData, isLoading } = useSearchInItem(
     searchText,
     100,
-    location.pathname.includes("Market") ? "/Markets" : "/Restoraunts",
+    location.pathname.includes("Market") ? "/Markets" : "/Restaurants",
     content.name
   );
   const navigate = useNavigate();

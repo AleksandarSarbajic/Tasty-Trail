@@ -32,6 +32,12 @@ export default function Aside(props) {
     navigate(`#${type}`);
   }
 
+  const types = props.content.food.map((item) => item.type);
+
+  const items = props.content.types.filter((item1) => {
+    return types.includes(item1);
+  });
+
   return (
     <aside>
       <ul className={classes.list}>
@@ -54,7 +60,7 @@ export default function Aside(props) {
               : classes.easeOut
           }`}
         >
-          {props.content.types.map((type) => {
+          {items.map((type) => {
             return (
               <li className={classes.item} key={type}>
                 <button

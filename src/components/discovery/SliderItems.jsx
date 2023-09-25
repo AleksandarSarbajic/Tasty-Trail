@@ -67,7 +67,7 @@ export default function SliderItems(props) {
           customLeftArrow={<CustomLeftArrow />}
           removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
         >
-          {props.data.Restoraunts.map((item) => {
+          {props.data.Restaurants.map((item) => {
             return (
               <SliderItem
                 store={item}

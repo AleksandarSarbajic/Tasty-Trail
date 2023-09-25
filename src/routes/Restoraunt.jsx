@@ -6,7 +6,7 @@ export default function Restoraunt() {
   const params = useParams();
   const loading = useRouteLoaderData("restoraunt");
 
-  const restoraunt = loading.Restoraunts.find((store) => {
+  const restoraunt = loading.Restaurants.find((store) => {
     return store.link === params.id;
   });
 

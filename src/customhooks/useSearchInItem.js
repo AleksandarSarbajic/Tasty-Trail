@@ -4,7 +4,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 export function useSearchInItem(
   query,
   time = 1000,
-  type = "/Restoraunts",
+  type = "/Restaurants",
   name
 ) {
   const [exportData, setExportData] = useState([]);

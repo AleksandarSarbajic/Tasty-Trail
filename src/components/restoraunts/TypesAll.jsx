@@ -14,11 +14,11 @@ export default function TypesAll({ allData, searchData = [], heading }) {
     location.pathname.includes("search");
 
   const data = location.pathname.includes("restaraunts")
-    ? allData.Restoraunts
+    ? allData.Restaurants
     : location.pathname.includes("markets")
     ? allData.Markets
     : location.pathname.includes("category")
-    ? allData.Restoraunts.concat(allData.Markets)
+    ? allData.Restaurants.concat(allData.Markets)
     : searchData;
 
   const searchQuery = searchParams.get("type");

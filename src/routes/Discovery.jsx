@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import useDocumentTitle from "../customhooks/useDocumentTitle";
+import TypesSlider from "../components/restoraunts/TypesSlider";
 export default function Discovery() {
   useDocumentTitle("Discover a Restaurant or Markets | TastyTrail");
   const data = useRouteLoaderData("discovery");
@@ -37,6 +38,7 @@ export default function Discovery() {
         heading={"Our recommendations!"}
         discount={true}
       />
+      {/* <TypesSlider data={data} /> */}
       <SliderMarkets data={data} heading={"Markets"} />
     </>
   );

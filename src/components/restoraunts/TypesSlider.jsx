@@ -3,14 +3,13 @@ import classes from "../restoraunts/TypesSlider.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-// import SliderMarketItem from "../discovery/SliderMarketItem";
+
 import TypesItem from "./TypesItem";
 export default function TypesSlider({ data: typesData, heading }) {
   const data = typesData;
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 6,
     },
@@ -30,10 +29,7 @@ export default function TypesSlider({ data: typesData, heading }) {
       breakpoint: { max: 704, min: 500 },
       items: 3,
     },
-    // bigmobile: {
-    //   breakpoint: { max: 650, min: 432 },
-    //   items: 2,
-    // },
+
     mobile: {
       breakpoint: { max: 500, min: 0 },
       items: 2,
@@ -41,7 +37,6 @@ export default function TypesSlider({ data: typesData, heading }) {
   };
 
   const CustomRightArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonRight}>
         <BsArrowRight className={classes.arrow} />
@@ -49,7 +44,6 @@ export default function TypesSlider({ data: typesData, heading }) {
     );
   };
   const CustomLeftArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonLeft}>
         <BsArrowLeft className={classes.arrow} />
@@ -79,7 +73,11 @@ export default function TypesSlider({ data: typesData, heading }) {
             ? data.types.markets.map((item) => {
                 return <TypesItem item={item} key={item.name} type={heading} />;
               })
-            : data.types.food.map((item) => {
+            : heading === "Restaurants"
+            ? data.types.food.map((item) => {
+                return <TypesItem item={item} key={item.name} type={heading} />;
+              })
+            : data.types.food.concat(data.types.markets).map((item) => {
                 return <TypesItem item={item} key={item.name} type={heading} />;
               })}
         </Carousel>

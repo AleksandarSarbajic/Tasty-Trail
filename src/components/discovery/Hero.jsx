@@ -66,7 +66,7 @@ export default function Hero(props) {
         customLeftArrow={<CustomLeftArrow />}
         removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
       >
-        {props.data.Restoraunts.map((item) => {
+        {props.data.Restaurants.map((item) => {
           return <HeroItem store={item} key={item.name} />;
         })}
       </Carousel>

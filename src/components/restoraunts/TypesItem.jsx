@@ -2,7 +2,7 @@ import classes from "../restoraunts/TypesItem.module.scss";
 
 import { Link, useLoaderData } from "react-router-dom";
 export default function TypesItem({ item, type }) {
-  const { Markets: marketsData, Restoraunts: restorauntData } =
+  const { Markets: marketsData, Restaurants: restorauntData } =
     useLoaderData("restoraunts");
 
   const numberOfplaces =
@@ -10,7 +10,11 @@ export default function TypesItem({ item, type }) {
       ? marketsData.filter((innerArray) => {
           return innerArray.types.includes(item.name);
         })
-      : restorauntData.filter((innerArray) => {
+      : type === "Restaurants"
+      ? restorauntData.filter((innerArray) => {
+          return innerArray.types.includes(item.name);
+        })
+      : marketsData.concat(restorauntData).filter((innerArray) => {
           return innerArray.types.includes(item.name);
         });
 

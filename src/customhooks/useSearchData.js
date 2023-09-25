@@ -16,7 +16,7 @@ export function useLoader(query, time = 1000) {
         }
         const data = await res.json();
 
-        const filteredRestaurants = await data.Restoraunts.filter((item) => {
+        const filteredRestaurants = await data.Restaurants.filter((item) => {
           const types = item.types
             .map((item) => item.replace(/\s+/g, "").toLowerCase())
             .some((item) =>
