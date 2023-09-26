@@ -136,7 +136,9 @@ export default function MainHeader() {
                     to={"/howitworks"}
                     className={classes.link}
                     onClick={() => {
-                      setShowSidebar((show) => !show);
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
                     }}
                   >
                     How It Works
@@ -147,7 +149,9 @@ export default function MainHeader() {
                     to={"/aboutus"}
                     className={classes.link}
                     onClick={() => {
-                      setShowSidebar((show) => !show);
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
                     }}
                   >
                     About Us
@@ -158,7 +162,9 @@ export default function MainHeader() {
                     to={"/contact"}
                     className={classes.link}
                     onClick={() => {
-                      setShowSidebar((show) => !show);
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
                     }}
                   >
                     Contact
@@ -169,7 +175,9 @@ export default function MainHeader() {
                     to={"/discovery"}
                     className={classes.button}
                     onClick={() => {
-                      setShowSidebar((show) => !show);
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
                     }}
                   >
                     Get Started
