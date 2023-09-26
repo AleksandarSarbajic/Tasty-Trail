@@ -108,21 +108,6 @@ export default function Filter({ data: allData, type }) {
           >
             Order time
           </button>
-          <button
-            className={`${classes.gridItem} ${
-              value === "Price"
-                ? classes.selected
-                : sort === ""
-                ? classes.selected
-                : ""
-            }`}
-            value={"Price"}
-            onClick={(e) => {
-              setValue(e.target.value);
-            }}
-          >
-            Price
-          </button>
         </div>
         <button className={classes.button} onClick={onClickHandler}>
           Apply
