@@ -19,15 +19,18 @@ import { searchActions } from "../../redux/search-slice";
 
 export default function Content({ content }) {
   const searchText = useSelector((state) => state.search.search);
-
+  const [text, setText] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
   const { exportData, isLoading } = useSearchInItem(
-    searchText,
+    text,
     100,
     location.pathname.includes("Market") ? "/Markets" : "/Restaurants",
     content.name
   );
+
+  console.log(exportData);
+
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search");
@@ -48,41 +51,42 @@ export default function Content({ content }) {
     };
   }, [onScroll]);
 
-  const handlePopState = useCallback(
-    (e) => {
-      e.preventDefault();
-      if (parts.length === 3) return;
-      if (searchText.length === 0 && query === null && location.hash === "") {
-        navigate("/discovery");
-      }
-      if (searchText.length === 0 && query === null) return;
-      dispatch(searchActions.setSearchText({ payload: "" }));
-      searchParams.delete("search");
-      setSearchParams(searchParams);
-    },
-    [
-      parts,
-      location.hash,
-      dispatch,
-      navigate,
-      query,
-      searchParams,
-      searchText.length,
-      setSearchParams,
-    ]
-  );
+  // const handlePopState = useCallback(
+  //   (e) => {
+  //     e.preventDefault();
+  //     if (parts.length === 3) return;
+  //     if (searchText.length === 0 && query === null && location.hash === "") {
+  //       navigate("/discovery");
+  //     }
+  //     if (searchText.length === 0 && query === null) return;
+  //     dispatch(searchActions.setSearchText({ payload: "" }));
+  //     searchParams.delete("search");
+  //     setSearchParams(searchParams);
+  //   },
+  //   [
+  //     parts,
+  //     location.hash,
+  //     dispatch,
+  //     navigate,
+  //     query,
+  //     searchParams,
+  //     searchText.length,
+  //     setSearchParams,
+  //   ]
+  // );
 
-  useEffect(() => {
-    window.addEventListener("popstate", handlePopState);
+  // useEffect(() => {
+  //   window.addEventListener("popstate", handlePopState);
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, [handlePopState]);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener("popstate", handlePopState);
+  //   };
+  // }, [handlePopState]);
 
   function onChangeTextHandler(e) {
-    dispatch(searchActions.setSearchText({ payload: e.target.value }));
+    setText(e.target.value);
+    // dispatch(searchActions.setSearchText({ payload: e.target.value }));
   }
   function handleClearSearch(e) {
     e.preventDefault();
@@ -100,7 +104,7 @@ export default function Content({ content }) {
               <AiOutlineSearch className={classes.icon} />
               <input
                 onChange={onChangeTextHandler}
-                value={searchText}
+                value={text}
                 className={classes.input}
                 type="text"
                 placeholder={`Search in ${content.name}`}
