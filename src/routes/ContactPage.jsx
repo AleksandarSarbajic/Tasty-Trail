@@ -14,9 +14,12 @@ export default function ContactPage() {
     });
   }, []);
   return (
-    <div className="contact">
-      <TextPart />
-      <FormPart />
-    </div>
+    <>
+      <h2 className="heading">Contact Page</h2>
+      <div className="contact">
+        <TextPart />
+        <FormPart />
+      </div>
+    </>
   );
 }

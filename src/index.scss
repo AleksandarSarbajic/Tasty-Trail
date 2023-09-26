@@ -107,13 +107,22 @@ button {
 //   visibility: visible;
 //   /* transition-delay: 1s; */
 // }
-
+.heading {
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 20rem 0 10rem 0;
+  text-align: center;
+  font-size: 5rem;
+  @media only screen and (max-width: 50em) {
+    padding: 20rem 0 3rem 0;
+  }
+}
 .contact {
   display: grid;
   grid-template-columns: 1fr 55%;
   max-width: 135rem;
   margin: 0 auto;
-  padding: 20rem 0;
+
   @media only screen and (max-width: 50em) {
     font-size: 50%;
     grid-template-columns: 1fr;
