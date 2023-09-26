@@ -21,6 +21,12 @@ export default function Aside(props) {
     navigate(`/Restaurant/${props.content.link}`);
   }
 
+  function setAnimationHandler() {
+    setAnimation((animate) =>
+      animation === null ? true : animation != null ? !animate : null
+    );
+  }
+
   function clearAndMoveHandler(type) {
     searchParams.delete("search");
     setSearchParams(searchParams);
@@ -62,7 +68,10 @@ export default function Aside(props) {
                   className={`${classes.link} ${
                     cuttedHash === type && classes.high
                   }`}
-                  onClick={() => clearAndMoveHandler(type)}
+                  onClick={() => {
+                    setAnimationHandler();
+                    clearAndMoveHandler(type);
+                  }}
                 >
                   {type.replace(/-/g, " ")}
                 </button>
