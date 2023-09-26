@@ -52,44 +52,44 @@ export default function Footer() {
           </ul>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Company
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Blog
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Carriers
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 News
               </Link>
             </li>
           </ul>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Resources
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Parteners
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Ordering
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 About
               </Link>
             </li>

@@ -27,6 +27,7 @@
   position: absolute;
   bottom: 2rem;
   left: 4rem;
+
   @media only screen and (max-width: 37.5em) {
     left: 2rem;
   }
@@ -41,6 +42,7 @@
   font-size: 2.6rem;
   color: var(--text-tertiary);
   width: 90%;
+  line-height: 1;
   @media only screen and (max-width: 37.5em) {
     font-size: 2rem;
   }

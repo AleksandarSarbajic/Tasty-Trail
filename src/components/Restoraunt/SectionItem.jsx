@@ -9,7 +9,9 @@ export default function SectionItem({ types, number }) {
       {types.food.filter((item) => item.type === types.types[number]).length !==
         0 && (
         <>
-          <p className={classes.heading}>{types.types[number]}</p>
+          <p className={classes.heading}>
+            {types.types[number].replace(/-/g, " ")}
+          </p>
           <div className={classes.grid}>
             {food.map((item) => {
               return (

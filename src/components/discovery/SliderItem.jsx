@@ -5,7 +5,7 @@ export default function SliderItem({ store, discount }) {
   return (
     <Link to={`/Restaurant/${store.link}`} key={store.name}>
       <div className={classes.border}>
-        <img src={store.image} className={classes.img} />
+        <img src={store.image} className={classes.img} alt={store.name} />
         {store.discount !== "0%" && discount && (
           <span className={classes.discount}>{store.discount}</span>
         )}

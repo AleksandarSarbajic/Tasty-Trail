@@ -110,7 +110,9 @@ export default function Content({ content }) {
       </div>
       {location.hash !== "" ? (
         <>
-          <p className={classes.heading}>{location.hash.slice(1)}</p>
+          <p className={classes.heading}>
+            {location.hash.slice(1).replace(/-/g, " ")}
+          </p>
           <div className={classes.grid}>
             {content.food
               .filter((item) => `#${item.type}` === location.hash)

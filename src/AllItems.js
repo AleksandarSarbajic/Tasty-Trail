@@ -1647,7 +1647,103 @@
 //   },
 // ];
 
-export const itemToBeAdded = {
-  food: [{ img: "", name: "pizza" }],
-  markets: [{ img: "", name: "pizza" }],
-};
+// export const itemToBeAdded = {
+//   food: [
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/a69b5aea-c5a8-11ea-9f48-2e3b484a03e4_0b2c3eb5_ae95_4bff_9144_7f7c93ea74f9.jpg-md?w=960",
+//       name: "burger",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/35a758c0-c5b7-11ea-b7ee-ae2256681f27_0b7baea7_17b7_4113_93ed_6a7f40a3139c.jpg-md?w=960",
+//       name: "barbecue",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/53129366-c5a8-11ea-8a78-822e244794a0_52b897cd_ac18_4cb5_9921_2653f1d38650.jpg-md?w=960",
+//       name: "pizza",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/fd1d18e0-c5a8-11ea-8a78-822e244794a0_a1852dc9_4afb_4877_9659_793adcb0f87b.jpg-md?w=960",
+//       name: "salads",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/5c379448-8364-11ec-86c9-f6b3c036ea5b_2fc5ac24_1974_4871_a73a_829e6417f3f9.jpeg-md?w=960",
+//       name: "chicken",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/2d24d3ee-c5b2-11ea-a452-2e3b484a03e4_331daa86_a0e3_45da_bd06_05f8a6df06f3.jpg-md?w=960",
+//       name: "breakfast",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/90afac70-c5af-11ea-8a78-822e244794a0_7e31d123_8ff4_4211_9f17_88ae65a175bd.jpg-md?w=960",
+//       name: "dessert",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/4b29c514-c5af-11ea-9f48-2e3b484a03e4_79c34f68_00f6_4f6f_8f07_7fb624561638.jpg-md?w=960",
+//       name: "pasta",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/3b15b7ec-c5a9-11ea-b203-822e244794a0_f9f6d726_a28a_40f1_9d3f_76d3ed1528c7.jpg-md?w=960",
+//       name: "sandwich",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/ce6f725a-c5b1-11ea-a452-2e3b484a03e4_77dfe9e2_c1cf_4537_a261_35ab0ebd5f9e.jpg-md?w=960",
+//       name: "wings",
+//     },
+//   ],
+//   markets: [
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/bfd9a598-46ee-11ec-9121-0e9ac38cbb02_24769cd1_c20a_447a_812b_741ef61bffbe.webp-md?w=960",
+//       name: "grocery",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/a0f2c09e-dda5-11ec-9763-eec63c6f9859_fc9971f6_8def_4d06_a691_7c82418ee1bc.png-md?w=960",
+//       name: "bakery",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/db624ce8-477a-11ec-b661-f2ea60bfba0f_e19a3fa2_32cd_49eb_be13_008ad57496c1.jpg-md?w=960",
+//       name: "meat",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/7c7b9b24-46f0-11ec-9441-be09fcc76cfb_bd37eb65_f8d9_4824_a236_419fe7b8b22a.jpg-md?w=960",
+//       name: "alcohol",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/ad2cdc9e-7cdb-11ec-b170-16d64d8256c1_70c85f6d_cb4f_4662_bc53_5d8729677116.jpg-md?w=960",
+//       name: "electronics",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/43da6aaa-4779-11ec-bda2-16dadda4b025_8536d8e7_98b3_48e7_a823_a9a281ffc642.jpg-md?w=960",
+//       name: "pharmacy",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/eee1e246-46ea-11ec-9441-be09fcc76cfb_f6c7229e_ab29_45aa_9a4d_12871668b7d7.jpg-md?w=960",
+//       name: "gifts",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/4022c6cc-477a-11ec-8e04-16dadda4b025_8c9275db_d0a7_4225_9d5a_1e314f939648.jpg-md?w=960",
+//       name: "toys",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/8e5d6adc-963e-11ec-a612-1ebbeb2c25d8_957df7bb_ed62_431e_8bff_474a1b1204a4.jpg-md?w=960",
+//       name: "cosmetics",
+//     },
+//     {
+//       img: "https://imageproxy.wolt.com/wolt-frontpage-images/categories/7c6c160a-46ef-11ec-97ba-f2ea60bfba0f_5ebcfefe_fbad_4744_945a_f91d519b6e86.jpg-md?w=960",
+//       name: "kids",
+//     },
+//   ],
+// };
+
+export const itemToBeAdded = [
+  "#EmBEYQ",
+  "#FWI9eT",
+  "#pI1NiC",
+  "#iF1AT4",
+  "#dWMJth",
+  "#DgmO7y",
+  "#y5hb99",
+  "#mxyO5w",
+  "#1hKdTo",
+  "#02Sitq",
+  "#36C8E3",
+];

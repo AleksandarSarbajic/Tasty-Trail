@@ -18,20 +18,24 @@ export default function TypesItem({ item, type }) {
           return innerArray.types.includes(item.name);
         });
 
+  console.log(numberOfplaces);
   return (
     <Link to={`/discovery/category?type=${item.name}`} className={classes.item}>
       <div className={classes.border}>
-        <img src={item.img} className={classes.img} />
+        <img src={item.img} className={classes.img} alt={item.text} />
       </div>
       <div className={classes.text}>
         <p className={classes.name}>{item.name}</p>
       </div>
-      {numberOfplaces.length > 0 && (
-        <span className={classes.quantity}>
-          {numberOfplaces.length}{" "}
-          {numberOfplaces.length > 1 ? "places" : "place"}
-        </span>
-      )}
+
+      <span className={classes.quantity}>
+        {numberOfplaces.length > 0 && numberOfplaces.length}{" "}
+        {numberOfplaces.length > 1
+          ? "places"
+          : numberOfplaces.length === 0
+          ? "No places"
+          : "place"}
+      </span>
     </Link>
   );
 }

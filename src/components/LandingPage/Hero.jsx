@@ -41,10 +41,10 @@ export default function Hero() {
       <div className={classes.center}>
         <h1 className={`${classes.heading} ${hidden}`}>{text}</h1>
         <div className={`${classes.links} ${hidden}`}>
-          <Link to={"/"} className={classes.link}>
+          <Link to={"/discovery"} className={classes.link}>
             Order fresh food right now!
           </Link>
-          <Link to={"/"} className={classes.link}>
+          <Link to={"/discovery"} className={classes.link}>
             At your place in 10 minutes!
           </Link>
         </div>
@@ -52,8 +52,16 @@ export default function Hero() {
           There are more than a thousand stores available to place food orders
           from!
         </p>
-        <img className={`${classes.left} ${cloud}`} src="/cloud.webp" />
-        <img className={`${classes.right} ${cloud}`} src="/cloud.webp" />
+        <img
+          className={`${classes.left} ${cloud}`}
+          src="/cloud.webp"
+          alt="Two clouds that are moving to the sides"
+        />
+        <img
+          className={`${classes.right} ${cloud}`}
+          src="/cloud.webp"
+          alt="Two clouds that are moving to the sides"
+        />
       </div>
     </section>
   );

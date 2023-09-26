@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 import LandingPage from "./routes/LandingPage";
 import Discovery, { loader as discoveryLoader } from "./routes/Discovery";
 import Food, { loader as foodLoader } from "./routes/Food";
-import CartPage from "./routes/CartPage";
+import CartPage, { loader as discountLoader } from "./routes/CartPage";
 import ContactPage from "./routes/ContactPage";
 import RestorauntsPage, {
   loader as restorauntsLoader,
@@ -96,6 +96,7 @@ const router = createBrowserRouter([
         path: "/cart",
         id: "cart",
         element: <CartPage />,
+        loader: discountLoader,
       },
       {
         path: "/contact",

@@ -57,6 +57,7 @@ export default function Finish() {
 
   function onClickHandler() {
     dispatch(cartActions.removeAllItems());
+    dispatch(cartActions.setDiscountPercent(1));
     navigate("/discovery");
   }
 
@@ -112,7 +113,6 @@ export default function Finish() {
         <div className={classes.checkBox}>
           <h3 className={classes.checkBoxHeading}>Subtotal</h3>
           <p className={classes.checkBoxText}>
-            {" "}
             {cart.selected === "first"
               ? cart.totalPrice
               : cart.selected === "second"
@@ -124,31 +124,54 @@ export default function Finish() {
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Applied discount code</p>
-        <p className={classes.checkOutDiscount}> 20% off </p>
+        <p className={classes.checkOutDiscount}> {cart.discount}% off </p>
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Discount</p>
-        <p className={classes.checkOutText}> -0 rsd(0%) </p>
+        {cart.discount === 1 ? (
+          <p className={classes.checkOutText}>0 rsd ({cart.discount} %)</p>
+        ) : (
+          <p className={classes.checkOutText}>
+            {cart.selected === "first" && cart.discount > 1
+              ? cart.totalPrice / cart.discount
+              : cart.selected === "second" && cart.discount > 1
+              ? cart.totalPriceSecond / cart.discount
+              : (cart.totalPrice + cart.totalPriceSecond) / cart.discount}{" "}
+            rsd ({cart.discount}%)
+          </p>
+        )}
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Delivery</p>
-        <p className={classes.checkOutText}>
-          {delivery}
-          rsd
-        </p>
+        <p className={classes.checkOutText}>{delivery} rsd</p>
       </div>
 
       <div className={classes.checkOut}>
         <p className={classes.checkOutTotal}>Grand total</p>
-        <p className={classes.checkOutPrice}>
-          {" "}
-          {cart.selected === "first"
-            ? cart.totalPrice + delivery
-            : cart.selected === "second"
-            ? cart.totalPriceSecond + delivery
-            : cart.totalPrice + cart.totalPriceSecond + delivery}{" "}
-          RSD
-        </p>
+        {cart.discount === 1 ? (
+          <p className={classes.checkOutPrice}>
+            {cart.selected === "first"
+              ? cart.totalPrice
+              : cart.selected === "second"
+              ? cart.totalPriceSecond
+              : cart.totalPrice + cart.totalPriceSecond}{" "}
+            RSD
+          </p>
+        ) : (
+          <p className={classes.checkOutPrice}>
+            {cart.selected === "first"
+              ? cart.totalPrice + delivery - cart.totalPrice / cart.discount
+              : cart.selected === "second"
+              ? cart.totalPriceSecond +
+                delivery -
+                cart.totalPriceSecond / cart.discount
+              : cart.totalPrice +
+                cart.totalPriceSecond +
+                delivery -
+                (cart.totalPriceSecond + cart.totalPrice) / cart.discount}{" "}
+            RSD
+          </p>
+        )}
       </div>
       <button className={classes.button} onClick={onClickHandler}>
         Continue ordering food

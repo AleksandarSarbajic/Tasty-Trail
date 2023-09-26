@@ -103,7 +103,7 @@ function OurHistory() {
                 <img
                   src="Kfc_logo.webp
                 "
-                  alt="ship"
+                  alt="KFC logo"
                   className={classes.img}
                 />
               </div>

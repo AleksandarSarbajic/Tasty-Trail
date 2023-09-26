@@ -38,7 +38,7 @@ export default function Discovery() {
         heading={"Our recommendations!"}
         discount={true}
       />
-      {/* <TypesSlider data={data} /> */}
+      <TypesSlider data={data} />
       <SliderMarkets data={data} heading={"Markets"} />
     </>
   );

@@ -66,18 +66,42 @@ export default function CheckOut(props) {
       </div>
       <div>
         <span className={classes.CheckOutName}>Discount</span>
-        <span className={classes.CheckOutPrice}>0 rsd</span>
+        {cart.discount === 1 ? (
+          <span className={classes.CheckOutPrice}>0 rsd</span>
+        ) : (
+          <span className={classes.CheckOutPrice}>
+            {cart.selected === "first" && cart.discount > 1
+              ? cart.totalPrice / cart.discount
+              : cart.selected === "second" && cart.discount > 1
+              ? cart.totalPriceSecond / cart.discount
+              : (cart.totalPrice + cart.totalPriceSecond) / cart.discount}
+            rsd
+          </span>
+        )}
       </div>
       <div className={classes.CheckOutLast}>
         <span className={classes.CheckOutNameFinal}>Grand total</span>
-        <span className={classes.CheckOutPriceFinal}>
-          {cart.selected === "first"
-            ? cart.totalPrice
-            : cart.selected === "second"
-            ? cart.totalPriceSecond
-            : cart.totalPrice + cart.totalPriceSecond}{" "}
-          RSD
-        </span>
+        {cart.discount === 1 ? (
+          <span className={classes.CheckOutPriceFinal}>
+            {cart.selected === "first"
+              ? cart.totalPrice
+              : cart.selected === "second"
+              ? cart.totalPriceSecond
+              : cart.totalPrice + cart.totalPriceSecond}{" "}
+            RSD
+          </span>
+        ) : (
+          <span className={classes.CheckOutPriceFinal}>
+            {cart.selected === "first"
+              ? cart.totalPrice - cart.totalPrice / cart.discount
+              : cart.selected === "second"
+              ? cart.totalPriceSecond - cart.totalPriceSecond / cart.discount
+              : cart.totalPrice +
+                cart.totalPriceSecond -
+                (cart.totalPriceSecond + cart.totalPrice) / cart.discount}{" "}
+            RSD
+          </span>
+        )}
       </div>
       <button className={classes.CheckOutButton} onClick={onClickHandler}>
         {location.hash === "" ? "Checkout now" : "Order Now"}

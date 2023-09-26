@@ -69,7 +69,7 @@ export default function Aside(props) {
                   }`}
                   onClick={() => clearAndMoveHandler(type)}
                 >
-                  {type}
+                  {type.replace(/-/g, " ")}
                 </button>
               </li>
             );

@@ -37,9 +37,9 @@ export default function TypesAll({ allData, searchData = [], heading }) {
     return (
       <Error
         img={"/cart.png"}
-        text=" There is no such restoraunt for any of that filters, choose other
-  filters or go back to restoraunts"
-        to="/discovery/restaraunts"
+        text=" There is no such place for any of that filters, choose other
+  filters or go back to place"
+        to="/discovery"
         alt={"cart"}
         link={"Go back"}
       />
@@ -53,9 +53,9 @@ export default function TypesAll({ allData, searchData = [], heading }) {
     return (
       <Error
         img={"/cart.png"}
-        text="There is no such restoraunt for any of that filters, choose other
-  filters or go back to restoraunts"
-        to="/discovery/restaraunts"
+        text="There is no such places for any of that filters, choose other
+  filters or go back to place"
+        to="/discovery"
         alt={"cart"}
         link={"Go back"}
       />

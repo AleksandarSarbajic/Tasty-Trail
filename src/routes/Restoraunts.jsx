@@ -18,7 +18,7 @@ export default function RestorauntsPage() {
   const heading = location.pathname.includes("markets")
     ? "Markets"
     : "Restaurants";
-  const showFilter = useSelector((state) => state.filter.show);
+  const { show, sort } = useSelector((state) => state.filter);
 
   const data = useLoaderData("restoraunts");
 
@@ -26,11 +26,11 @@ export default function RestorauntsPage() {
     <>
       <StoreTypes />
       <Header heading={heading} />
-      {location.search === "" ? (
+      {location.search === "" && sort === "Recommended" ? (
         <TypesSlider data={data} heading={heading} />
       ) : null}
       <TypesAll allData={data} heading={heading} />
-      {showFilter && <Filter data={data.types} type={heading} />}
+      {show && <Filter data={data.types} type={heading} />}
     </>
   );
 }

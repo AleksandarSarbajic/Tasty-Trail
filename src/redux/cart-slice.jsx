@@ -11,12 +11,12 @@ const cartSlice = createSlice({
     totalPriceSecond: 0,
     selected: "first",
     changed: false,
+    discount: 1,
   },
   reducers: {
     addToCart: (state, action) => {
       const newItem = action.payload.item;
       const type = action.payload.type;
-
       if (type !== "Market") {
         const existingItem = state.items.find(
           (items) => items.name === newItem.name
@@ -166,6 +166,9 @@ const cartSlice = createSlice({
     },
     setSelectedCart: (state, action) => {
       state.selected = action.payload;
+    },
+    setDiscountPercent: (state, action) => {
+      state.discount = action.payload;
     },
   },
 });

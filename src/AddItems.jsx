@@ -6,7 +6,7 @@ function AddItems() {
   async function addItemsHandler() {
     try {
       const res = await fetch(
-        `https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data/types.json`,
+        `https://tastytrail-cc4bb-default-rtdb.europe-west1.firebasedatabase.app/data/Discount.json`,
         {
           method: "PUT",
           body: JSON.stringify(itemToBeAdded),
