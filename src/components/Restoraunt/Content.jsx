@@ -47,7 +47,6 @@ export default function Content({ content }) {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
   }, [onScroll]);
-
   const handlePopState = useCallback(
     (e) => {
       e.preventDefault();

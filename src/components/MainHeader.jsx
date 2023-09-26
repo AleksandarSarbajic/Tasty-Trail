@@ -85,9 +85,19 @@ export default function MainHeader() {
             )}
           </div>
 
+          {location.pathname !== "/" &&
+          location.pathname !== "/aboutus" &&
+          location.pathname !== "/contact" &&
+          location.pathname !== "/cart" &&
+          location.pathname !== "/howitworks" ? (
+            <SearchForm />
+          ) : (
+            <span className={classes.flex}> </span>
+          )}
           {location.pathname === "/" ||
           location.pathname === "/aboutus" ||
           location.pathname === "/contact" ||
+          location.pathname === "/cart" ||
           location.pathname === "/howitworks" ? (
             <>
               <button
@@ -102,22 +112,22 @@ export default function MainHeader() {
           ) : (
             ""
           )}
-          {location.pathname !== "/" &&
-          location.pathname !== "/aboutus" &&
-          location.pathname !== "/contact" &&
-          location.pathname !== "/howitworks" ? (
-            <SearchForm />
-          ) : (
-            ""
-          )}
-
           <ul
             className={`${classes.list} ${
               showSidebar ? classes.transform : ""
+            } ${
+              location.pathname !== "/" &&
+              location.pathname !== "/aboutus" &&
+              location.pathname !== "/contact" &&
+              location.pathname !== "/cart" &&
+              location.pathname !== "/howitworks"
+                ? classes.gone
+                : ""
             }`}
           >
             {location.pathname === "/" ||
             location.pathname === "/aboutus" ||
+            location.pathname === "/cart" ||
             location.pathname === "/contact" ||
             location.pathname === "/howitworks" ? (
               <>
@@ -172,11 +182,21 @@ export default function MainHeader() {
           </ul>
           {location.pathname !== "/" &&
           location.pathname !== "/aboutus" &&
+          location.pathname !== "/cart" &&
           location.pathname !== "/contact" &&
           location.pathname !== "/howitworks" ? (
             <>
               <CartButton />
-              <CartPreview />
+
+              {location.pathname !== "/" &&
+              location.pathname !== "/aboutus" &&
+              location.pathname !== "/cart" &&
+              location.pathname !== "/contact" &&
+              location.pathname !== "/howitworks" ? (
+                <CartPreview />
+              ) : (
+                ""
+              )}
             </>
           ) : (
             ""

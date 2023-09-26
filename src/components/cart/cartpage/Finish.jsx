@@ -124,12 +124,15 @@ export default function Finish() {
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Applied discount code</p>
-        <p className={classes.checkOutDiscount}> {cart.discount}% off </p>
+        <p className={classes.checkOutDiscount}>
+          {" "}
+          {cart.discount === 1 ? 0 : cart.discount}% off{" "}
+        </p>
       </div>
       <div className={classes.checkOut}>
         <p className={classes.checkOutHeading}>Discount</p>
         {cart.discount === 1 ? (
-          <p className={classes.checkOutText}>0 rsd ({cart.discount} %)</p>
+          <p className={classes.checkOutText}>0 rsd ({0} %)</p>
         ) : (
           <p className={classes.checkOutText}>
             {cart.selected === "first" && cart.discount > 1

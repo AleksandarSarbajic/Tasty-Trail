@@ -31,15 +31,10 @@
   @media only screen and (max-width: 27.25em) {
     padding: 1.4rem;
     &:hover .button {
-      border: none;
-
-      transform: none;
-      background-image: none;
+      transform: scale(1.1);
     }
     &:hover .icon {
-      transform: none;
-
-      color: var(--text-tertiary);
+      transform: scale(1.1);
     }
     &:hover,
     &:active {
@@ -139,18 +134,18 @@
     width: 8rem;
     right: -2rem;
     bottom: -2rem;
-    &:hover {
-      border: none;
+    // &:hover {
+    //   border: none;
 
-      transform: none;
-      background-image: none;
-    }
+    //   transform: none;
+    //   background-image: none;
+    // }
   }
-  &:hover .icon {
-    transform: none;
+  // &:hover .icon {
+  //   transform: none;
 
-    color: var(--text-tertiary);
-  }
+  //   color: var(--text-tertiary);
+  // }
 }
 
 .icon {

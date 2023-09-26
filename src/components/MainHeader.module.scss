@@ -63,6 +63,10 @@
     z-index: 90999999;
   }
 }
+.gone {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
 .link:visited,
 .link:link {
   display: inline-block;
@@ -160,14 +164,21 @@
 
 .menu {
   display: none;
+
   &Burger {
     font-size: 4rem;
   }
   @media only screen and (max-width: 50em) {
+    flex: 1 1 0%;
     display: block;
+    text-align: right;
     border: none;
     background-color: transparent;
     z-index: 99999999999999999999999999 !important;
     cursor: pointer;
   }
+}
+
+.flex {
+  flex: 0.5 1 0%;
 }

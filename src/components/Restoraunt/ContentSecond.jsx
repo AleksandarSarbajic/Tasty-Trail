@@ -14,13 +14,11 @@ import { useSearchInItem } from "../../customhooks/useSearchInItem";
 import LoadingSpinnerSmall from "../UI/LoadingSpinnerSmall";
 import Error from "../UI/Error";
 
-import { useDispatch, useSelector } from "react-redux";
-import { searchActions } from "../../redux/search-slice";
+import { MdCancel } from "react-icons/md";
 
-export default function Content({ content }) {
-  const searchText = useSelector((state) => state.search.search);
+export default function ContentSecond({ content }) {
   const [text, setText] = useState("");
-  const dispatch = useDispatch();
+
   const location = useLocation();
   const { exportData, isLoading } = useSearchInItem(
     text,
@@ -29,12 +27,10 @@ export default function Content({ content }) {
     content.name
   );
 
-  console.log(exportData);
-
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search");
-  const parts = location.pathname.split("/");
+
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = useCallback(() => {
@@ -51,46 +47,44 @@ export default function Content({ content }) {
     };
   }, [onScroll]);
 
-  // const handlePopState = useCallback(
-  //   (e) => {
-  //     e.preventDefault();
-  //     if (parts.length === 3) return;
-  //     if (searchText.length === 0 && query === null && location.hash === "") {
-  //       navigate("/discovery");
-  //     }
-  //     if (searchText.length === 0 && query === null) return;
-  //     dispatch(searchActions.setSearchText({ payload: "" }));
-  //     searchParams.delete("search");
-  //     setSearchParams(searchParams);
-  //   },
-  //   [
-  //     parts,
-  //     location.hash,
-  //     dispatch,
-  //     navigate,
-  //     query,
-  //     searchParams,
-  //     searchText.length,
-  //     setSearchParams,
-  //   ]
-  // );
+  const handlePopState = useCallback(() => {
+    if (text !== "") {
+      setText("");
+      searchParams.delete("search");
+      setSearchParams(searchParams);
+    }
 
-  // useEffect(() => {
-  //   window.addEventListener("popstate", handlePopState);
+    if (location.hash === "" && text === "") {
+      navigate("/discovery");
+    }
+  }, [text, location.hash, searchParams, setSearchParams, navigate]);
 
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener("popstate", handlePopState);
-  //   };
-  // }, [handlePopState]);
+  useEffect(() => {
+    if (query === null) {
+      setText("");
+    }
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [handlePopState, query]);
 
   function onChangeTextHandler(e) {
     setText(e.target.value);
-    // dispatch(searchActions.setSearchText({ payload: e.target.value }));
+
+    searchParams.set("search", e.target.value);
+    setSearchParams(searchParams);
+    if (e.target.value === "") {
+      searchParams.delete("search");
+      setSearchParams(searchParams);
+    }
   }
   function handleClearSearch(e) {
     e.preventDefault();
-    dispatch(searchActions.setSearchText({ payload: "" }));
+
+    setText("");
     searchParams.delete("search");
     setSearchParams(searchParams);
   }
@@ -109,6 +103,19 @@ export default function Content({ content }) {
                 type="text"
                 placeholder={`Search in ${content.name}`}
               />
+              {text.length > 0 ? (
+                <button
+                  className={classes.cancelButton}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClearSearch();
+                  }}
+                >
+                  <MdCancel className={classes.cancel} />
+                </button>
+              ) : (
+                ""
+              )}
             </div>
           </Form>
         </div>
@@ -137,14 +144,14 @@ export default function Content({ content }) {
         ""
       )}
 
-      {isLoading && searchText !== "" ? (
+      {isLoading && text !== "" ? (
         <div className={classes.spinnerContainer}>
           <LoadingSpinnerSmall state={isLoading} />
         </div>
-      ) : searchText !== "" && exportData.length > 0 ? (
+      ) : text !== "" && exportData.length > 0 ? (
         <>
           <p className={classes.searchHeading}>
-            Search results for &quot;{searchText}&quot;{" "}
+            Search results for &quot;{text}&quot;{" "}
             <button
               className={classes.searchButton}
               onClick={handleClearSearch}
@@ -165,11 +172,11 @@ export default function Content({ content }) {
             ))}
           </div>
         </>
-      ) : searchText !== "" && exportData.length === 0 ? (
+      ) : text !== "" && exportData.length === 0 ? (
         <Error
           img={"/cart.png"}
           text="No results found"
-          header={searchText}
+          header={text}
           to="/discovery/restaraunts"
           alt={"cart"}
           link={"Clear search"}
@@ -179,11 +186,7 @@ export default function Content({ content }) {
       ) : (
         ""
       )}
-      {location.hash === "" && searchText === "" ? (
-        <Section types={content} />
-      ) : (
-        ""
-      )}
+      {location.hash === "" && text === "" ? <Section types={content} /> : ""}
     </div>
   );
 }

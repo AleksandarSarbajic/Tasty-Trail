@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
 
 export function useSearchInItem(
   query,
@@ -9,9 +8,6 @@ export function useSearchInItem(
 ) {
   const [exportData, setExportData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-  const searchQuery = searchParams.get("search");
 
   useEffect(() => {
     setIsLoading(true);
@@ -44,19 +40,6 @@ export function useSearchInItem(
           return filteredArray;
         });
 
-        if (query.length !== 0) {
-          searchParams.set("search", query);
-          setSearchParams(searchParams);
-        }
-
-        if (
-          query.length === 0 &&
-          location.hash === "" &&
-          searchQuery !== null
-        ) {
-          searchParams.delete("search");
-          setSearchParams(searchParams);
-        }
         setExportData(filteredData);
       } catch (error) {
         console.error(error.message);
@@ -70,7 +53,7 @@ export function useSearchInItem(
     return () => {
       clearTimeout(handler);
     };
-  }, [name, query, searchParams, searchQuery, setSearchParams, time, type]);
+  }, [name, query, time, type]);
 
   return { isLoading, exportData };
 }

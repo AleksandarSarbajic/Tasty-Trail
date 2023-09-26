@@ -137,3 +137,14 @@
     opacity: 1;
   }
 }
+.cancel {
+  font-size: 2.4rem;
+
+  &Button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 23;
+    margin-left: -3.5rem;
+  }
+}

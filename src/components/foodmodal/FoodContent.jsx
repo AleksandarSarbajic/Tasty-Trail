@@ -70,7 +70,10 @@ export default function FoodContent({ foodItem, item }) {
       <div className={classes.container}>
         <h1 className={classes.heading}>{foodItem.name}</h1>
         <p className={classes.price}>{foodItem.price} rsd</p>
-        <p className={classes.description}>{foodItem.ingredients}</p>
+        <p className={classes.description}>
+          {/* {foodItem.ingredients.length > 0 ? foodItem.ingredients : " "} &nbsp; */}
+          {foodItem.ingredients}
+        </p>
         <div className={classes.flex}>
           <div className={classes.buttons}>
             <button

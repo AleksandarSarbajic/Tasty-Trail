@@ -2,21 +2,16 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import classes from "../Restoraunt/Aside.module.scss";
 import { HiChevronDown, HiOutlineSquares2X2 } from "react-icons/hi2";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { searchActions } from "../../redux/search-slice";
 
 export default function Aside(props) {
   const [animation, setAnimation] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  // const queryParams = searchParams.get("typeQuery");
+
   const cuttedHash = location.hash.slice(1);
-  const dispatch = useDispatch();
 
   function onClick() {
-    dispatch(searchActions.setSearchText({ payload: "" }));
-
     setAnimation((animate) =>
       animation === null ? true : animation != null ? !animate : null
     );
@@ -27,8 +22,8 @@ export default function Aside(props) {
   }
 
   function clearAndMoveHandler(type) {
-    dispatch(searchActions.setSearchText({ payload: "" }));
-
+    searchParams.delete("search");
+    setSearchParams(searchParams);
     navigate(`#${type}`);
   }
 
@@ -39,7 +34,7 @@ export default function Aside(props) {
   });
 
   return (
-    <aside>
+    <aside className={classes.side}>
       <ul className={classes.list}>
         <button className={classes.square} onClick={onClick}>
           <span>

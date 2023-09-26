@@ -31,6 +31,7 @@ export default function ContainerCart() {
           }`}
         >
           <ProgressBar />
+
           {locataion.hash === "" ? (
             <Cart />
           ) : locataion.hash === "#checkout" ? (

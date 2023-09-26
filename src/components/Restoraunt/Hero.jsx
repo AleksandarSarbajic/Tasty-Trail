@@ -1,6 +1,7 @@
 import classes from "../Restoraunt/Hero.module.scss";
 import Aside from "./Aside";
-import Content from "./Content";
+// import Content from "./Content";
+import ContentSecond from "./ContentSecond";
 import Navigation from "./Navigation";
 export default function RestorauntHero(props) {
   return (
@@ -12,7 +13,7 @@ export default function RestorauntHero(props) {
         <Navigation store={props.store} />
         <div className={classes.main}>
           <Aside content={props.store} />
-          <Content content={props.store} />
+          <ContentSecond content={props.store} />
         </div>
       </div>
     </>

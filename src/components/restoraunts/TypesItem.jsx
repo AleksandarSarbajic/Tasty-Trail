@@ -18,7 +18,6 @@ export default function TypesItem({ item, type }) {
           return innerArray.types.includes(item.name);
         });
 
-  console.log(numberOfplaces);
   return (
     <Link to={`/discovery/category?type=${item.name}`} className={classes.item}>
       <div className={classes.border}>
