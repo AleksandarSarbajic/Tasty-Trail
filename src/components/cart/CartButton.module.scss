@@ -1,5 +1,15 @@
 .icon {
   font-size: 3rem;
+  @media only screen and (max-width: 50em) {
+    font-size: 4rem;
+  }
+}
+.blank {
+  min-width: 0px;
+  flex: 1 1 0%;
+  @media only screen and (max-width: 50em) {
+    display: none;
+  }
 }
 .button {
   display: flex;
@@ -17,11 +27,61 @@
   &:hover {
     background-color: var(--primary-color);
   }
+
+  @media only screen and (max-width: 50em) {
+    text-align: center;
+
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 15px;
+    width: 85%;
+  }
 }
 .text {
   font-size: 1.8rem;
+  @media only screen and (max-width: 50em) {
+    font-size: 3rem;
+  }
 }
 .count {
   font-size: 2rem;
   font-weight: 400;
+  @media only screen and (max-width: 50em) {
+    font-size: 3.2rem;
+  }
+}
+.item {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 0px;
+  flex: 1 1 0%;
+
+  @media only screen and (max-width: 50em) {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    transform: translate(-42.5%, -50%);
+    animation: easeInSecond 1s;
+  }
+}
+
+@keyframes easeInSecond {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-42.5%, 100%);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-42.5%, -50%);
+  }
 }

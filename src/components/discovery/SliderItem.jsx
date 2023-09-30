@@ -3,9 +3,9 @@ import classes from "../discovery/SliderItem.module.scss";
 import { Link } from "react-router-dom";
 export default function SliderItem({ store, discount }) {
   return (
-    <Link to={`/Restoraunt/${store.link}`} key={store.name}>
+    <Link to={`/Restaurant/${store.link}`} key={store.name}>
       <div className={classes.border}>
-        <img src={store.image} className={classes.img} />
+        <img src={store.image} className={classes.img} alt={store.name} />
         {store.discount !== "0%" && discount && (
           <span className={classes.discount}>{store.discount}</span>
         )}

@@ -1,5 +1,5 @@
 import Slider from "./Slider";
-import classes from "../LandingPage/Background.module.css";
+import classes from "../LandingPage/Background.module.scss";
 import Download from "./Download";
 import { useInView } from "react-intersection-observer";
 export default function Background() {
@@ -17,22 +17,9 @@ export default function Background() {
           <p
             className={`${classes.text} ${gridInView ? classes.animateF : ""}`}
           >
-            Feeling hungry? Feeling too exhausted to prepare a
-          </p>
-          <p
-            className={`${classes.text} ${gridInView ? classes.animateS : ""}`}
-          >
-            meal? Whether you have guests coming over or you
-          </p>
-          <p
-            className={`${classes.text} ${gridInView ? classes.animateT : ""}`}
-          >
-            just want to add some convenience to your life,
-          </p>
-          <p
-            className={`${classes.text} ${gridInView ? classes.animateFr : ""}`}
-          >
-            TastyTrail is the solution.
+            Feeling hungry? Feeling too exhausted to prepare a meal? Whether you
+            have guests coming over or you just want to add some convenience to
+            your life, TastyTrail is the solution.
           </p>
         </div>
         <div
@@ -41,7 +28,11 @@ export default function Background() {
           <p className={classes.image}>
             Rest assured, TastyTrail has got you covered.
           </p>
-          <img src="public/food.png" className={classes.img} />
+          <img
+            src="/food.png"
+            className={classes.img}
+            alt="Image of plate with food and juice"
+          />
         </div>
       </div>
       <Slider />

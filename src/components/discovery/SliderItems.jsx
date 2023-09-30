@@ -7,7 +7,6 @@ import SliderItem from "./SliderItem";
 export default function SliderItems(props) {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 3,
     },
@@ -33,7 +32,6 @@ export default function SliderItems(props) {
     },
   };
   const CustomRightArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonRight}>
         <BsArrowRight className={classes.arrow} />
@@ -41,7 +39,6 @@ export default function SliderItems(props) {
     );
   };
   const CustomLeftArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
     return (
       <button onClick={() => onClick()} className={classes.buttonLeft}>
         <BsArrowLeft className={classes.arrow} />
@@ -67,7 +64,7 @@ export default function SliderItems(props) {
           customLeftArrow={<CustomLeftArrow />}
           removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
         >
-          {props.data.Restoraunts.map((item) => {
+          {props.data.Restaurants.map((item) => {
             return (
               <SliderItem
                 store={item}

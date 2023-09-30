@@ -5,29 +5,30 @@ import {
   useReducer,
   forwardRef,
 } from "react";
-import classes from "../LandingPage/Mobile.module.css";
+import classes from "../LandingPage/Mobile.module.scss";
+import { useWindowHeight } from "../../customhooks/useWindowHeight";
 
 const info = [
   {
     number: 1,
     text: "Never again waste time thinking about what to eat! Omnifood AI will create a 100% personalized weekly meal plan just for you. It makes sure you get all the nutrients and vitamins you need, no matter what diet you follow!",
     heading: "Find the perfect food for you",
-    img: "/public/app-screen-1.png",
+    img: "/app-screen-1.webp",
   },
   {
     number: 2,
     text: "Once per week, approve the meal plan generated for you by Omnifood AI. You can change ingredients, swap entire meals, or even add your own recipes!",
     heading: "Go to cart and check your order",
-    img: "/public/app-screen-2.png",
+    img: "/app-screen-2.webp",
   },
   {
     number: 3,
     text: "Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!",
     heading: "Order your food, and it will be at your place in 10 minutes",
-    img: "/public/app-screen-3.png",
+    img: "/app-screen-3.webp",
   },
 ];
-const reducer = (_, action) => {
+const reducer = (payload, action) => {
   switch (action.type) {
     case "FIRST":
       return [
@@ -56,11 +57,20 @@ const reducer = (_, action) => {
           number: info[2].number,
         },
       ];
+
     default:
       throw new Error("Should not get there");
   }
 };
 const Mobile = forwardRef(({ isVisible }, ref) => {
+  const {
+    windowHeight: {
+      first: startingPosition,
+      second: secondItem,
+      third: thirdItem,
+      close: closePosition,
+    },
+  } = useWindowHeight();
   const [userInfo, setUserInfo] = useReducer(reducer, [
     {
       text: info[0].text,
@@ -71,44 +81,42 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
   ]);
 
   const [scrollY, setScrollY] = useState(0);
-  const [classD, setClassD] = useState("");
+  const [classD, setClassD] = useState({});
   const [hidden, setHidden] = useState(true);
 
   const onScroll = useCallback(() => {
     const { pageYOffset } = window;
 
     setScrollY(pageYOffset);
-    if (pageYOffset >= 1125) {
-      setClassD(classes.fixed);
+
+    if (pageYOffset >= startingPosition && isVisible) {
+      setClassD({ fixed: classes.fixed, position: classes.position });
     } else {
       setClassD("");
       setUserInfo({ type: "FIRST" });
     }
-    if (pageYOffset >= 2250) {
+    if (pageYOffset >= closePosition) {
       setClassD("");
       setHidden(false);
       setHidden(false);
     } else {
       setHidden(true);
     }
-    if (pageYOffset >= 1500 && pageYOffset <= 1800) {
+    if (pageYOffset >= secondItem[0] && pageYOffset <= secondItem[1]) {
       setUserInfo({ type: "SECOND" });
     }
-    if (pageYOffset >= 1800 && pageYOffset <= 2100) {
+    if (pageYOffset >= thirdItem[0] && pageYOffset <= thirdItem[1]) {
       setUserInfo({ type: "THIRD" });
     }
-    // console.log(pageYOffset);
-  }, []);
+  }, [closePosition, isVisible, secondItem, startingPosition, thirdItem]);
 
   useEffect(() => {
-    //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
 
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
-  }, []);
+  }, [onScroll]);
 
   return (
     <>
@@ -116,7 +124,7 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
         className={`${classes.log} ${isVisible ? classes.animate : ""}`}
         ref={ref}
       >
-        <div className={`${classD} ${classes.mobile}`}>
+        <div className={`${classD.fixed} ${classes.mobile}`}>
           <h2 className={classes.heading}>Try the app</h2>
           <p className={classes.subheading}>
             Experience the convenience of having a wide selection of Serbian
@@ -129,14 +137,16 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               <p className={classes.direction}>{userInfo[0].heading}</p>
               <p className={classes.paragraph}>{userInfo[0].text}</p>
             </div>
-            <img src={`${userInfo[0].img}`} className={classes.img} />
-            {/* <img src="/public/app-screen-2.png" />
-        <img src="/public/app-screen-3.png" /> */}
+            <img
+              src={`${userInfo[0].img}`}
+              className={classes.img}
+              alt="Image of our app on the phone"
+            />
           </div>
         </div>
       </div>
       <div className={`${classes.height} ${hidden ? classes.hidden : ""}`}>
-        <div className={` ${classes.mobile}`}>
+        <div className={`${classes.mobile}`}>
           <h2 className={classes.heading}>Try the app</h2>
           <p className={classes.subheading}>
             Experience the convenience of having a wide selection of Serbian
@@ -149,14 +159,16 @@ const Mobile = forwardRef(({ isVisible }, ref) => {
               <p className={classes.direction}>{userInfo[0].heading}</p>
               <p className={classes.paragraph}>{userInfo[0].text}</p>
             </div>
-            <img src={`${userInfo[0].img}`} className={classes.img} />
-            {/* <img src="/public/app-screen-2.png" />
-        <img src="/public/app-screen-3.png" /> */}
+            <img
+              src={`${userInfo[0].img}`}
+              className={classes.img}
+              alt="Image of our app on the phone"
+            />
           </div>
         </div>
       </div>
-      {/* <div className={classes.height}></div> */}
     </>
   );
 });
+Mobile.displayName = "Mobile";
 export default Mobile;

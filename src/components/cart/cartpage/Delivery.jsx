@@ -64,7 +64,6 @@ export default function Delivery(props) {
   }
 
   function onInputHandler() {
-    console.log(nameRef.current.value.length);
     if (nameRef.current.value.length === 0) {
       dispatchError({ type: "nameError", payload: true });
     } else {
@@ -100,7 +99,6 @@ export default function Delivery(props) {
 
   return (
     <div className={classes.container}>
-      <h3 className={classes.heading}>Checkout</h3>
       <p className={classes.formHeading}>Shipping address</p>
       <Form className={classes.form}>
         <div className={classes.formBox}>

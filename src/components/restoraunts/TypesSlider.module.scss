@@ -6,7 +6,7 @@
 }
 .heading {
   font-size: 3rem;
-  margin-bottom: -6rem;
+
   margin-left: 1rem;
   font-weight: 500;
 }
@@ -18,14 +18,16 @@
   padding: 0 1rem;
   border-radius: 15px;
   position: relative;
+
+  width: 100%;
 }
 
 .buttonRight {
-  top: 1rem;
+  top: 0rem;
   right: 3rem;
 }
 .buttonLeft {
-  top: 1rem;
+  top: 0rem;
   right: 10rem;
 }
 .buttonLeft,

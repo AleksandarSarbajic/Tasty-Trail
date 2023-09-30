@@ -8,8 +8,8 @@
   flex-direction: column;
   align-items: center;
   border: 3px solid var(--primary-color--light--2);
-  width: 22rem;
-  height: 22rem;
+
+  height: 100%;
   border-radius: 50%;
   position: relative;
   opacity: 0;
@@ -28,18 +28,39 @@
   margin-left: -2rem;
   opacity: 0;
   visibility: hidden;
+  padding: 0 1rem;
+  @media only screen and (max-width: 52rem) {
+    margin-left: 0;
+  }
 }
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 30rem));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 24rem));
+  grid-auto-rows: 24rem;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  @media only screen and (max-width: 52rem) {
+    grid-template-columns: repeat(2, minmax(20rem, 24rem));
+  }
+  @media only screen and (max-width: 27.25rem) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 30rem));
+    grid-auto-rows: 30rem;
+  }
 }
 
 .image {
-  width: 15rem;
+  width: 18rem;
+  @media only screen and (max-width: 27.25rem) {
+    width: 20rem;
+  }
 }
-
+.bucks {
+  width: 14rem;
+  @media only screen and (max-width: 27.25rem) {
+    width: 16rem;
+  }
+}
 .animate {
   animation: animate 1.2s linear;
   opacity: 1;

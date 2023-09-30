@@ -15,7 +15,7 @@ export default function ModalSetLoaction(props) {
     } else {
       setLabelClass(false);
     }
-    if (e.target.value.length >= 15 && containsNumbers(e.target.value)) {
+    if (e.target.value.length >= 10 && containsNumbers(e.target.value)) {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);

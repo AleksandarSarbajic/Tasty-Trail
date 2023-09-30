@@ -1,0 +1,61 @@
+.box {
+  display: grid;
+  gap: 4rem;
+  justify-content: center;
+  grid-template-columns: max-content max-content 0.6fr;
+  margin-bottom: 3rem;
+  @media only screen and (max-width: 57.5em) {
+    grid-template-columns: max-content max-content 0.9fr;
+    gap: 3rem;
+  }
+  @media only screen and (max-width: 44em) {
+    grid-template-columns: max-content max-content 1fr;
+    gap: 2.5rem;
+  }
+  @media only screen and (max-width: 38.5em) {
+    grid-template-columns: max-content 1fr;
+    grid-auto-rows: max-content;
+    gap: 2.5rem;
+    margin-bottom: 10rem;
+  }
+}
+.img {
+  width: 50rem;
+  object-fit: contain;
+  @media only screen and (max-width: 50em) {
+    width: 40rem;
+  }
+  @media only screen and (max-width: 44em) {
+    width: 35rem;
+  }
+}
+.heading {
+  font-size: 4rem;
+}
+.text {
+  font-size: 2rem;
+  &Box {
+    @media only screen and (max-width: 38.5em) {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.numberBox {
+  position: relative;
+  @media only screen and (max-width: 38.5em) {
+    grid-column: 1 / 2;
+    grid-row: 1 /2;
+  }
+}
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  font-size: 4rem;
+  background-color: var(--primary-color--light--2);
+  border-radius: 50%;
+  z-index: 99999999;
+}

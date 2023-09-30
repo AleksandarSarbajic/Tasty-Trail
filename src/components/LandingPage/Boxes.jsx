@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import classes from "../LandingPage/Boxes.module.css";
+import classes from "../LandingPage/Boxes.module.scss";
 import { MdSell } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserAlt } from "react-icons/fa";
 import { forwardRef } from "react";
+
 const Boxes = forwardRef(({ isVisible }, ref) => {
   return (
     <div className={classes.container} ref={ref}>
@@ -18,7 +19,7 @@ const Boxes = forwardRef(({ isVisible }, ref) => {
             Are you a restaurant owner looking to grow your business? Reach new
             customers when you join us.
           </p>
-          <Link to={"/"} className={classes.link}>
+          <Link to={"/howitworks"} className={classes.link}>
             See more <span className={classes.arrow}>&#8594;</span>
           </Link>
         </div>
@@ -29,7 +30,10 @@ const Boxes = forwardRef(({ isVisible }, ref) => {
             Join our elite league of delivery riders delivering happiness to
             customers and earn to achieve your dreams while at it.
           </p>
-          <Link to={"/"} className={`${classes.link} ${classes.second}`}>
+          <Link
+            to={"/howitworks"}
+            className={`${classes.link} ${classes.second}`}
+          >
             See more <span className={classes.arrow}>&#8594;</span>
           </Link>
         </div>
@@ -40,7 +44,10 @@ const Boxes = forwardRef(({ isVisible }, ref) => {
             Our customers are our number one priority, so we focus on doing
             everything we can to do for you to fell satisfying.
           </p>
-          <Link to={"/"} className={`${classes.link} ${classes.third}`}>
+          <Link
+            to={"/howitworks"}
+            className={`${classes.link} ${classes.third}`}
+          >
             See more <span className={classes.arrow}>&#8594;</span>
           </Link>
         </div>
@@ -48,4 +55,7 @@ const Boxes = forwardRef(({ isVisible }, ref) => {
     </div>
   );
 });
+
+Boxes.displayName = "boxes";
+
 export default Boxes;

@@ -1,8 +1,8 @@
-import { Form, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import classes from "../components/MainHeader.module.scss";
-import { BsSearch } from "react-icons/bs";
-import { RxCross1 } from "react-icons/rx";
+
 import { FiMapPin, FiChevronDown } from "react-icons/fi";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 import { useEffect, useState, useCallback } from "react";
 import useLocationCity from "../customhooks/useLocationCity";
@@ -12,14 +12,13 @@ import Modal from "./UI/Modal";
 import ModalContent from "./discovery/ModalContent";
 import CartButton from "./cart/CartButton";
 import CartPreview from "./cart/CartPreview";
+import SearchForm from "./search/SearchForm";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
-  const [labelClass, setLabelClass] = useState("");
-  const [cancelClass, setCancelClass] = useState(classes.delete);
-  const location = useLocation();
-
+  const [showSidebar, setShowSidebar] = useState(false);
   const city = useLocationCity();
+  const location = useLocation();
 
   const dispatch = useDispatch();
   const toggleModal = useSelector((state) => state.adress.isShown);
@@ -31,43 +30,12 @@ export default function MainHeader() {
   }, []);
 
   useEffect(() => {
-    //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
 
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
-  }, []);
-
-  function onChangeHandler(e) {
-    if (e.target.value.length >= 1) {
-      setLabelClass(classes.animate);
-      setCancelClass("");
-    } else {
-      setLabelClass("");
-      setCancelClass(classes.delete);
-    }
-  }
-  function cancelHandler(e) {
-    e.preventDefault();
-  }
-
-  const form = location.pathname !== "/" && (
-    <Form className={classes.form}>
-      <BsSearch className={classes.search} />
-      <input id="input" className={classes.input} onChange={onChangeHandler} />
-      <label htmlFor="input" className={`${classes.label} ${labelClass}`}>
-        Search
-      </label>
-      <button
-        className={`${classes.cancel} ${cancelClass} `}
-        onClick={cancelHandler}
-      >
-        <RxCross1 className={classes.cross} />
-      </button>
-    </Form>
-  );
+  }, [onScroll]);
 
   return (
     <>
@@ -78,15 +46,29 @@ export default function MainHeader() {
       )}
       <header
         className={`${classes.header} ${scrollY > 150 ? classes.fixed : ""} ${
-          location.pathname.includes("/Restoraunt") && classes.bg
+          location.pathname.includes("/Restaurant") ||
+          location.pathname.includes("/Market")
+            ? classes.bg
+            : ""
         }`}
       >
-        <nav className={`${classes.nav} `}>
+        <nav className={`${classes.nav}`}>
           <div className={classes.pin}>
-            <Link to={"/"} className={classes.logo}>
-              TastyTrail
+            <Link
+              to={`${
+                location.pathname === "/" ||
+                location.pathname === "/aboutus" ||
+                location.pathname === "/contact" ||
+                location.pathname === "/discovery" ||
+                location.pathname === "/howitworks"
+                  ? "/"
+                  : "/discovery"
+              } `}
+              className={classes.logo}
+            >
+              Tasty Trail
             </Link>
-            {location.pathname !== "/" && (
+            {location.pathname !== "/" && city && (
               <div
                 className={classes.location}
                 onClick={() => {
@@ -102,40 +84,131 @@ export default function MainHeader() {
               </div>
             )}
           </div>
-          {/* {form} */}
-          <ul className={classes.list}>
-            {location.pathname === "/" && (
+
+          {location.pathname !== "/" &&
+          location.pathname !== "/aboutus" &&
+          location.pathname !== "/contact" &&
+          location.pathname !== "/cart" &&
+          location.pathname !== "/howitworks" ? (
+            <SearchForm />
+          ) : (
+            <span className={classes.flex}> </span>
+          )}
+          {location.pathname === "/" ||
+          location.pathname === "/aboutus" ||
+          location.pathname === "/contact" ||
+          location.pathname === "/cart" ||
+          location.pathname === "/howitworks" ? (
+            <>
+              <button
+                className={classes.menu}
+                onClick={() => {
+                  setShowSidebar((show) => !show);
+                }}
+              >
+                <RxHamburgerMenu className={classes.menuBurger} />
+              </button>
+            </>
+          ) : (
+            ""
+          )}
+          <ul
+            className={`${classes.list} ${
+              showSidebar ? classes.transform : ""
+            } ${
+              location.pathname !== "/" &&
+              location.pathname !== "/aboutus" &&
+              location.pathname !== "/contact" &&
+              location.pathname !== "/cart" &&
+              location.pathname !== "/howitworks"
+                ? classes.gone
+                : ""
+            }`}
+          >
+            {location.pathname === "/" ||
+            location.pathname === "/aboutus" ||
+            location.pathname === "/cart" ||
+            location.pathname === "/contact" ||
+            location.pathname === "/howitworks" ? (
               <>
                 <li>
-                  <Link to={"/"} className={classes.link}>
+                  <Link
+                    to={"/howitworks"}
+                    className={classes.link}
+                    onClick={() => {
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
+                    }}
+                  >
                     How It Works
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"} className={classes.link}>
+                  <Link
+                    to={"/aboutus"}
+                    className={classes.link}
+                    onClick={() => {
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
+                    }}
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/contact"} className={classes.link}>
+                  <Link
+                    to={"/contact"}
+                    className={classes.link}
+                    onClick={() => {
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
+                    }}
+                  >
                     Contact
                   </Link>
                 </li>
                 <li className={classes.border}>
-                  <Link to={"/discovery"} className={classes.button}>
-                    {/* <AiOutlineShoppingCart className={classes.icon} /> */}
+                  <Link
+                    to={"/discovery"}
+                    className={classes.button}
+                    onClick={() => {
+                      if (window.innerWidth <= 800) {
+                        setShowSidebar((show) => !show);
+                      }
+                    }}
+                  >
                     Get Started
                   </Link>
                 </li>
               </>
-            )}
-            {location.pathname !== "/" && (
-              <>
-                <CartButton />
-                <CartPreview />
-              </>
+            ) : (
+              ""
             )}
           </ul>
+          {location.pathname !== "/" &&
+          location.pathname !== "/aboutus" &&
+          location.pathname !== "/cart" &&
+          location.pathname !== "/contact" &&
+          location.pathname !== "/howitworks" ? (
+            <>
+              <CartButton />
+
+              {location.pathname !== "/" &&
+              location.pathname !== "/aboutus" &&
+              location.pathname !== "/cart" &&
+              location.pathname !== "/contact" &&
+              location.pathname !== "/howitworks" ? (
+                <CartPreview />
+              ) : (
+                ""
+              )}
+            </>
+          ) : (
+            ""
+          )}
         </nav>
       </header>
     </>

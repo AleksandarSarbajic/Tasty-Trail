@@ -6,7 +6,7 @@ export default function RootLayout() {
   return (
     <>
       <MainHeader />
-      <main>
+      <main className="transition">
         <Outlet />
       </main>
       <Footer />

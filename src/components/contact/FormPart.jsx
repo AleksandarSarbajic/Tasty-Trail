@@ -1,4 +1,3 @@
-import { Form } from "react-router-dom";
 import classes from "../contact/FormPart.module.scss";
 
 export default function FormPart() {
@@ -10,7 +9,7 @@ export default function FormPart() {
       <p className={classes.subtitle}>
         Our customers feedback is very important for us!
       </p>
-      <Form className={classes.form}>
+      <form className={classes.form} netlify>
         <div>
           <input type="text" placeholder="Your Name" />
         </div>
@@ -22,7 +21,7 @@ export default function FormPart() {
           <input type="text" id="message" />
         </div>
         <button className={classes.formButton}>Send us an email!</button>
-      </Form>
+      </form>
     </div>
   );
 }

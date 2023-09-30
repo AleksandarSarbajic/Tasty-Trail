@@ -12,15 +12,15 @@
 .modal {
   max-width: 90rem;
   min-height: 50rem;
-  // min-width: max-content;
+
   width: 60rem;
   border: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  // padding: 3rem;
+
   z-index: 99999999999999;
   position: fixed;
-  top: 55rem;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
@@ -63,6 +63,6 @@
   100% {
     opacity: 1;
 
-    transform: translateY(-50%) translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 }

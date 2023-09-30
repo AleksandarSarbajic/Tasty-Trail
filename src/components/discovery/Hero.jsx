@@ -7,7 +7,6 @@ import HeroItem from "./HeroItem";
 export default function Hero(props) {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 2,
     },
@@ -33,8 +32,6 @@ export default function Hero(props) {
     },
   };
   const CustomRightArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
-
     return (
       <button onClick={() => onClick()} className={classes.buttonRight}>
         <BsArrowRight className={classes.arrow} />
@@ -42,8 +39,6 @@ export default function Hero(props) {
     );
   };
   const CustomLeftArrow = ({ onClick }) => {
-    // onMove means if dragging or swiping in progress.
-
     return (
       <button onClick={() => onClick()} className={classes.buttonLeft}>
         <BsArrowLeft className={classes.arrow} />
@@ -66,7 +61,7 @@ export default function Hero(props) {
         customLeftArrow={<CustomLeftArrow />}
         removeArrowOnDeviceType={["tablet", "bigmobile", "mobile"]}
       >
-        {props.data.Restoraunts.map((item) => {
+        {props.data.Restaurants.map((item) => {
           return <HeroItem store={item} key={item.name} />;
         })}
       </Carousel>

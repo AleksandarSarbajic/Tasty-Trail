@@ -4,10 +4,14 @@ import { cartActions } from "../../redux/cart-slice";
 import classes from "../foodmodal/FoodContent.module.scss";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-export default function FoodContent({ foodItem }) {
+export default function FoodContent({ foodItem, item }) {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.cart.items);
-  const filter = items.find((item) => item.name === foodItem.name);
+  const { items, secondItems } = useSelector((state) => state.cart);
+  const filter =
+    item.type === "Market"
+      ? secondItems.find((item) => item.name === foodItem.name)
+      : items.find((item) => item.name === foodItem.name);
+
   const [orderNumber, setOrderNumber] = useState(filter ? filter.quantity : 1);
   const [totalPrice, setTotalPrice] = useState(
     filter ? filter.totalPrice : foodItem.price
@@ -30,22 +34,46 @@ export default function FoodContent({ foodItem }) {
     }
   }
   function addToCartHandler() {
-    const newItem = { ...foodItem, quantity: orderNumber, totalPrice };
+    const newItem = {
+      ...foodItem,
+      quantity: orderNumber,
+      totalPrice,
+      type: item.type,
+      delivery: item.price,
+      company: item.name,
+    };
+
     if (orderNumber === 0) {
-      dispatch(cartActions.removeFromCart({ name: foodItem.name }));
+      dispatch(
+        cartActions.removeFromCart({ name: foodItem.name, type: item.type })
+      );
     } else {
-      dispatch(cartActions.addToCart(newItem));
+      dispatch(
+        cartActions.addToCart({
+          item: newItem,
+          type: item.type,
+        })
+      );
     }
-    navigate(-1);
+
+    navigate(`/${item.type}/${item.link}`);
   }
 
   return (
     <div className={classes.foodContent}>
-      <img src={foodItem.image} alt={foodItem.name} className={classes.image} />
+      <img
+        src={foodItem.image}
+        alt={foodItem.name}
+        className={classes.image}
+        loading="lazy"
+      />
       <div className={classes.container}>
         <h1 className={classes.heading}>{foodItem.name}</h1>
         <p className={classes.price}>{foodItem.price} rsd</p>
-        <p className={classes.description}>{foodItem.ingredients}</p>
+        <p className={classes.description}>
+          {/* {foodItem.ingredients.length > 0 ? foodItem.ingredients : " "} &nbsp; */}
+          {foodItem.ingredients}
+        </p>
         <div className={classes.flex}>
           <div className={classes.buttons}>
             <button

@@ -13,6 +13,13 @@ const filterSlice = createSlice({
     showFilter: (state, action) => {
       state.show = action.payload;
     },
+    setFilters: (state, action) => {
+      const newItems = action.payload;
+
+      state.filters = newItems;
+      state.itemsToBeFiltered = newItems;
+      if (newItems.length === 0) state.commonItems = newItems;
+    },
     setFilter: (state) => {
       const items = state.filters;
       const newItems = state.itemsToBeFiltered;

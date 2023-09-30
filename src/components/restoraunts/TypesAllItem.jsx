@@ -3,7 +3,10 @@ import classes from "../restoraunts/TypesAllItem.module.scss";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 export default function TypesAllItem(props) {
   return (
-    <Link to={`/Restoraunt/${props.link}`} className={classes.item}>
+    <Link
+      to={`/${props.type === "Market" ? "Market" : "Restaurant"}/${props.link}`}
+      className={classes.item}
+    >
       <div className={classes.container}>
         <div className={classes.itemContainer}>
           <img src={props.img} alt={props.name} className={classes.img} />
@@ -17,7 +20,7 @@ export default function TypesAllItem(props) {
           </p>
         </div>
         <div className={classes.itemBox}>
-          <div>
+          <div className={classes.itemBoxTextes}>
             <p className={classes.itemBoxName}>{props.name}</p>
             <p className={classes.itemBoxText}>{props.text}</p>
           </div>

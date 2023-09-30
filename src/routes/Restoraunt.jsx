@@ -1,18 +1,19 @@
 import RestorauntHero from "../components/Restoraunt/Hero";
 import { json, useRouteLoaderData, useParams, Outlet } from "react-router-dom";
+import useDocumentTitle from "../customhooks/useDocumentTitle";
 
 export default function Restoraunt() {
   const params = useParams();
   const loading = useRouteLoaderData("restoraunt");
 
-  console.log(loading.Restoraunts);
-  const restoraunt = loading.Restoraunts.find((store) => {
+  const restoraunt = loading.Restaurants.find((store) => {
     return store.link === params.id;
   });
 
+  useDocumentTitle(`${restoraunt.name} | TastyTrail`);
   return (
     <>
-      <RestorauntHero store={restoraunt}></RestorauntHero>
+      <RestorauntHero store={restoraunt} />
       <Outlet />
     </>
   );

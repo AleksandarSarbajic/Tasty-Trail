@@ -1,22 +1,38 @@
 .item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-right: 2.5rem;
+  @media only screen and (max-width: 50em) {
+    margin-right: 0rem;
+    padding: 0 1rem;
+  }
 }
 .img {
   width: 8rem;
   border-radius: 5px;
+  @media only screen and (max-width: 50em) {
+    width: 10rem;
+  }
 }
 .name {
   font-size: 1.5rem;
+  @media only screen and (max-width: 50em) {
+    font-size: 1.8rem;
+  }
 }
 .price {
   font-size: 1.4rem;
   margin-left: auto;
   color: var(--primary-color);
+  @media only screen and (max-width: 50em) {
+    font-size: 1.6rem;
+  }
 }
 .quantity {
   width: 2.5rem;
   font-size: 1.4rem;
+  @media only screen and (max-width: 50em) {
+    font-size: 1.6rem;
+  }
 }

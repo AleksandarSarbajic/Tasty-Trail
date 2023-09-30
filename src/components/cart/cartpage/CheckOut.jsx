@@ -1,10 +1,11 @@
-import classes from "../cartpage/CheckOut.module.scss";
+import classes from "../cartpage/Checkout.module.scss";
 import { useSelector } from "react-redux";
 import CheckOutItems from "./CheckOutItems";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 export default function CheckOut(props) {
-  const { cart, adress } = useSelector((state) => state);
+  const cart = useSelector((state) => state.cart);
+  const { adress } = useSelector((state) => state.adress);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,14 +16,15 @@ export default function CheckOut(props) {
     }
 
     if (Object.keys(props.form).length !== 0) {
-      if (props.form?.name === "") {
-      }
-      if (props.form?.phone === "") {
-      }
-      if (props.form?.email === "" || props.form?.sameEmail === "") {
-      }
-      if (props.form?.email === props?.form.sameEmail) {
-      }
+      // if (props.form?.name === "") {
+      // }
+      // if (props.form?.phone === "") {
+      // }
+      // if (props.form?.email === "" || props.form?.sameEmail === "") {
+      // }
+      if (props.form?.email !== props?.form.sameEmail) return;
+
+      if (adress.length === 0) return;
       if (
         props.form?.name === "" ||
         props.form?.phone === "" ||
@@ -40,7 +42,7 @@ export default function CheckOut(props) {
         props.form?.email === props?.form.sameEmail
       ) {
         if (location.hash === "#checkout") {
-          navigate("#finish");
+          navigate("#overview");
         }
       } else {
         return;
@@ -54,42 +56,54 @@ export default function CheckOut(props) {
       <div>
         <span className={classes.CheckOutName}>Subtotal</span>
         <span className={classes.CheckOutPrice}>
-          {location.hash === ""
+          {cart.selected === "first"
             ? cart.totalPrice
-            : cart.items.length === cart.selectedItems.length
-            ? cart.totalPrice
-            : cart.totalPriceSelected}
-          &nbsp; rsd
+            : cart.selected === "second"
+            ? cart.totalPriceSecond
+            : cart.totalPrice + cart.totalPriceSecond}{" "}
+          RSD
         </span>
       </div>
       <div>
         <span className={classes.CheckOutName}>Discount</span>
-        <span className={classes.CheckOutPrice}>0 rsd</span>
+        {cart.discount === 1 ? (
+          <span className={classes.CheckOutPrice}>0 rsd</span>
+        ) : (
+          <span className={classes.CheckOutPrice}>
+            {cart.selected === "first" && cart.discount > 1
+              ? cart.totalPrice / cart.discount
+              : cart.selected === "second" && cart.discount > 1
+              ? cart.totalPriceSecond / cart.discount
+              : (cart.totalPrice + cart.totalPriceSecond) / cart.discount}
+            rsd
+          </span>
+        )}
       </div>
       <div className={classes.CheckOutLast}>
         <span className={classes.CheckOutNameFinal}>Grand total</span>
-        <span className={classes.CheckOutPriceFinal}>
-          {location.hash === ""
-            ? cart.totalPrice
-            : cart.items.length === cart.selectedItems.length
-            ? cart.totalPrice
-            : cart.totalPriceSelected}
-          &nbsp; rsd
-        </span>
+        {cart.discount === 1 ? (
+          <span className={classes.CheckOutPriceFinal}>
+            {cart.selected === "first"
+              ? cart.totalPrice
+              : cart.selected === "second"
+              ? cart.totalPriceSecond
+              : cart.totalPrice + cart.totalPriceSecond}{" "}
+            RSD
+          </span>
+        ) : (
+          <span className={classes.CheckOutPriceFinal}>
+            {cart.selected === "first"
+              ? cart.totalPrice - cart.totalPrice / cart.discount
+              : cart.selected === "second"
+              ? cart.totalPriceSecond - cart.totalPriceSecond / cart.discount
+              : cart.totalPrice +
+                cart.totalPriceSecond -
+                (cart.totalPriceSecond + cart.totalPrice) / cart.discount}{" "}
+            RSD
+          </span>
+        )}
       </div>
-      <button
-        disabled={
-          cart.selectedItems.length === 0
-            ? true
-            : location.hash === ""
-            ? false
-            : adress.adress.length === 0
-            ? true
-            : false
-        }
-        className={classes.CheckOutButton}
-        onClick={onClickHandler}
-      >
+      <button className={classes.CheckOutButton} onClick={onClickHandler}>
         {location.hash === "" ? "Checkout now" : "Order Now"}
       </button>
     </div>

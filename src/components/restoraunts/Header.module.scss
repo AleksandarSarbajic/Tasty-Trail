@@ -1,15 +1,25 @@
 .header {
-  width: 140rem;
-  margin: 3rem auto;
+  max-width: 140rem;
+  margin: 3rem auto 3rem auto;
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 27.25em) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .heading {
   font-size: 3.6rem;
   font-weight: 600;
   margin-left: 1rem;
+  text-transform: capitalize;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 4.4rem;
+  }
 }
 .button {
   font-size: 1.6rem;
@@ -19,6 +29,10 @@
   color: var(--primary-color--light--2);
   cursor: pointer;
   transition: all 0.2s;
+  @media only screen and (max-width: 27.25em) {
+    font-size: 2rem;
+  }
+
   span {
     color: var(--primary-color);
     font-weight: 500;

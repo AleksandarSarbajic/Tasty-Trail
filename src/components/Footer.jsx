@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "../components/Footer.module.css";
+import classes from "../components/Footer.module.scss";
 import { BiUser } from "react-icons/bi";
 export default function Footer() {
   return (
@@ -30,66 +30,66 @@ export default function Footer() {
         <div className={classes.all}>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Platform
+              <Link to={"/howitworks"} className={classes.link}>
+                How it works
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Pricing
+              <Link to={"/aboutus"} className={classes.link}>
+                About us
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Our team
+              <Link to={"/contact"} className={classes.link}>
+                Contact
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
-                Our businesses
+              <Link to={"/discovery"} className={classes.link}>
+                Discovery
               </Link>
             </li>
           </ul>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Company
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Blog
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Carriers
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 News
               </Link>
             </li>
           </ul>
           <ul>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Resources
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Parteners
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 Ordering
               </Link>
             </li>
             <li className={classes.item}>
-              <Link to={"/"} className={classes.link}>
+              <Link to={"/discovery"} className={classes.link}>
                 About
               </Link>
             </li>

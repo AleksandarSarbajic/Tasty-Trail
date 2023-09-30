@@ -1,0 +1,21 @@
+.hero {
+  max-width: 135rem;
+
+  margin: 0 auto 10rem auto;
+  padding: 15rem 1rem 0;
+}
+.heading {
+  font-size: 6.6rem;
+  margin: 2rem 0;
+
+  line-height: 1;
+  letter-spacing: 0.5px;
+  @media only screen and (max-width: 57.25em) {
+    font-size: 4.2rem;
+    letter-spacing: 0.4px;
+  }
+  @media only screen and (max-width: 38.5em) {
+    font-size: 4rem;
+    text-align: center;
+  }
+}

@@ -1,3 +1,5 @@
+Items.js
+AllItems.js
 # Logs
 logs
 *.log
@@ -8,6 +10,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+src\AllItems.js
 dist
 dist-ssr
 *.local

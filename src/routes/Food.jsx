@@ -1,24 +1,34 @@
+import { useErrorBoundary } from "react-error-boundary";
 import FoodContent from "../components/foodmodal/FoodContent";
 import FoodModal from "../components/foodmodal/ModalFood";
-import { json, useRouteLoaderData, useParams } from "react-router-dom";
+import {
+  json,
+  useRouteLoaderData,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 
-export default function Food() {
-  const data = useRouteLoaderData("food");
+export default function Food({ type = "food" }) {
+  const data = useRouteLoaderData(type);
   const params = useParams();
+  const location = useLocation();
 
-  const filteredRestoraunts = data.Restoraunts.find(
-    (food) => food.link === params.id
-  );
-  const foodItem = filteredRestoraunts.food.find(
-    (item) => item.name === params.food
-  );
+  const filteredItem = location.pathname.includes("Market")
+    ? data.Markets.find((food) => food.link === params.id)
+    : data.Restaurants.find((food) => food.link === params.id);
+
+  const filteredRestoraunts = location.pathname.includes("Market")
+    ? data.Markets.find((food) => food.link === params.id).food.find(
+        (item) => item.name === params.food
+      )
+    : data.Restaurants.find((food) => food.link === params.id).food.find(
+        (item) => item.name === params.food
+      );
 
   return (
-    <>
-      <FoodModal>
-        <FoodContent foodItem={foodItem} />
-      </FoodModal>
-    </>
+    <FoodModal item={filteredItem}>
+      <FoodContent foodItem={filteredRestoraunts} item={filteredItem} />
+    </FoodModal>
   );
 }
 export async function loader() {

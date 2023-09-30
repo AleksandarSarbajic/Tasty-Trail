@@ -1,39 +1,82 @@
+.side {
+  overflow: hidden;
+}
 .list {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+.high {
+  color: var(--primary-color--dark--1);
+}
+.links {
   @media only screen and (max-width: 52.5em) {
-    // flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 
-.link:visited,
-.link:link {
+.easeOut {
+  @media only screen and (max-width: 52.5em) {
+    height: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    animation: easeOut 1s;
+    transform: translateY(-200%);
+  }
+}
+
+.easeIn {
+  @media only screen and (max-width: 52.5em) {
+    animation: easeIn 1s;
+    transform: translateY(0%);
+  }
+}
+
+.link {
   width: 17rem;
   font-size: 1.6rem;
   display: inline-block;
   padding: 1rem 0.5rem 1rem 2rem;
+  border: none;
+  background-color: transparent;
   border-bottom: 1px solid var(--text-primary);
+  text-align: left;
   transition: all 0.2s;
   text-transform: capitalize;
+  font-weight: 500;
+  cursor: pointer;
+
   @media only screen and (max-width: 52.5em) {
+    font-size: 2.4rem;
     flex-direction: row;
     border-bottom: none;
-    width: min-content;
-    max-width: 17rem;
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 1.5rem 1rem 1.5rem 2.5rem;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
   }
 }
-.square:visited,
-.square:link {
+.square {
   margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: 1.6rem;
   display: flex;
   align-items: flex-end;
   gap: 0.5rem;
-  // padding: 1rem 0.5rem 1rem 1.5rem;ma
-  // margin-left: -1rem;
+
   transition: all 0.2s;
   text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  @media only screen and (max-width: 52.5em) {
+    font-size: 2.4rem;
+    justify-content: space-between;
+  }
 }
 .square:hover,
 .square:active {
@@ -48,4 +91,46 @@
 .icon {
   font-size: 2.4rem;
   color: var(--primary-color--dark--1);
+  @media only screen and (max-width: 52.5em) {
+    font-size: 3.6rem;
+  }
+}
+
+.chevron {
+  display: none;
+  @media only screen and (max-width: 52.5em) {
+    display: inline-block;
+    font-size: 3.6rem;
+  }
+}
+
+@keyframes easeOut {
+  0% {
+    height: 33.5rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+  }
+
+  100% {
+    height: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-60%);
+  }
+}
+@keyframes easeIn {
+  0% {
+    height: 1rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-60%);
+  }
+
+  100% {
+    height: 33.5rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+  }
 }

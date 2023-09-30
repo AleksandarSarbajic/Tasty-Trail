@@ -1,10 +1,9 @@
-import classes from "../LandingPage/Company.module.css";
+import classes from "../LandingPage/Company.module.scss";
 import ReactCurvedText from "react-curved-text";
 import { useInView } from "react-intersection-observer";
 export default function Company() {
-  // Dummy data for the companies TastyTrail has worked with
   const { ref: boxRef, inView: boxInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     triggerOnce: true,
   });
   return (
@@ -17,9 +16,10 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/McDonalds-Logo.png"}
+            src={"/McDonalds-Logo.webp"}
             alt={"McDonald's"}
             className={classes.image}
+            loading="lazy"
           />
           <ReactCurvedText
             width={300}
@@ -42,9 +42,10 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/Kfc_logo.png"}
+            src={"/Kfc_logo.webp"}
             alt={"KFC"}
             className={classes.image}
+            loading="lazy"
           />
           <ReactCurvedText
             width={300}
@@ -67,9 +68,10 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/starbucks-logo.png"}
+            src={"/starbucks-logo.webp"}
             alt={"StarBucks"}
-            className={classes.img}
+            className={classes.bucks}
+            loading="lazy"
           />
           <ReactCurvedText
             width={300}
@@ -92,7 +94,7 @@ export default function Company() {
           className={`${classes.company} ${boxInView ? classes.animate : ""}`}
         >
           <img
-            src={"public/Burger-King-Logo-1994.png"}
+            src={"/Burger-King-Logo-1994.webp"}
             alt={"BurgerKing"}
             className={classes.image}
           />

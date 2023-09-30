@@ -4,14 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../redux/filter-slice";
 import { useState } from "react";
 import FilterItem from "./FilterItem";
-export default function Filter(props) {
-  const sort = useSelector((state) => state.filter.sort);
+import { useSearchParams } from "react-router-dom";
+export default function Filter({ data: allData, type }) {
+  const { sort, itemsToBeFiltered } = useSelector((state) => state.filter);
   const [value, setValue] = useState(sort);
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
+
+  const data = type === "Markets" ? allData.markets : allData.food;
+
   function onClickHandler() {
     dispatch(filterActions.setFilter());
     dispatch(filterActions.showFilter(false));
     dispatch(filterActions.setSort(value));
+
+    if (itemsToBeFiltered.length > 0) {
+      searchParams.set("filters", itemsToBeFiltered);
+      setSearchParams(searchParams);
+    } else {
+      searchParams.delete("filters");
+
+      setSearchParams(searchParams);
+    }
   }
   function onItemClick(item) {
     dispatch(filterActions.setItemsForFilter(item));
@@ -39,8 +53,12 @@ export default function Filter(props) {
         </nav>
         <p className={classes.heading}>Filter</p>
         <div className={classes.grid}>
-          {props.data.types.food.map((type) => (
-            <FilterItem key={type} type={type} onClick={onItemClick} />
+          {data.map((item) => (
+            <FilterItem
+              key={item.name}
+              type={item.name}
+              onClick={onItemClick}
+            />
           ))}
         </div>
         <p className={classes.subheading}>Sort by</p>
@@ -89,21 +107,6 @@ export default function Filter(props) {
             }}
           >
             Order time
-          </button>
-          <button
-            className={`${classes.gridItem} ${
-              value === "Price"
-                ? classes.selected
-                : sort === ""
-                ? classes.selected
-                : ""
-            }`}
-            value={"Price"}
-            onClick={(e) => {
-              setValue(e.target.value);
-            }}
-          >
-            Price
           </button>
         </div>
         <button className={classes.button} onClick={onClickHandler}>

@@ -8,7 +8,7 @@ export default function FoodModal(props) {
   const navigate = useNavigate();
 
   function onCloseHandler() {
-    navigate(-1);
+    navigate(`/${props.item.type}/${props.item.link}`);
   }
   return (
     <>
