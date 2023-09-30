@@ -51,6 +51,7 @@ export async function loader() {
   if (!response.ok) {
     throw json("Failed to load data");
   } else {
+    // dasdd
     return response;
   }
 }
