@@ -19,7 +19,6 @@ export default function Hero() {
   const [hidden, setHidden] = useState("");
 
   useEffect(() => {
-    // setAnimation(classes.animation);
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * food.length);
       setText(food[randomIndex]);

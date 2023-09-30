@@ -1,6 +1,6 @@
 import classes from "../Restoraunt/Hero.module.scss";
 import Aside from "./Aside";
-// import Content from "./Content";
+
 import ContentSecond from "./ContentSecond";
 import Navigation from "./Navigation";
 export default function RestorauntHero(props) {

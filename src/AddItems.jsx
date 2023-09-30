@@ -17,7 +17,6 @@ function AddItems() {
       );
 
       if (!res.ok) throw new Error("Error");
-      // const data = await res.json();
     } catch (error) {
       showBoundary(error);
     }

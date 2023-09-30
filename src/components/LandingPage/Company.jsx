@@ -2,7 +2,6 @@ import classes from "../LandingPage/Company.module.scss";
 import ReactCurvedText from "react-curved-text";
 import { useInView } from "react-intersection-observer";
 export default function Company() {
-  // Dummy data for the companies TastyTrail has worked with
   const { ref: boxRef, inView: boxInView } = useInView({
     threshold: 0.3,
     triggerOnce: true,

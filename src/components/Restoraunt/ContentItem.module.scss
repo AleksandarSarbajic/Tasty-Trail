@@ -69,7 +69,7 @@
 .description {
   font-size: 1.3rem;
   text-align: center;
-  // margin-top: 3rem;
+
   margin-bottom: 3rem;
   max-height: 10rem;
   @media only screen and (max-width: 27.25em) {
@@ -88,7 +88,7 @@
 
   border-radius: 15px;
   font-weight: 700;
-  // background-color: #fef5ea;
+
   @media only screen and (max-width: 27.25em) {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
@@ -134,18 +134,7 @@
     width: 8rem;
     right: -2rem;
     bottom: -2rem;
-    // &:hover {
-    //   border: none;
-
-    //   transform: none;
-    //   background-image: none;
-    // }
   }
-  // &:hover .icon {
-  //   transform: none;
-
-  //   color: var(--text-tertiary);
-  // }
 }
 
 .icon {

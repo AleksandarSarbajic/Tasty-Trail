@@ -16,8 +16,6 @@ export default function Aside(props) {
       animation === null ? true : animation != null ? !animate : null
     );
 
-    // if (!animation) return;
-
     navigate(`/Restaurant/${props.content.link}`);
   }
 

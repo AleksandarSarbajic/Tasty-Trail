@@ -74,7 +74,6 @@ export default function Content({ content }) {
   useEffect(() => {
     window.addEventListener("popstate", handlePopState);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("popstate", handlePopState);
     };

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import classes from "../discovery/StoreTypes.module.scss";
 import { HiHome } from "react-icons/hi";
-// import { IoStorefrontOutline } from "react-icons/io";
+
 import { BiStore } from "react-icons/bi";
 import { ImSpoonKnife } from "react-icons/im";
 

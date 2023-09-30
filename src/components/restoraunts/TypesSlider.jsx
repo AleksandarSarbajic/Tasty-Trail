@@ -60,7 +60,6 @@ export default function TypesSlider({ data: typesData, heading }) {
           infinite={true}
           responsive={responsive}
           containerClass="zindex"
-          // autoPlay={true}
           customTransition="transform 1000ms ease-in-out"
           transitionDuration={1000}
           autoPlaySpeed={5000}

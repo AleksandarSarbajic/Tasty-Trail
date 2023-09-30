@@ -4,7 +4,7 @@ import { WiSunrise } from "react-icons/wi";
 import { IoFastFood } from "react-icons/io5";
 import { BiTimeFive } from "react-icons/bi";
 import { FcPhoneAndroid } from "react-icons/fc";
-// import "./LogoCarousel.css"; // Create this file to add custom styles
+
 export default function Slider() {
   return (
     <div className={classes.container}>

@@ -30,8 +30,6 @@
         max-width: 25rem;
         display: grid;
         grid-template-columns: min-content 1fr;
-        // gap: 2rem;
-        // justify-content: space-between;
       }
     }
     &Email {
@@ -91,7 +89,6 @@
   width: 10rem !important;
 }
 .location {
-  // justify-self: flex-end !important;
   font-size: 1.6rem;
 }
 
