@@ -5,11 +5,10 @@
 <div align="center">
 <img src="https://img.shields.io/npm/v/npm.svg?logo=npm"/>
 <img src="https://img.shields.io/badge/react-v18.2.0-blue?logo=react"/>
+<img src="https://img.shields.io/badge/redux/toolkit-v1.9.5-purple?logo=redux"/>
 <img src="https://img.shields.io/badge/reactrouterdom-v6.14.2-red?logo=reactrouter"/>
-<img src="https://img.shields.io/badge/styledcomponents-v6.0.7-pink?logo=styledcomponents"/>
-<img src="https://img.shields.io/badge/reactquery-v4.32.6-red?logo=reactquery"/>
-<img src="https://img.shields.io/badge/reacthookform-v7.45.4-red?logo=reacthookform"/>
-<img src="https://img.shields.io/badge/supabase-v2.31.0-green?logo=supabase"/>
+<img src="https://img.shields.io/badge/sass-v1.62.1-pink?logo=sass"/>
+<img src="https://img.shields.io/badge/firebase-v10.4.0-orange?logo=firebase"/>
 </div>  
 
 
@@ -27,10 +26,10 @@
 
   - [React](https://react.dev/)
   - [React Router Dom](https://reactrouter.com/en/main)
-  - [Styled componenets](https://styled-components.com/)
-  - [React Query](https://tanstack.com/query/v3/)
-  - [React Hook Form](https://www.react-hook-form.com/)
-  - [Supabase](https://supabase.com/)
+  - [Sass](https://sass-lang.com/)
+  - [Redux Tollkit](https://redux-toolkit.js.org/)
+  - [React multi carousel](https://github.com/YIZHUANG/react-multi-carousel)
+  - [Firebase](https://firebase.google.com/)
 
 
 ## Screenshot
@@ -43,10 +42,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com/) and [
 
 ```
 # Clone this repository 
-$ git clone https://github.com/AleksandarSarbajic/the-wild-oasis
+$ git clone https://github.com/AleksandarSarbajic/Tasty-Trail
 
 # Go into the repository
-$ cd the-wild-oasis
+$ cd Tasty-Trail
 
 # Install dependencies
 $ npm install
@@ -65,7 +64,8 @@ $ npm run start
 
 ## You may also like...
 
-- [Tasty Trail](https://github.com/AleksandarSarbajic/the-wild-oasis) - Food ordering app
+
+- [The Wild Oasis](https://github.com/AleksandarSarbajic/Tasty-Trail) - Hotel service app
 - [Fast React Pizza](https://github.com/AleksandarSarbajic/fast-react-pizza) - Pizza ordering app
 - [World Wise](https://github.com/AleksandarSarbajic/WorldWise) - Countries visited tracking app
 
