@@ -12,7 +12,7 @@
 </div>  
 
 
-<p align="center">The Fast React Pizza is an app, that that has a variety of different pizzas so everyone can find his favorite pizza to order</p>
+<p align="center">Tasty Trail is delivery app, that has a lot of restaurants and markets so you can order from your favorite places</p>
 
 <div align="center">
   
