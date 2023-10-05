@@ -1,6 +1,4 @@
-<div align="center">
- <img  src="https://github.com/AleksandarSarbajic/the-wild-oasis/blob/main/public/logo-dark.png"/>
- </div>
+<h1 align="center">Tasty Trail😋 </h1>
 
 <div align="center">
 <img src="https://img.shields.io/npm/v/npm.svg?logo=npm"/>
