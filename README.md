@@ -34,7 +34,8 @@
 
 ## Screenshot
 
-![Screenshot 2023-09-30 164953](https://github.com/AleksandarSarbajic/the-wild-oasis/assets/114814838/528ab328-dc51-4f0a-baad-f825b6f3b7c7)
+![Landing page](https://github.com/AleksandarSarbajic/Tasty-Trail/assets/114814838/8b470744-2447-4dde-a00e-5e3426b56e33)
+
 
 ## Quicstart
 
@@ -60,6 +61,38 @@ $ npm run start
 
 ## How It Works
 
+### App
+
+On the app page you can discover a variety of different restaurants and markets.
+Click the one of the items and it will go to that item's page.
+We have an filter to only show restaurants or markets.
+And search bar in navigation to faster find what you want.
+
+![App page](https://github.com/AleksandarSarbajic/Tasty-Trail/assets/114814838/3037bb82-eb64-46cb-a4bd-35ffb1e9ec9c)
+
+When we go to only restaurants we can filter for different categories, sort for different prices, delivery price and speed to be delivered.
+You can even filter, type of different food that restaurants has, so you can find your need
+
+![Restaurants page](https://github.com/AleksandarSarbajic/Tasty-Trail/assets/114814838/b25b0c2c-c002-4079-8f28-5f46c75bf947)
+
+### Single item
+
+When u get navigated to the item's page, you can find every type of product that is present on the page.
+You can filter products by the type.
+Search products in that certain item so you can add items to the cart faster. 
+By clicking on the item you find in front of you product modal, that gives you info about it and u can add a certain amount of it to the cart.
+
+![Item page](https://github.com/AleksandarSarbajic/Tasty-Trail/assets/114814838/fd383811-0bbe-4fe9-9d2c-d2b8281cbceb)
+
+### Cart page
+
+On the carts page
+
+You can see you have the two different carts, for the markets and restaurants, and you can select which cart you want to go further or you can select both for faster checkout.
+You can increase or decrease the number of items or just delete it if you don't want that item.
+
+
+![Cart](https://github.com/AleksandarSarbajic/Tasty-Trail/assets/114814838/006a2e59-a745-420a-87e7-09d4cba4d19c)
 
 
 ## You may also like...
