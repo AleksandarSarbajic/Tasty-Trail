@@ -22,7 +22,7 @@ function Aboutus() {
       <AboutHero />
       <AboutBoxContainer />
       <OurHistory />
-      <AddItems />
+      {/* <AddItems /> */}
     </>
   );
 }
