@@ -3,6 +3,8 @@
   margin: 5rem 0 3rem 0;
   padding: 3rem 5rem;
   border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.1);
   @media only screen and (max-width: 30em) {
     padding: 2rem 3.5rem;
@@ -30,4 +32,45 @@
 }
 .icon {
   font-size: 2.4rem;
+}
+
+.favorite {
+  &Box {
+    align-self: flex-end;
+  }
+  &Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: rgba(237, 237, 237, 0.9);
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba(237, 237, 237);
+    }
+  }
+  &Icon {
+    font-size: 2.6rem;
+    color: var(--color-red-800);
+    transition: all 0.3s;
+    animation: fade 0.4s;
+  }
+}
+
+@keyframes fade {
+  0% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 4.4rem;
+  }
+  75% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 2.6rem;
+  }
 }

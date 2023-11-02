@@ -17,22 +17,30 @@ export default function CartButton() {
   }
 
   return (
-    <li
-      className={`${classes.item} hovered__button`}
-      onMouseEnter={() => {
-        if (window.innerWidth < 800) return;
-        previewCartHandler();
-      }}
-      onMouseLeave={() => {
-        if (window.innerWidth < 800) return;
-        previewCartHandler();
-      }}
-      onClick={() => {
-        if (window.innerWidth > 800) return;
-        previewCartHandler();
-      }}
-    >
-      <button className={classes.button}>
+    <li className={`${classes.item} `}>
+      <div
+        className={`${classes.absolute} hovered__absolute`}
+        onMouseEnter={() => {
+          if (window.innerWidth < 800) return;
+
+          previewCartHandler();
+        }}
+      />
+      <button
+        className={classes.button}
+        onMouseEnter={() => {
+          if (window.innerWidth < 800) return;
+          previewCartHandler();
+        }}
+        onMouseLeave={() => {
+          if (window.innerWidth < 800) return;
+          previewCartHandler();
+        }}
+        onClick={() => {
+          if (window.innerWidth > 800) return;
+          previewCartHandler();
+        }}
+      >
         <AiOutlineShoppingCart className={classes.icon} />
         <span className={classes.text}>Cart</span>
         <span className={classes.count}>

@@ -16,6 +16,19 @@
   visibility: hidden;
   height: 50rem;
   justify-content: space-between;
+
+  @media only screen and (max-width: 90em) {
+    right: 1rem;
+  }
+
+  @media only screen and (max-width: 75em) {
+    right: 3%;
+  }
+
+  @media only screen and (max-width: 68.5em) {
+    right: 1rem;
+  }
+
   @media only screen and (max-width: 50em) {
     position: fixed;
     width: 100dvw;
@@ -152,16 +165,6 @@
   }
 }
 
-.absolute {
-  position: absolute;
-  height: 2rem;
-  width: 15rem;
-  bottom: -0.5rem;
-  right: 30rem;
-  @media only screen and (max-width: 50em) {
-    display: none;
-  }
-}
 .closeButton {
   border: none;
   background-color: transparent;

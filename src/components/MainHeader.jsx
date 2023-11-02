@@ -13,6 +13,8 @@ import ModalContent from "./discovery/ModalContent";
 import CartButton from "./cart/CartButton";
 import CartPreview from "./cart/CartPreview";
 import SearchForm from "./search/SearchForm";
+import FavoriteButton from "./favorite/FavoriteButton";
+import FavoriteModal from "./favorite/FavoriteModal";
 
 export default function MainHeader() {
   const [scrollY, setScrollY] = useState(0);
@@ -195,6 +197,8 @@ export default function MainHeader() {
           location.pathname !== "/howitworks" ? (
             <>
               <CartButton />
+
+              <FavoriteButton />
 
               {location.pathname !== "/" &&
               location.pathname !== "/aboutus" &&

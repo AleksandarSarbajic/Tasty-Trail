@@ -2,15 +2,17 @@ import classes from "../restoraunts/Header.module.scss";
 import { TbArrowsSort } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../redux/filter-slice";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 export default function Header({ heading = "Restaraunts" }) {
   const { sort, filters } = useSelector((state) => state.filter);
   const [searchParams] = useSearchParams();
-
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const items = searchParams.get("filters");
 
   const queryType = searchParams.get("type");
+
+  const query = searchParams.get("q");
 
   function onClickHandler() {
     if (searchParams.get("filters") !== null && filters.length === 0) {
@@ -24,7 +26,13 @@ export default function Header({ heading = "Restaraunts" }) {
   return (
     <header className={classes.header}>
       <h2 className={classes.heading}>
-        {queryType === null ? heading : queryType + " " + "close to you!"}
+        {queryType === null && query === null
+          ? ""
+          : queryType === null
+          ? ""
+          : queryType + " " + "close to you!"}
+        {query !== null ? heading + " for: " + query : ""}
+        {pathname.includes("favorites") ? heading : ""}
       </h2>
       <button
         className={classes.button}

@@ -4,6 +4,7 @@ import AboutBoxContainer from "../components/aboutus/AboutBoxContainer";
 import AboutHero from "../components/aboutus/Hero";
 import OurHistory from "../components/aboutus/OurHistory";
 import useDocumentTitle from "../customhooks/useDocumentTitle";
+import AddItems from "../AddItems";
 
 function Aboutus() {
   useDocumentTitle("About Us | TastyTrail");
@@ -21,6 +22,7 @@ function Aboutus() {
       <AboutHero />
       <AboutBoxContainer />
       <OurHistory />
+      <AddItems />
     </>
   );
 }

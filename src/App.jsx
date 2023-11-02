@@ -19,6 +19,7 @@ import HowItWorks from "./routes/HowItWorks";
 import Search, { loader as searchLoader } from "./routes/Search";
 import Market, { loader as marketsLoader } from "./routes/Market";
 import ErrorFallBack from "./components/UI/ErrorFallBack";
+import Favorite, { loader as favoriteLoader } from "./routes/Favorite";
 
 const router = createBrowserRouter([
   {
@@ -91,7 +92,12 @@ const router = createBrowserRouter([
         id: "aboutus",
         element: <Aboutus />,
       },
-
+      {
+        path: "/favorites",
+        id: "favorite",
+        element: <Favorite />,
+        loader: favoriteLoader,
+      },
       {
         path: "/cart",
         id: "cart",

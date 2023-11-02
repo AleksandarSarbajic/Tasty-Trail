@@ -21,7 +21,7 @@ export default function Finish() {
 
   const delivery =
     [...new Set(checkOutItems.map((item) => item.company))].length * 160;
-
+  const orderNumber = self.crypto.randomUUID().toString();
   const currentDate = new Date();
 
   const orderTime = [30, 45];
@@ -60,12 +60,15 @@ export default function Finish() {
     dispatch(cartActions.setDiscountPercent(1));
     navigate("/discovery");
   }
-
+  console.log(cart.totalPrice + delivery - cart.totalPrice / cart.discount);
   return (
     <div className={classes.container}>
       <div className={classes.header}>
         <CiCircleCheck className={classes.headerIcon} />
         <h2 className={classes.headerTitle}>Thanks for your order! </h2>
+        <p className={classes.orderNumber}>
+          Your order number is {orderNumber}{" "}
+        </p>
         <p className={classes.headerMessage}>
           The order confirmation has been sent to {formattedDate}
         </p>
@@ -82,10 +85,7 @@ export default function Finish() {
         <h3 className={classes.boxHeading}>Transacation Date</h3>
         <p className={classes.boxText}>{formattedDate}</p>
       </div>
-      <div className={classes.box}>
-        <h3 className={classes.boxHeading}>Transacation Date</h3>
-        <p className={classes.boxText}>{formattedDate}</p>
-      </div>
+
       <div className={classes.orderItems}>
         <h3 className={classes.orderItemsHeading}>Your Order</h3>
         <div className={classes.orderItemsMargin}>
@@ -154,10 +154,10 @@ export default function Finish() {
         {cart.discount === 1 ? (
           <p className={classes.checkOutPrice}>
             {cart.selected === "first"
-              ? cart.totalPrice
+              ? cart.totalPrice + delivery
               : cart.selected === "second"
-              ? cart.totalPriceSecond
-              : cart.totalPrice + cart.totalPriceSecond}{" "}
+              ? cart.totalPriceSecond + delivery
+              : cart.totalPrice + cart.totalPriceSecond + delivery}{" "}
             RSD
           </p>
         ) : (

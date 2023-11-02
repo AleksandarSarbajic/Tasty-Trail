@@ -1,0 +1,39 @@
+.favorite {
+  position: relative;
+  padding-left: 2.4rem;
+  &Button {
+    height: 4.4rem;
+    width: 4.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: rgba(237, 237, 237, 0.9);
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba(237, 237, 237);
+    }
+  }
+  &Icon {
+    font-size: 2.6rem;
+    color: var(--color-red-800);
+    transition: all 0.3s;
+    animation: fade 0.3s;
+  }
+}
+
+@keyframes fade {
+  0% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 4.4rem;
+  }
+  75% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 2.6rem;
+  }
+}

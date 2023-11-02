@@ -1,3 +1,6 @@
+.link {
+  position: relative;
+}
 .img {
   display: block;
   width: 100%;
@@ -26,7 +29,7 @@
 .text {
   position: absolute;
   bottom: 2rem;
-  left: 4rem;
+  left: 2rem;
   @media only screen and (max-width: 37.5em) {
     left: 3rem;
   }
@@ -40,7 +43,7 @@
   display: block;
   font-size: 3.6rem;
   color: var(--text-tertiary);
-  width: 90%;
+  // width: 90%;
   line-height: 1;
   @media only screen and (max-width: 62.5em) {
     font-size: 2.6rem;

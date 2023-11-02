@@ -2,35 +2,20 @@ import classes from "../cart/CartPreview.module.scss";
 
 import { useSelector } from "react-redux";
 import CartPreviewItem from "./CartPreviewItem";
-import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { useShowCart } from "../../customhooks/useShowCart";
 export default function CartPreview() {
-  const [maxMoney, setMaxMoney] = useState(0);
   const { items, secondItems, totalPrice, totalPriceSecond } = useSelector(
     (state) => state.cart
   );
   const { isShown, previewCartHandler } = useShowCart();
 
-  useEffect(() => {
-    items.map((item) => {
-      setMaxMoney((prev) => prev + item.totalPrice);
-    });
-  }, [items]);
-
   if (items.length === 0 && secondItems.length === 0) return null;
 
   return (
     <>
-      <div
-        className={`${classes.absolute} hovered__absolute`}
-        onMouseEnter={() => {
-          if (window.innerWidth < 800) return;
-
-          previewCartHandler();
-        }}
-      />
       <div
         className={`${classes.container} ${
           isShown ? classes.isShown : classes.isDisabled

@@ -4,14 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../redux/filter-slice";
 import { useState } from "react";
 import FilterItem from "./FilterItem";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 export default function Filter({ data: allData, type }) {
+  const location = useLocation();
   const { sort, itemsToBeFiltered } = useSelector((state) => state.filter);
   const [value, setValue] = useState(sort);
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 
-  const data = type === "Markets" ? allData.markets : allData.food;
+  const data = location.pathname.includes("favorites")
+    ? [...allData.markets, ...allData.food]
+    : type === "Markets"
+    ? allData.markets
+    : allData.food;
 
   function onClickHandler() {
     dispatch(filterActions.setFilter());
@@ -76,7 +81,7 @@ export default function Filter({ data: allData, type }) {
               setValue(e.target.value);
             }}
           >
-            Reccomended
+            Recommended
           </button>
           <button
             className={`${classes.gridItem} ${

@@ -10,6 +10,7 @@ export default function TypesAll({ allData, searchData = [], heading }) {
   const filter = useSelector((state) => state.filter);
   const containsLocation =
     location.pathname.includes("restaraunts") ||
+    location.pathname.includes("favorites") ||
     location.pathname.includes("markets") ||
     location.pathname.includes("search");
 

@@ -1,10 +1,10 @@
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import classes from "../Restoraunt/ContentItem.module.scss";
 import { BsBag } from "react-icons/bs";
 import { useEffect, useState } from "react";
 export default function ContentItem(props) {
   const location = useLocation();
-  const params = useParams();
+
   const navigate = useNavigate();
   const [hash, setHash] = useState(location.hash);
 

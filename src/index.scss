@@ -12,6 +12,7 @@
   --text-primary: #333;
   --text-secondary: #222;
   --text-tertiary: #ffffff;
+  --color-red-800: #ff0000;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 500;
@@ -62,6 +63,17 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -83,6 +95,10 @@ li {
 }
 button {
   font-family: "Rubik", sans-serif;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .zindex {
   padding-top: 2rem;
